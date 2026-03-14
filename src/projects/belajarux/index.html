@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BelajarUX - Bootcamp UX Career Accelerator</title>
+  <meta name="description" content="BelajarUX membantu Anda naik level dari belajar teori ke siap kerja UX lewat kurikulum intensif, mentoring, dan project portfolio.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-orange: #ff9d4d;
+      --brand-orange-deep: #f08226;
+      --brand-teal: #28c7bf;
+      --brand-teal-deep: #159c96;
+      --ink-900: #0f213d;
+      --ink-700: #30496e;
+      --ink-500: #6881a6;
+      --card: #ffffff;
+      --line: #d6e2f2;
+      --bg-soft: #f7fbff;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink-900);
+      background:
+        radial-gradient(circle at 8% -10%, rgba(40, 199, 191, 0.22), transparent 34%),
+        radial-gradient(circle at 92% 0%, rgba(255, 157, 77, 0.2), transparent 28%),
+        linear-gradient(180deg, #f3fbfd 0%, #f8fbff 44%, #f3f8ff 100%);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Syne", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .grain {
+      background-image:
+        linear-gradient(rgba(15, 33, 61, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 33, 61, 0.04) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+
+    .soft-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(214, 226, 242, 0.9);
+      box-shadow: 0 14px 30px rgba(16, 44, 84, 0.08);
+    }
+
+    .brand-pill {
+      background: linear-gradient(135deg, rgba(40, 199, 191, 0.18), rgba(255, 157, 77, 0.2));
+      border: 1px solid rgba(40, 199, 191, 0.35);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.75s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-white/80">
+    <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+      <img src="./asset/belajarux.png" alt="BelajarUX" class="h-8 md:h-9 w-auto">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-[var(--ink-700)]">
+        <a href="#kurikulum" class="hover:text-[var(--ink-900)]">Kurikulum</a>
+        <a href="#mentor" class="hover:text-[var(--ink-900)]">Mentor</a>
+        <a href="#testimoni" class="hover:text-[var(--ink-900)]">Testimoni</a>
+        <a href="#harga" class="hover:text-[var(--ink-900)]">Harga</a>
+      </nav>
+      <a href="#harga" class="rounded-xl bg-[var(--brand-orange)] px-4 py-2 text-sm font-extrabold text-slate-900 hover:bg-[var(--brand-orange-deep)] transition">Daftar Sekarang</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-6xl mx-auto px-5 pt-10 pb-14 md:pb-20">
+      <div class="grid lg:grid-cols-2 items-center gap-10">
+        <div class="fade-up">
+          <p class="inline-flex items-center rounded-full px-3 py-1 text-xs uppercase tracking-[0.18em] font-bold text-[var(--ink-700)] brand-pill">Bootcamp UX Career Accelerator</p>
+          <h1 class="mt-5 text-4xl md:text-6xl leading-tight">Bangun Skill UX yang Dicari Industri dalam 8 Minggu</h1>
+          <p class="mt-5 text-[var(--ink-700)] md:text-lg max-w-xl">BelajarUX bukan sekadar belajar tools. Anda akan belajar cara berpikir UX, membuat keputusan desain berbasis data, dan menyusun portfolio yang meyakinkan recruiter.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#harga" class="rounded-xl bg-[var(--brand-orange)] px-6 py-3 font-extrabold text-slate-900 hover:bg-[var(--brand-orange-deep)] transition">Mulai Sekarang</a>
+            <a href="#kurikulum" class="rounded-xl border border-[var(--line)] bg-white px-6 py-3 font-bold text-[var(--ink-900)] hover:bg-[var(--bg-soft)] transition">Lihat Kurikulum</a>
+          </div>
+          <div class="mt-7 grid sm:grid-cols-3 gap-3 text-sm">
+            <div class="soft-card rounded-xl px-4 py-3"><p class="text-2xl font-black text-[var(--brand-teal-deep)]">1.200+</p><p class="text-[var(--ink-700)]">Alumni aktif</p></div>
+            <div class="soft-card rounded-xl px-4 py-3"><p class="text-2xl font-black text-[var(--brand-teal-deep)]">8 Minggu</p><p class="text-[var(--ink-700)]">Program intensif</p></div>
+            <div class="soft-card rounded-xl px-4 py-3"><p class="text-2xl font-black text-[var(--brand-teal-deep)]">12 Project</p><p class="text-[var(--ink-700)]">Hands-on challenge</p></div>
+          </div>
+        </div>
+        <div class="fade-up delay-1">
+          <div class="relative soft-card rounded-3xl p-4 md:p-6 overflow-hidden">
+            <div class="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-[var(--brand-orange)]/20"></div>
+            <div class="absolute -bottom-14 -left-14 h-36 w-36 rounded-full bg-[var(--brand-teal)]/25"></div>
+            <img src="./asset/hero-belajarux.jpg" alt="Hero BelajarUX" class="relative z-10 w-full rounded-2xl">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grain py-12 border-y border-[var(--line)]">
+      <div class="max-w-6xl mx-auto px-5">
+        <p class="text-center text-xs uppercase tracking-[0.2em] text-[var(--ink-500)] font-bold">Dipercaya Oleh Tim dari</p>
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+          <img src="./asset/logo-4-1.png" alt="Company 1" class="h-9 mx-auto opacity-80">
+          <img src="./asset/logo-5.png" alt="Company 2" class="h-7 mx-auto opacity-80">
+          <img src="./asset/logo-3-1.png" alt="Company 3" class="h-8 mx-auto opacity-80">
+          <img src="./asset/logo-4-1.png" alt="Company 4" class="h-9 mx-auto opacity-80">
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 py-14 md:py-20">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <img src="./asset/permasalahan-belajarux.png" alt="Permasalahan UX" class="w-full rounded-3xl border border-[var(--line)] shadow-sm fade-up">
+        <div class="fade-up delay-1">
+          <p class="text-xs uppercase tracking-[0.2em] font-bold text-[var(--brand-teal-deep)]">Masalah Utama</p>
+          <h2 class="mt-3 text-3xl md:text-5xl">Kenapa Belajar UX Sering Berhenti di Tengah Jalan?</h2>
+          <div class="mt-6 space-y-3 text-[var(--ink-700)]">
+            <p class="soft-card rounded-xl p-4">Belajar teori terus, tapi bingung implementasi ke project nyata.</p>
+            <p class="soft-card rounded-xl p-4">Sudah desain banyak, namun belum bisa menjelaskan reasoning UX.</p>
+            <p class="soft-card rounded-xl p-4">Portfolio terlihat rapi tapi tidak menunjukkan proses problem solving.</p>
+            <p class="soft-card rounded-xl p-4">Saat interview, sulit menjawab pertanyaan studi kasus produk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 md:py-20 bg-white border-y border-[var(--line)]">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="max-w-3xl fade-up">
+          <p class="text-xs uppercase tracking-[0.2em] font-bold text-[var(--brand-teal-deep)]">Framework BelajarUX</p>
+          <h2 class="mt-3 text-3xl md:text-5xl">Roadmap Belajar yang Jelas dari Basic ke Advanced</h2>
+        </div>
+        <div class="mt-10 grid md:grid-cols-3 gap-5">
+          <article class="soft-card rounded-2xl p-6 fade-up delay-1"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Fase 1</p><h3 class="mt-2 text-2xl">Think Like UX</h3><p class="mt-3 text-[var(--ink-700)]">Mindset produk, UX principles, dan problem framing.</p></article>
+          <article class="soft-card rounded-2xl p-6 fade-up delay-2"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Fase 2</p><h3 class="mt-2 text-2xl">Build With Data</h3><p class="mt-3 text-[var(--ink-700)]">Riset pengguna, prioritas pain points, dan validasi insight.</p></article>
+          <article class="soft-card rounded-2xl p-6 fade-up delay-3"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Fase 3</p><h3 class="mt-2 text-2xl">Present To Win</h3><p class="mt-3 text-[var(--ink-700)]">Susun case study, storytelling, dan simulasi interview UX.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kurikulum" class="max-w-6xl mx-auto px-5 py-14 md:py-20">
+      <div class="text-center max-w-3xl mx-auto fade-up">
+        <p class="text-xs uppercase tracking-[0.2em] font-bold text-[var(--brand-teal-deep)]">Kurikulum</p>
+        <h2 class="mt-3 text-3xl md:text-5xl">Materi Lengkap yang Relevan dengan Kebutuhan Kerja</h2>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 1</p><h3 class="mt-2 text-xl">UX Foundations</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Dasar berpikir UX dan kerangka kerja desain produk.</p></article>
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 2</p><h3 class="mt-2 text-xl">User Research</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Interview script, survey setup, dan synthesis insight.</p></article>
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 3</p><h3 class="mt-2 text-xl">Information Architecture</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Menyusun struktur produk yang mudah dipahami user.</p></article>
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 4</p><h3 class="mt-2 text-xl">Wireframing Sprint</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Low-fidelity sampai user flow end-to-end.</p></article>
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 5</p><h3 class="mt-2 text-xl">UI Decision System</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Komponen, hierarchy visual, dan design tokens dasar.</p></article>
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 6</p><h3 class="mt-2 text-xl">Prototyping</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Prototype interaktif untuk validasi cepat ke user.</p></article>
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 7</p><h3 class="mt-2 text-xl">Usability Testing</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Test scenario, observasi, dan prioritas perbaikan.</p></article>
+        <article class="soft-card rounded-2xl p-5"><p class="text-sm font-bold text-[var(--brand-orange-deep)]">Minggu 8</p><h3 class="mt-2 text-xl">Case Study</h3><p class="mt-2 text-sm text-[var(--ink-700)]">Dokumentasi portfolio dan latihan interview panel.</p></article>
+      </div>
+    </section>
+
+    <section id="mentor" class="py-14 md:py-20 bg-white border-y border-[var(--line)]">
+      <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-2 gap-8 items-center">
+        <img src="./asset/img-founder.jpg" alt="Mentor BelajarUX" class="w-full rounded-3xl border border-[var(--line)]">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] font-bold text-[var(--brand-teal-deep)]">Mentor Spotlight</p>
+          <h2 class="mt-3 text-3xl md:text-5xl">Belajar Langsung dari Praktisi Produk Digital</h2>
+          <p class="mt-4 text-[var(--ink-700)]">Sesi dibimbing mentor berpengalaman di tim product dan startup. Anda akan mendapatkan feedback teknis, review portfolio, dan arahan karier yang lebih terarah.</p>
+          <div class="mt-6 space-y-3 text-[var(--ink-700)]">
+            <p class="soft-card rounded-xl p-4">Live mentoring mingguan dan office hour.</p>
+            <p class="soft-card rounded-xl p-4">Review tugas berbasis rubric industri.</p>
+            <p class="soft-card rounded-xl p-4">Roadmap personal untuk target kerja Anda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoni" class="max-w-6xl mx-auto px-5 py-14 md:py-20">
+      <div class="text-center max-w-3xl mx-auto fade-up">
+        <p class="text-xs uppercase tracking-[0.2em] font-bold text-[var(--brand-teal-deep)]">Testimoni Alumni</p>
+        <h2 class="mt-3 text-3xl md:text-5xl">Cerita Perubahan Setelah Ikut BelajarUX</h2>
+      </div>
+      <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <article class="soft-card rounded-2xl p-6"><img src="./asset/img-profile-1.png" alt="Alumni 1" class="h-14 w-14 rounded-full"><p class="mt-4 text-[var(--ink-700)]">"Dulu saya bingung mulai dari mana. Setelah ikut BelajarUX, saya bisa susun case study yang akhirnya tembus interview."</p><p class="mt-4 font-bold">Dina - Junior UX</p></article>
+        <article class="soft-card rounded-2xl p-6"><img src="./asset/img-profile-2.png" alt="Alumni 2" class="h-14 w-14 rounded-full"><p class="mt-4 text-[var(--ink-700)]">"Feedback mentornya detail banget. Yang paling berasa itu cara saya menjelaskan keputusan desain jadi jauh lebih kuat."</p><p class="mt-4 font-bold">Rafi - UI Designer</p></article>
+        <article class="soft-card rounded-2xl p-6"><img src="./asset/img-profile-1.png" alt="Alumni 3" class="h-14 w-14 rounded-full"><p class="mt-4 text-[var(--ink-700)]">"Kurikulumnya runtut dan tidak random. Saya berhasil pindah role dari visual designer ke product designer."</p><p class="mt-4 font-bold">Salsa - Product Designer</p></article>
+      </div>
+    </section>
+
+    <section class="py-14 md:py-20 bg-[#0f213d] text-white">
+      <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300 font-bold">Bonus Eksklusif</p>
+          <h2 class="mt-3 text-3xl md:text-5xl">Anda Juga Dapat Bonus yang Mempercepat Proses Belajar</h2>
+          <ul class="mt-6 space-y-3 text-slate-200">
+            <li class="rounded-xl bg-white/10 px-4 py-3">Template UX audit siap pakai</li>
+            <li class="rounded-xl bg-white/10 px-4 py-3">Prompt interview pengguna</li>
+            <li class="rounded-xl bg-white/10 px-4 py-3">Case study outline untuk portfolio</li>
+            <li class="rounded-xl bg-white/10 px-4 py-3">Akses komunitas dan career channel</li>
+          </ul>
+        </div>
+        <div class="soft-card rounded-3xl p-6 text-[var(--ink-900)]">
+          <h3 class="text-2xl">Total Value Bonus</h3>
+          <p class="mt-2 text-sm text-[var(--ink-700)] line-through">Rp 1.200.000</p>
+          <p class="text-5xl font-black text-[var(--brand-teal-deep)]">Gratis</p>
+          <p class="mt-3 text-[var(--ink-700)]">Selama periode pendaftaran batch aktif.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="harga" class="max-w-6xl mx-auto px-5 py-14 md:py-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <p class="text-xs uppercase tracking-[0.2em] font-bold text-[var(--brand-teal-deep)]">Harga Program</p>
+        <h2 class="mt-3 text-3xl md:text-5xl">Pilih Paket yang Sesuai Target Anda</h2>
+      </div>
+      <div class="mt-10 grid lg:grid-cols-2 gap-6">
+        <article class="soft-card rounded-3xl p-7 border-2 border-[var(--brand-teal)]">
+          <p class="text-xs uppercase tracking-[0.16em] font-bold text-[var(--brand-teal-deep)]">Career Track - Recommended</p>
+          <p class="mt-3 text-sm text-[var(--ink-500)] line-through">Rp 1.499.000</p>
+          <p class="text-5xl font-black">Rp 499.000</p>
+          <ul class="mt-5 space-y-2 text-[var(--ink-700)]">
+            <li>8 minggu live class</li>
+            <li>Mentoring & office hour</li>
+            <li>2x portfolio review</li>
+            <li>Interview simulation</li>
+            <li>Sertifikat kelulusan</li>
+          </ul>
+          <a href="#" class="mt-7 inline-block w-full rounded-xl bg-[var(--brand-orange)] px-5 py-3 text-center font-extrabold text-slate-900">Daftar Career Track</a>
+          <img src="./asset/bank-white-1-2.png" alt="Payment" class="mt-4 h-5 w-auto">
+        </article>
+        <article class="soft-card rounded-3xl p-7">
+          <p class="text-xs uppercase tracking-[0.16em] font-bold text-[var(--ink-700)]">Starter Track</p>
+          <p class="mt-3 text-sm text-[var(--ink-500)] line-through">Rp 799.000</p>
+          <p class="text-5xl font-black">Rp 299.000</p>
+          <ul class="mt-5 space-y-2 text-[var(--ink-700)]">
+            <li>8 minggu live class</li>
+            <li>Materi + workbook</li>
+            <li>Komunitas belajar</li>
+            <li>1x task feedback</li>
+            <li>Sertifikat partisipasi</li>
+          </ul>
+          <a href="#" class="mt-7 inline-block w-full rounded-xl border border-[var(--line)] bg-white px-5 py-3 text-center font-extrabold text-[var(--ink-900)]">Daftar Starter Track</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-5 py-14 md:py-20 text-center">
+      <img src="./asset/Money-Back-Guarantee.png" alt="Garansi" class="mx-auto w-44 md:w-56">
+      <h2 class="mt-6 text-3xl md:text-5xl">Garansi 100% Uang Kembali</h2>
+      <p class="mt-4 text-[var(--ink-700)]">Jika dalam masa garansi program tidak sesuai ekspektasi, Anda dapat mengajukan refund sesuai syarat dan ketentuan yang berlaku.</p>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 pb-14 md:pb-20">
+      <div class="rounded-3xl bg-white border border-[var(--line)] p-8 md:p-12">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] font-bold text-[var(--brand-teal-deep)]">FAQ</p>
+            <h2 class="mt-3 text-3xl md:text-4xl">Pertanyaan yang Sering Ditanyakan</h2>
+          </div>
+          <div class="lg:col-span-2 space-y-4">
+            <details class="soft-card rounded-2xl p-5" open>
+              <summary class="cursor-pointer font-bold">Apakah program ini cocok untuk pemula?</summary>
+              <p class="mt-3 text-sm text-[var(--ink-700)]">Ya. Program dirancang bertahap dari dasar sampai praktik, jadi aman untuk pemula serius.</p>
+            </details>
+            <details class="soft-card rounded-2xl p-5">
+              <summary class="cursor-pointer font-bold">Apakah ada rekaman kelas?</summary>
+              <p class="mt-3 text-sm text-[var(--ink-700)]">Ada. Peserta mendapatkan akses replay selama masa program aktif.</p>
+            </details>
+            <details class="soft-card rounded-2xl p-5">
+              <summary class="cursor-pointer font-bold">Bagaimana sistem mentoringnya?</summary>
+              <p class="mt-3 text-sm text-[var(--ink-700)]">Mentoring dilakukan live mingguan, plus review tugas dan sesi office hour terjadwal.</p>
+            </details>
+            <details class="soft-card rounded-2xl p-5">
+              <summary class="cursor-pointer font-bold">Apakah dibantu sampai portfolio siap?</summary>
+              <p class="mt-3 text-sm text-[var(--ink-700)]">Ya. Anda dibimbing menyusun satu case study utama yang siap digunakan untuk melamar kerja.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 pb-16">
+      <div class="rounded-3xl overflow-hidden bg-[#0f213d] text-white">
+        <div class="grid lg:grid-cols-2 items-center">
+          <div class="p-8 md:p-12">
+            <p class="text-xs uppercase tracking-[0.2em] text-cyan-300 font-bold">Closing</p>
+            <h2 class="mt-3 text-3xl md:text-5xl">Skill UX Anda Tidak Akan Naik Kalau Ditunda Terus</h2>
+            <p class="mt-4 text-slate-200">Mulai langkah pertama hari ini. Amankan slot Anda dan belajar dengan sistem yang jelas bersama mentor BelajarUX.</p>
+            <a href="#harga" class="mt-7 inline-block rounded-xl bg-[var(--brand-orange)] px-6 py-3 font-extrabold text-slate-900">Saya Mau Join Sekarang</a>
+          </div>
+          <img src="./asset/img-founder.jpg" alt="BelajarUX Mentor" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--line)] py-10 bg-white/80">
+    <div class="max-w-6xl mx-auto px-5 text-center">
+      <img src="./asset/belajarux.png" alt="BelajarUX" class="mx-auto h-8 w-auto">
+      <p class="mt-4 text-sm text-[var(--ink-700)]">Copyright 2026 BelajarUX. All rights reserved.</p>
+      <p class="mt-2 text-xs text-[var(--ink-500)]">Disclaimer: hasil peserta dapat berbeda berdasarkan intensitas belajar dan praktik masing-masing.</p>
+    </div>
+  </footer>
+</body>
+</html>

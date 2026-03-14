@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sepatoe - Sneaker Berkualitas</title>
+  <meta name="description" content="Landing page Sepatoe: sneaker berkualitas dengan promo menarik, desain modern, dan mobile-first.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --ink: #1f2229;
+      --muted: #5c6473;
+      --brand: #ff8961;
+      --brand-deep: #e66057;
+      --brand-soft: #ffd7c9;
+      --dark: #222222;
+      --card: #f3f4f8;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(230, 96, 87, 0.15), transparent 35%),
+        radial-gradient(circle at 92% 12%, rgba(34, 34, 34, 0.09), transparent 28%),
+        linear-gradient(180deg, #fff9f6 0%, var(--bg) 55%, #fdfaf4 100%);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Archivo Black", sans-serif;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+    }
+
+    .mesh {
+      background-image:
+        linear-gradient(rgba(31, 34, 41, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 34, 41, 0.06) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .glow {
+      box-shadow: 0 20px 45px rgba(230, 96, 87, 0.22);
+    }
+
+    .mobile-menu-open {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header class="max-w-6xl mx-auto px-4 md:px-6 pt-5 md:pt-8" id="home">
+    <nav class="rounded-2xl bg-white/80 backdrop-blur border border-white px-4 md:px-5 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2">
+        <img src="./asset/logo.png" alt="Logo Sepatoe" class="h-8 md:h-10 w-auto">
+      </a>
+
+      <button id="menuButton" class="md:hidden inline-flex items-center justify-center rounded-lg border border-black/10 p-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <ul class="hidden md:flex items-center gap-7 text-sm font-bold text-slate-700">
+        <li><a href="#keuntungan" class="hover:text-black">Keuntungan</a></li>
+        <li><a href="#produk" class="hover:text-black">Produk</a></li>
+        <li><a href="#testimoni" class="hover:text-black">Testimoni</a></li>
+        <li><a href="#faq" class="hover:text-black">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden mt-2 rounded-xl bg-white border border-black/10 p-3">
+      <a href="#keuntungan" class="block py-2 font-semibold">Keuntungan</a>
+      <a href="#produk" class="block py-2 font-semibold">Produk</a>
+      <a href="#testimoni" class="block py-2 font-semibold">Testimoni</a>
+      <a href="#faq" class="block py-2 font-semibold">FAQ</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-6xl mx-auto px-4 md:px-6 pt-10 md:pt-14 pb-14 md:pb-20">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+          <span class="inline-flex rounded-full bg-[var(--brand-soft)] px-3 py-1 text-xs font-bold text-[var(--brand-deep)]">SNEAKER PREMIUM COLLECTION</span>
+          <h1 class="mt-4 text-4xl md:text-6xl text-[var(--dark)]">Tampil keren menggunakan Sneaker Berkualitas</h1>
+          <p class="mt-4 text-[var(--muted)] text-base md:text-lg max-w-xl">Sepatoe menghadirkan pilihan sneaker dengan desain stylish dan material nyaman untuk aktivitas harian sampai weekend look.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#flash-sale" class="rounded-xl bg-[var(--dark)] px-6 py-3 text-white font-extrabold tracking-wide hover:opacity-90">Beli Sekarang</a>
+            <a href="#produk" class="rounded-xl border border-black/20 bg-white px-6 py-3 font-extrabold tracking-wide hover:bg-black/5">Lihat Produk</a>
+          </div>
+        </div>
+        <div data-aos="fade-left" class="relative">
+          <div class="absolute -inset-4 bg-[var(--brand)]/25 blur-3xl rounded-full"></div>
+          <img src="./asset/ImgKat-intro-sepatu.png" alt="Hero sneakers" class="relative w-full max-w-xl mx-auto">
+        </div>
+      </div>
+    </section>
+
+    <section id="produk" class="max-w-6xl mx-auto px-4 md:px-6 pb-14 md:pb-20">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-5xl">New Arrival</h2>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article class="bg-[var(--card)] p-5 rounded-2xl" data-aos="fade-up" data-aos-delay="50">
+          <img src="./asset/produk-sneaker-1-1.png" alt="Sepatu Sport NG 675 varian 1" class="w-full h-52 object-contain">
+          <div class="mt-3">
+            <img src="./asset/star-orange.png" alt="Rating produk" class="h-3 w-auto">
+            <h3 class="mt-2 text-lg">Sepatu Sport NG 675</h3>
+            <p class="text-sm text-gray-500 line-through">Rp 365.000</p>
+            <p class="text-xl text-[var(--brand-deep)] font-extrabold">Rp 120.000</p>
+          </div>
+        </article>
+
+        <article class="bg-[var(--card)] p-5 rounded-2xl" data-aos="fade-up" data-aos-delay="120">
+          <img src="./asset/produk-sneaker-1-1-1.png" alt="Sepatu Sport NG 675 varian 2" class="w-full h-52 object-contain">
+          <div class="mt-3">
+            <img src="./asset/star-orange.png" alt="Rating produk" class="h-3 w-auto">
+            <h3 class="mt-2 text-lg">Sepatu Sport NG 675</h3>
+            <p class="text-sm text-gray-500 line-through">Rp 365.000</p>
+            <p class="text-xl text-[var(--brand-deep)] font-extrabold">Rp 120.000</p>
+          </div>
+        </article>
+
+        <article class="bg-[var(--card)] p-5 rounded-2xl" data-aos="fade-up" data-aos-delay="180">
+          <img src="./asset/produk-sneaker-1-2.png" alt="Sepatu Sport NG 675 varian 3" class="w-full h-52 object-contain">
+          <div class="mt-3">
+            <img src="./asset/star-orange.png" alt="Rating produk" class="h-3 w-auto">
+            <h3 class="mt-2 text-lg">Sepatu Sport NG 675</h3>
+            <p class="text-sm text-gray-500 line-through">Rp 365.000</p>
+            <p class="text-xl text-[var(--brand-deep)] font-extrabold">Rp 120.000</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="flash-sale" class="py-14 md:py-20 bg-[var(--brand)] text-white mesh">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
+        <div data-aos="fade-right" class="order-2 lg:order-1">
+          <h2 class="text-4xl md:text-6xl">Deal of the Week</h2>
+          <p class="mt-4 text-white/85 max-w-lg">Dapatkan promo mingguan dengan harga spesial dan stok terbatas untuk koleksi sneaker favorit kamu.</p>
+          <div class="mt-6 grid grid-cols-4 gap-2 max-w-md text-center font-extrabold">
+            <div class="bg-black/20 rounded-xl py-3"><span id="d">02</span><p class="text-xs font-bold">Hari</p></div>
+            <div class="bg-black/20 rounded-xl py-3"><span id="h">12</span><p class="text-xs font-bold">Jam</p></div>
+            <div class="bg-black/20 rounded-xl py-3"><span id="m">44</span><p class="text-xs font-bold">Menit</p></div>
+            <div class="bg-black/20 rounded-xl py-3"><span id="s">31</span><p class="text-xs font-bold">Detik</p></div>
+          </div>
+          <a href="#" class="inline-block mt-6 rounded-xl bg-black px-6 py-3 font-extrabold">Beli Sekarang</a>
+        </div>
+        <div data-aos="fade-left" class="order-1 lg:order-2">
+          <img src="./asset/ImgKat-flashsale-sepatu.png" alt="Flash sale sneaker" class="w-full max-w-xl mx-auto">
+        </div>
+      </div>
+    </section>
+
+    <section id="keuntungan" class="max-w-6xl mx-auto px-4 md:px-6 py-14 md:py-20">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-5xl">Semua Koleksi Sepatoe</h2>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <img src="./asset/produk-sneaker-1-1-1.png" alt="Koleksi sneaker 1" class="bg-[var(--card)] rounded-2xl p-4 w-full h-56 object-contain" data-aos="zoom-in">
+        <img src="./asset/produk-sneaker-1-2.png" alt="Koleksi sneaker 2" class="bg-[var(--card)] rounded-2xl p-4 w-full h-56 object-contain" data-aos="zoom-in" data-aos-delay="70">
+        <img src="./asset/produk-sneaker-1-1.png" alt="Koleksi sneaker 3" class="bg-[var(--card)] rounded-2xl p-4 w-full h-56 object-contain" data-aos="zoom-in" data-aos-delay="130">
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl p-5 border border-black/10" data-aos="fade-up">
+          <img src="./asset/free-delivery-1.png" alt="Gratis ongkir" class="h-12 w-12">
+          <h3 class="mt-3 text-xl">Gratis Ongkir</h3>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-black/10" data-aos="fade-up" data-aos-delay="70">
+          <img src="./asset/support.png" alt="Support 24/7" class="h-12 w-12">
+          <h3 class="mt-3 text-xl">Support 24/7</h3>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-black/10" data-aos="fade-up" data-aos-delay="120">
+          <img src="./asset/shield-1.png" alt="Garansi uang kembali" class="h-12 w-12">
+          <h3 class="mt-3 text-xl">Garansi Uang Kembali</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoni" class="bg-[#34201f] py-14 md:py-20">
+      <div class="max-w-3xl mx-auto px-4 md:px-6">
+        <article class="rounded-3xl p-8 md:p-10 text-center text-white border border-white/20" data-aos="fade-up">
+          <img src="./asset/quotes-brown.png" alt="Kutipan" class="h-10 mx-auto">
+          <h3 class="mt-5 text-2xl md:text-3xl">Bahannya sangat berkualitas dan harga sangat terjangkau, recommended banget</h3>
+          <p class="mt-4 text-white/75">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lacus, auctor pretium ac ultrices. Dui lacus dignissim tincidunt urna.</p>
+          <div class="mt-6 flex items-center justify-center gap-3">
+            <img src="./asset/avatar-testi-sepatu.png" alt="John Doe Shoes" class="h-14 w-14 rounded-full">
+            <div class="text-left">
+              <p class="font-bold">John Doe Shoes</p>
+              <p class="text-sm text-white/70">Founder milenial</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="max-w-6xl mx-auto px-4 md:px-6 py-14 md:py-20">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-5xl">FAQ</h2>
+      </div>
+      <div class="mt-8 grid gap-4 max-w-3xl mx-auto">
+        <details class="bg-white rounded-xl border border-black/10 p-4" open>
+          <summary class="font-bold cursor-pointer">Berapa lama pengiriman sepatu?</summary>
+          <p class="mt-2 text-[var(--muted)]">Pengiriman 2-5 hari kerja tergantung lokasi, dengan update resi real-time.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-black/10 p-4">
+          <summary class="font-bold cursor-pointer">Apakah ada garansi?</summary>
+          <p class="mt-2 text-[var(--muted)]">Ada garansi uang kembali sesuai syarat dan ketentuan jika produk tidak sesuai.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-black/10 p-4">
+          <summary class="font-bold cursor-pointer">Bagaimana cara order cepat?</summary>
+          <p class="mt-2 text-[var(--muted)]">Klik tombol "Beli Sekarang", isi data singkat, lalu admin kami akan konfirmasi pesanan.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[var(--brand-deep)] text-white py-12 md:py-14">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-10">
+      <div>
+        <img src="./asset/logo-putih.png" alt="Sepatoe" class="h-8 w-auto">
+        <p class="mt-4 text-white/80 max-w-md">P.S Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec sagittis dolor. Maecenas quam nunc, tincidunt quis facilisis ut.</p>
+        <p class="mt-4 font-bold">Follow kami di social media</p>
+        <div class="mt-3 flex gap-3">
+          <a href="#" class="h-10 w-10 rounded-full bg-black/30 grid place-items-center" aria-label="Instagram">IG</a>
+          <a href="#" class="h-10 w-10 rounded-full bg-black/30 grid place-items-center" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-2xl">Instagram Shop</h4>
+        <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2">
+          <img src="./asset/igShop-sepatu.png" alt="Instagram shop 1" class="rounded-lg w-full h-auto">
+          <img src="./asset/igShop-sepatu-2.png" alt="Instagram shop 2" class="rounded-lg w-full h-auto">
+          <img src="./asset/igShop-sepat-3.png" alt="Instagram shop 3" class="rounded-lg w-full h-auto">
+          <img src="./asset/igShop-sepatu-4.png" alt="Instagram shop 4" class="rounded-lg w-full h-auto">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 650, once: true, offset: 40 });
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.toggle('mobile-menu-open');
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    const closeMenuOnClick = mobileMenu.querySelectorAll('a');
+    closeMenuOnClick.forEach(function (item) {
+      item.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('mobile-menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Simple evergreen countdown for visual urgency.
+    const countdownTarget = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000 + 12 * 60 * 60 * 1000);
+    const d = document.getElementById('d');
+    const h = document.getElementById('h');
+    const m = document.getElementById('m');
+    const s = document.getElementById('s');
+
+    setInterval(function () {
+      const now = new Date();
+      const diff = Math.max(0, countdownTarget - now);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      d.textContent = String(days).padStart(2, '0');
+      h.textContent = String(hours).padStart(2, '0');
+      m.textContent = String(mins).padStart(2, '0');
+      s.textContent = String(secs).padStart(2, '0');
+    }, 1000);
+  </script>
+</body>
+</html>

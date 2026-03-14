@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dietly - Minuman Pelangsing Organik</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --citrus-50: #f6ffe7;
+      --citrus-100: #e8ffc4;
+      --citrus-300: #bfe768;
+      --citrus-500: #7ab83b;
+      --citrus-700: #335f1f;
+      --orange-400: #ffb347;
+      --orange-600: #f58a00;
+      --ink-900: #1f2a18;
+    }
+
+    body {
+      font-family: "Sora", sans-serif;
+      color: var(--ink-900);
+      background:
+        radial-gradient(circle at 8% 0%, #f0ffd5 0%, rgba(240, 255, 213, 0) 40%),
+        radial-gradient(circle at 95% 18%, #ffe5b8 0%, rgba(255, 229, 184, 0) 36%),
+        #fffef8;
+    }
+
+    h1, h2, h3 {
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(122, 184, 59, 0.22);
+      box-shadow: 0 16px 34px rgba(72, 97, 25, 0.12);
+      backdrop-filter: blur(3px);
+    }
+
+    .nav-shell {
+      background: linear-gradient(130deg, rgba(255, 255, 255, 0.95), rgba(232, 255, 196, 0.9));
+      border: 1px solid rgba(122, 184, 59, 0.28);
+      box-shadow: 0 14px 28px rgba(72, 97, 25, 0.14);
+      backdrop-filter: blur(6px);
+    }
+
+    .nav-cta {
+      background: linear-gradient(130deg, var(--orange-600), var(--orange-400));
+      box-shadow: 0 10px 20px rgba(245, 138, 0, 0.28);
+    }
+
+    .nav-cta:hover {
+      filter: brightness(0.96);
+    }
+
+    .float-soft {
+      animation: floatSoft 4.6s ease-in-out infinite;
+    }
+
+    .rise-in {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: riseIn 0.8s ease forwards;
+    }
+
+    .rise-delay-1 { animation-delay: 0.1s; }
+    .rise-delay-2 { animation-delay: 0.24s; }
+    .rise-delay-3 { animation-delay: 0.38s; }
+
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes riseIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky top-3 z-40 max-w-6xl mx-auto px-5 pt-4 md:pt-6">
+    <div class="nav-shell rounded-2xl px-4 py-3 md:px-5 md:py-3.5 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3 min-w-0">
+        <span class="inline-flex h-9 w-9 rounded-xl bg-lime-700 items-center justify-center ring-4 ring-lime-100/70">
+          <img src="./asset/logo-3.png" alt="Logo Dietly" class="h-5 w-auto">
+        </span>
+        <div class="min-w-0">
+          <p class="text-xs uppercase tracking-[0.14em] font-semibold text-lime-800/80">Dietly Wellness</p>
+          <p class="text-sm md:text-base font-bold text-lime-900 truncate">Minuman Pelangsing Organik</p>
+        </div>
+      </div>
+      <a href="#detail" class="nav-cta inline-flex items-center rounded-full text-white px-4 md:px-5 py-2.5 text-sm font-bold transition whitespace-nowrap">Ambil Promo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-6xl mx-auto px-5 pt-10 md:pt-14">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div class="rise-in">
+          <p class="inline-flex items-center gap-2 rounded-full bg-lime-100 text-lime-800 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]">100% Organic Juice</p>
+          <h1 class="mt-5 text-4xl md:text-6xl leading-[1.02] font-extrabold">Solusi Perut Buncit, Turun Berat Badan Tetap Sehat</h1>
+          <p class="mt-5 text-[15px] md:text-base leading-relaxed text-lime-900/80">Dietly adalah minuman cold pressed berbahan alami untuk bantu metabolisme, jaga pencernaan, dan menemani program langsing Anda dengan cara lebih nyaman.</p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#detail" class="rounded-xl bg-orange-500 hover:bg-orange-600 text-white px-6 py-3.5 font-semibold transition">Ambil Promo Hari Ini</a>
+            <a href="#faq" class="rounded-xl border border-lime-700 text-lime-800 px-6 py-3.5 font-semibold hover:bg-lime-50 transition">Lihat FAQ</a>
+          </div>
+          <div class="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div class="glass-card rounded-lg p-3 grid place-items-center"><img src="./asset/logo-3.png" alt="Brand partner" class="h-6"></div>
+            <div class="glass-card rounded-lg p-3 grid place-items-center"><img src="./asset/logo-3.png" alt="Brand partner" class="h-6"></div>
+            <div class="glass-card rounded-lg p-3 grid place-items-center"><img src="./asset/logo-3.png" alt="Brand partner" class="h-6"></div>
+            <div class="glass-card rounded-lg p-3 grid place-items-center"><img src="./asset/logo-3.png" alt="Brand partner" class="h-6"></div>
+          </div>
+        </div>
+        <div class="rise-in rise-delay-1">
+          <div class="relative">
+            <div class="absolute -inset-3 bg-gradient-to-tr from-lime-300/30 via-orange-200/40 to-transparent rounded-[2rem]"></div>
+            <img src="./asset/Hero-dietly.png" alt="Produk Dietly" class="relative w-full max-w-[520px] mx-auto float-soft">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-24">
+      <div class="text-center max-w-2xl mx-auto rise-in">
+        <p class="text-lime-700 font-semibold uppercase tracking-[0.18em] text-xs">Testimoni</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold">Apa Kata Mereka Tentang Dietly</h2>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 gap-5">
+        <article class="glass-card rounded-2xl p-6 rise-in rise-delay-1">
+          <p class="leading-relaxed text-sm text-lime-900/80">"Badan jadi lebih ringan dan perut terasa tidak cepat begah. Program turun berat badan jadi lebih konsisten karena pencernaan juga lebih nyaman."</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="./asset/theres.png" alt="Pelanggan Dietly" class="h-10 w-10 rounded-full object-cover">
+            <div>
+              <p class="font-semibold text-sm">Floyd Miles</p>
+              <p class="text-xs text-lime-800/70">Pelanggan Dietly</p>
+            </div>
+          </div>
+        </article>
+        <article class="glass-card rounded-2xl p-6 rise-in rise-delay-2">
+          <p class="leading-relaxed text-sm text-lime-900/80">"Suka karena rasanya ringan dan tidak bikin eneg. Dalam beberapa minggu, ukuran celana mulai turun dan badan tetap fit beraktivitas."</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="./asset/theres.png" alt="Pelanggan Dietly" class="h-10 w-10 rounded-full object-cover">
+            <div>
+              <p class="font-semibold text-sm">Floyd Miles</p>
+              <p class="text-xs text-lime-800/70">Pelanggan Dietly</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-24 grid md:grid-cols-2 gap-8 items-center">
+      <div class="rise-in">
+        <p class="text-lime-700 font-semibold uppercase tracking-[0.18em] text-xs">Permasalahan</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold">Pengen Kurus dan Terlihat Langsing Tapi Tetap Sehat?</h2>
+        <p class="mt-4 text-lime-900/80 leading-relaxed">Banyak orang gagal diet karena metode terlalu ekstrim. Dietly hadir untuk bantu Anda menjalani proses yang lebih realistis dengan dukungan nutrisi alami.</p>
+        <ul class="mt-5 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="text-lime-700">●</span> Berat badan sulit turun walau sudah jaga makan</li>
+          <li class="flex gap-2"><span class="text-lime-700">●</span> Perut buncit bikin kurang percaya diri</li>
+          <li class="flex gap-2"><span class="text-lime-700">●</span> Ingin badan lebih fit sepanjang hari</li>
+          <li class="flex gap-2"><span class="text-lime-700">●</span> Butuh solusi praktis yang bisa dijalani harian</li>
+        </ul>
+      </div>
+      <div class="rise-in rise-delay-1">
+        <img src="./asset/permasalahan-dietly.png" alt="Ilustrasi permasalahan diet" class="w-full max-w-[520px] mx-auto">
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-20 grid md:grid-cols-2 gap-8 items-center">
+      <div class="order-2 md:order-1 rise-in">
+        <img src="./asset/dietly-perkenalan.png" alt="Perkenalan Dietly" class="w-full max-w-[460px] mx-auto">
+      </div>
+      <div class="order-1 md:order-2 rise-in rise-delay-1">
+        <p class="text-lime-700 font-semibold uppercase tracking-[0.18em] text-xs">Perkenalkan</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold">Dietly, Minuman Pelangsing Berbasis Bahan Organik</h2>
+        <p class="mt-4 text-lime-900/80 leading-relaxed">Formula Dietly dirancang untuk membantu kontrol berat badan, menjaga kesehatan pencernaan, dan tetap aman dikonsumsi secara rutin.</p>
+        <div class="mt-5 grid sm:grid-cols-2 gap-3">
+          <div class="glass-card rounded-xl p-4 text-sm">Membantu proses pembakaran lemak harian</div>
+          <div class="glass-card rounded-xl p-4 text-sm">Mendukung pencernaan lebih sehat</div>
+          <div class="glass-card rounded-xl p-4 text-sm">100% halal dan terdaftar BPOM</div>
+          <div class="glass-card rounded-xl p-4 text-sm">Tanpa rutinitas diet yang menyiksa</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-24">
+      <div class="text-center max-w-2xl mx-auto rise-in">
+        <p class="text-lime-700 font-semibold uppercase tracking-[0.18em] text-xs">Kelebihan</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold">Kelebihan Minuman Dari Dietly</h2>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-4">
+        <article class="glass-card rounded-2xl p-5 rise-in rise-delay-1">
+          <img src="./asset/icon-dietly.png" alt="Ikon manfaat" class="h-12 w-12">
+          <h3 class="mt-4 font-bold text-lg">Membantu Menurunkan Berat Badan</h3>
+          <p class="mt-2 text-sm text-lime-900/75">Mendukung pola hidup sehat untuk mencapai target tubuh ideal lebih cepat.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-5 rise-in rise-delay-2">
+          <img src="./asset/icon-dietly.png" alt="Ikon manfaat" class="h-12 w-12">
+          <h3 class="mt-4 font-bold text-lg">Menjaga Kesehatan Pencernaan</h3>
+          <p class="mt-2 text-sm text-lime-900/75">Bantu kenyamanan sistem cerna agar aktivitas tetap ringan dan produktif.</p>
+        </article>
+        <article class="glass-card rounded-2xl p-5 rise-in rise-delay-3">
+          <img src="./asset/icon-dietly.png" alt="Ikon manfaat" class="h-12 w-12">
+          <h3 class="mt-4 font-bold text-lg">100% Halal dan Aman</h3>
+          <p class="mt-2 text-sm text-lime-900/75">Sudah diformulasikan dengan standar kualitas agar lebih tenang dikonsumsi.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-24">
+      <div class="rounded-3xl bg-gradient-to-r from-lime-700 to-lime-500 text-white p-6 md:p-9">
+        <p class="uppercase text-xs tracking-[0.16em] font-semibold">Untuk siapa</p>
+        <h2 class="mt-2 text-3xl md:text-4xl font-bold max-w-2xl">Dietly Cocok Untuk Anda Yang Ingin</h2>
+        <div class="mt-7 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-lime-50">
+          <article class="bg-white/10 rounded-2xl p-4"><img src="./asset/US-Dietly-4.png" alt="Langsing dan sehat" class="h-16 w-16 rounded-full object-cover"><p class="mt-3 font-semibold">Langsing dan Sehat</p></article>
+          <article class="bg-white/10 rounded-2xl p-4"><img src="./asset/US-Dietly-3.png" alt="Badan fit" class="h-16 w-16 rounded-full object-cover"><p class="mt-3 font-semibold">Badan Tetap Fit Seharian</p></article>
+          <article class="bg-white/10 rounded-2xl p-4"><img src="./asset/US-Dietly-2.png" alt="Tubuh sehat" class="h-16 w-16 rounded-full object-cover"><p class="mt-3 font-semibold">Memiliki Tubuh Sehat</p></article>
+          <article class="bg-white/10 rounded-2xl p-4"><img src="./asset/US-Dietly-1.png" alt="Ingin langsing" class="h-16 w-16 rounded-full object-cover"><p class="mt-3 font-semibold">Turun Berat Tanpa Drama</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="detail" class="max-w-6xl mx-auto px-5 mt-16 md:mt-24">
+      <div class="text-center max-w-2xl mx-auto rise-in">
+        <p class="text-lime-700 font-semibold uppercase tracking-[0.18em] text-xs">Harga</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold">Investasi Terbaik Untuk Tubuh Sehat Anda</h2>
+      </div>
+      <div class="mt-9 grid lg:grid-cols-3 gap-5 items-stretch">
+        <article class="lg:col-span-2 glass-card rounded-3xl p-6 md:p-7 rise-in rise-delay-1">
+          <div class="grid md:grid-cols-2 gap-6 items-center">
+            <img src="./asset/harga-dietly.png" alt="Paket Dietly" class="w-full max-w-[280px] mx-auto">
+            <div>
+              <p class="inline-flex rounded-full bg-orange-100 text-orange-700 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em]">Best Deal</p>
+              <h3 class="mt-3 text-2xl font-extrabold">Beli 3 Hemat 75%</h3>
+              <p class="mt-2 text-sm text-lime-900/70 line-through">Rp 445.000,-</p>
+              <p class="text-4xl font-extrabold text-lime-700">Rp 150.000,-</p>
+              <ul class="mt-5 space-y-2 text-sm">
+                <li>Menjaga kesehatan pencernaan</li>
+                <li>100% halal dan BPOM</li>
+                <li>Membantu menurunkan berat badan</li>
+              </ul>
+              <a href="#order" class="mt-6 inline-flex rounded-xl bg-lime-700 text-white px-6 py-3 font-semibold hover:bg-lime-800 transition">Beli Sekarang</a>
+            </div>
+          </div>
+        </article>
+        <article class="rounded-3xl bg-[#1f2a18] text-white p-6 md:p-7 rise-in rise-delay-2">
+          <h3 class="text-xl font-bold">Beli 1 Dietly</h3>
+          <p class="mt-2 text-sm text-lime-200/80 line-through">Rp 145.000,-</p>
+          <p class="text-3xl font-extrabold text-lime-200">Rp 75.000,-</p>
+          <ul class="mt-5 space-y-2 text-sm text-lime-100/90">
+            <li>Menjaga kesehatan pencernaan</li>
+            <li>100% halal dan BPOM</li>
+            <li>Membantu menurunkan berat badan</li>
+          </ul>
+          <a href="#order" class="mt-6 inline-flex rounded-xl bg-orange-500 text-white px-6 py-3 font-semibold hover:bg-orange-600 transition">Beli Sekarang</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="order" class="max-w-6xl mx-auto px-5 mt-14">
+      <div class="rounded-3xl bg-[#24331a] text-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center justify-between">
+        <div>
+          <img src="./asset/bank-white-1.png" alt="Metode pembayaran" class="h-4 w-auto">
+          <h3 class="mt-4 text-2xl md:text-3xl font-bold">Promo Terbatas, Jangan Sampai Kehabisan</h3>
+          <p class="mt-2 text-lime-100/85 text-sm">Stok harian cepat habis. Amankan paket Dietly sekarang sebelum harga kembali normal.</p>
+        </div>
+        <a href="#detail" class="rounded-xl bg-orange-500 px-7 py-3.5 text-white font-semibold hover:bg-orange-600 transition">Amankan Sekarang</a>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-24 grid md:grid-cols-2 gap-8 items-center">
+      <div class="rise-in">
+        <img src="./asset/garansi-dietly.png" alt="Garansi Dietly" class="w-full max-w-[360px] mx-auto">
+      </div>
+      <div class="rise-in rise-delay-1">
+        <p class="text-lime-700 font-semibold uppercase tracking-[0.18em] text-xs">Garansi</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold">Garansi 100% Uang Kembali</h2>
+        <p class="mt-4 text-lime-900/80 leading-relaxed">Jika produk tidak sesuai ekspektasi, Anda bisa klaim garansi sesuai ketentuan. Prioritas kami adalah kenyamanan dan kepuasan pelanggan dalam proses diet sehat.</p>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-24">
+      <div class="rounded-3xl bg-rose-50 border border-rose-200 p-6 md:p-8">
+        <p class="text-rose-700 font-semibold uppercase tracking-[0.18em] text-xs">Kerugian</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold text-rose-900">Kerugian Jika Menunda Dietly Sekarang</h2>
+        <div class="mt-6 space-y-4">
+          <article class="bg-white rounded-2xl p-4 border border-rose-100 flex gap-3 items-start">
+            <img src="./asset/cross.png" alt="Kerugian" class="h-8 w-8 mt-0.5">
+            <p class="text-sm text-rose-900/90">Target berat badan makin tertunda dan rasa tidak percaya diri bisa berlanjut.</p>
+          </article>
+          <article class="bg-white rounded-2xl p-4 border border-rose-100 flex gap-3 items-start">
+            <img src="./asset/cross.png" alt="Kerugian" class="h-8 w-8 mt-0.5">
+            <p class="text-sm text-rose-900/90">Kondisi pencernaan yang kurang optimal dapat mengganggu energi harian.</p>
+          </article>
+          <article class="bg-white rounded-2xl p-4 border border-rose-100 flex gap-3 items-start">
+            <img src="./asset/cross.png" alt="Kerugian" class="h-8 w-8 mt-0.5">
+            <p class="text-sm text-rose-900/90">Promo hemat berpotensi terlewat sehingga biaya jadi lebih tinggi.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 mt-16 md:mt-20">
+      <div class="rounded-3xl bg-gradient-to-r from-lime-100 to-orange-100 p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center">
+        <img src="./asset/dietly-CTA.png" alt="Call to action Dietly" class="w-full max-w-[460px] mx-auto">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Yakin Mau Tunda Lagi?</h2>
+          <p class="mt-3 text-lime-900/80">Mulai langkah kecil hari ini. Pilih paket Dietly dan rasakan proses diet yang lebih nyaman serta terarah.</p>
+          <a href="#detail" class="mt-6 inline-flex rounded-xl bg-lime-700 text-white px-6 py-3 font-semibold hover:bg-lime-800 transition">Beli Sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="max-w-6xl mx-auto px-5 mt-16 md:mt-24">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div>
+          <p class="text-lime-700 font-semibold uppercase tracking-[0.18em] text-xs">FAQ</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold">Hal yang Sering Ditanyakan</h2>
+        </div>
+        <div class="lg:col-span-2 space-y-3">
+          <article class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold">Apakah Dietly ada efek samping?</h3>
+            <p class="mt-2 text-sm text-lime-900/75">Dietly diformulasikan dari bahan alami. Konsumsi sesuai anjuran pada kemasan untuk hasil optimal.</p>
+          </article>
+          <article class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold">Apakah aman untuk ibu hamil?</h3>
+            <p class="mt-2 text-sm text-lime-900/75">Untuk ibu hamil atau kondisi medis khusus, disarankan konsultasi ke tenaga kesehatan terlebih dahulu.</p>
+          </article>
+          <article class="glass-card rounded-xl p-5">
+            <h3 class="font-semibold">Berapa lama hasil bisa terlihat?</h3>
+            <p class="mt-2 text-sm text-lime-900/75">Hasil tiap orang berbeda, namun umumnya perubahan mulai terasa jika dikonsumsi rutin dan dibarengi pola hidup sehat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-5 mt-16 md:mt-20 pb-10">
+    <div class="glass-card rounded-2xl px-5 py-5 md:py-6 flex flex-col md:flex-row gap-4 items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="./asset/theres.png" alt="Owner Dietly" class="h-10 w-10 rounded-full object-cover">
+        <div>
+          <p class="font-semibold text-sm">Ralph Edwards</p>
+          <p class="text-xs text-lime-900/70">Owner Dietly</p>
+        </div>
+      </div>
+      <p class="text-xs text-lime-900/70 text-center md:text-right">Dietly - Minuman Pelangsing Organik. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>

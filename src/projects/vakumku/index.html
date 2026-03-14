@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vakumku - Vacuum Cleaner Daya Hisap Tinggi</title>
+  <meta name="description" content="vakumku hadir dengan daya hisap tinggi untuk membersihkan debu, kotoran, dan area sulit dengan cepat.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #64748b;
+      --brand: #0f766e;
+      --brand-soft: #14b8a6;
+      --accent: #f97316;
+      --surface: #f8fafc;
+      --card: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(20, 184, 166, 0.2), transparent 40%),
+        radial-gradient(circle at 95% 10%, rgba(249, 115, 22, 0.18), transparent 30%),
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 40%);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Sora", sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(6px);
+    }
+
+    .pattern {
+      background-image: linear-gradient(rgba(15, 118, 110, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 118, 110, 0.05) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 glass">
+    <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#top" class="text-2xl font-extrabold tracking-tight text-teal-700">vakumku</a>
+
+      <button id="menuBtn" class="inline-flex items-center rounded-lg border border-slate-300 p-2 text-slate-700 md:hidden" aria-label="Buka menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <ul class="hidden items-center gap-6 text-sm font-semibold text-slate-600 md:flex">
+        <li><a href="#fitur" class="hover:text-teal-700">Fitur</a></li>
+        <li><a href="#keunggulan" class="hover:text-teal-700">Keunggulan</a></li>
+        <li><a href="#testimoni" class="hover:text-teal-700">Testimoni</a></li>
+        <li><a href="#harga" class="hover:text-teal-700">Harga</a></li>
+        <li><a href="#faq" class="hover:text-teal-700">FAQ</a></li>
+      </ul>
+
+      <a href="#order" class="hidden rounded-xl bg-orange-500 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-600 md:inline-block">Booking Sekarang</a>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white md:hidden">
+      <ul class="space-y-2 px-4 py-4 text-sm font-semibold text-slate-700">
+        <li><a href="#fitur" class="block">Fitur</a></li>
+        <li><a href="#keunggulan" class="block">Keunggulan</a></li>
+        <li><a href="#testimoni" class="block">Testimoni</a></li>
+        <li><a href="#harga" class="block">Harga</a></li>
+        <li><a href="#faq" class="block">FAQ</a></li>
+        <li><a href="#order" class="mt-2 block rounded-xl bg-orange-500 px-4 py-2 text-center text-white">Booking Sekarang</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="mx-auto grid w-full max-w-6xl gap-10 px-4 pb-14 pt-12 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:pt-20">
+      <div data-aos="fade-up">
+        <p class="mb-4 inline-flex rounded-full bg-teal-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal-800">Clean Smarter</p>
+        <h1 class="text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">vacuum cleaner terbaru dengan daya hisap tinggi</h1>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-600">vakumku membantu membersihkan debu, serpihan, dan sudut sulit secara cepat. Cocok untuk rumah modern yang butuh hasil bersih tanpa ribet.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#order" class="rounded-xl bg-orange-500 px-6 py-3 text-sm font-extrabold text-white transition hover:bg-orange-600">Booking Sekarang</a>
+          <a href="#fitur" class="rounded-xl border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:border-teal-700 hover:text-teal-700">Lihat Keunggulan</a>
+        </div>
+      </div>
+      <div data-aos="zoom-in" class="relative">
+        <div class="pattern absolute -left-4 -top-4 h-28 w-28 rounded-2xl"></div>
+        <img src="./asset/Header-061-Img-left.png" alt="Produk vacuum cleaner vakumku" class="relative z-10 mx-auto w-full max-w-md">
+      </div>
+    </section>
+
+    <section class="border-y border-slate-200 bg-white/90 py-8">
+      <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-sm font-bold text-slate-500">Dipercaya oleh 2155+ toserba di Indonesia</p>
+        <div class="mt-6 grid grid-cols-2 items-center gap-5 opacity-80 sm:grid-cols-4">
+          <img src="./asset/Header-Img-Company-1.png" alt="Logo partner 1" class="mx-auto">
+          <img src="./asset/Header-Img-Company-3.png" alt="Logo partner 2" class="mx-auto">
+          <img src="./asset/Header-Img-Company-4.png" alt="Logo partner 3" class="mx-auto">
+          <img src="./asset/Header-Img-Company-4.png" alt="Logo partner 4" class="mx-auto">
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoni" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <p class="text-center text-sm font-bold uppercase tracking-wide text-teal-700" data-aos="fade-up">Apa kata mereka</p>
+      <h2 class="mx-auto mt-2 max-w-2xl text-center text-3xl font-extrabold sm:text-4xl" data-aos="fade-up">Tentang produk vacuum cleaner terbaru</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-aos="fade-up">
+          <img src="./asset/Section-061-Testi-User-Img-3.png" alt="Sarah" class="mb-4 h-16 w-16 rounded-full object-cover">
+          <h3 class="font-bold">Sarah</h3>
+          <p class="text-sm text-slate-500">Pelanggan</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Debu di rumah jadi jauh berkurang. Praktis dipakai setiap hari dan hasil bersihnya langsung terasa.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="80">
+          <img src="./asset/Section-061-Testi-User-Img-1.png" alt="Lina Tan" class="mb-4 h-16 w-16 rounded-full object-cover">
+          <h3 class="font-bold">Lina Tan</h3>
+          <p class="text-sm text-slate-500">Pelanggan</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Daya hisap kuat tapi suara tetap nyaman. Saya pakai buat lantai dan sela sofa, semua beres.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="140">
+          <img src="./asset/Section-061-Testi-User-Img-2.png" alt="Rina" class="mb-4 h-16 w-16 rounded-full object-cover">
+          <h3 class="font-bold">Rina</h3>
+          <p class="text-sm text-slate-500">Pelanggan</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Waktu bersih-bersih jadi lebih singkat. Cocok untuk rumah dengan aktivitas tinggi.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+        <img src="./asset/Section-061-Pain-Img-right.png" alt="Ilustrasi tantangan bersih rumah" data-aos="fade-right" class="mx-auto w-full max-w-sm">
+        <div data-aos="fade-left">
+          <p class="text-sm font-bold uppercase tracking-wide text-orange-500">Apakah anda pernah merasa kesulitan</p>
+          <h2 class="mt-2 text-3xl font-extrabold">Membersihkan rumah?</h2>
+          <p class="mt-4 leading-relaxed text-slate-600">Debu halus, sudut sempit, dan kotoran membandel sering membuat proses bersih-bersih jadi lama. vakumku dirancang untuk menyelesaikan masalah itu dengan satu alat yang efisien.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fitur" class="py-16 text-white" style="background: linear-gradient(145deg, #0f766e 0%, #14b8a6 100%);">
+      <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-sm font-bold uppercase tracking-wide text-teal-50">Fakta - fakta tentang</p>
+        <h2 class="mt-2 text-center text-3xl font-extrabold sm:text-4xl">vakumku Vacuum Cleaner</h2>
+        <div class="mt-10 grid gap-5">
+          <article class="grid gap-4 rounded-2xl border border-white/25 bg-white/10 p-5 md:grid-cols-[140px_1fr] md:items-center" data-aos="fade-up">
+            <img src="./asset/Section-061-Fakta-Img-3.png" alt="Membersihkan debu dan kotoran" class="mx-auto w-24 md:w-28">
+            <div>
+              <h3 class="text-xl font-bold">Membersihkan debu dan kotoran</h3>
+              <p class="mt-2 text-sm leading-relaxed text-teal-50/90">Dirancang untuk mengangkat partikel dari lantai, karpet, sampai sela furniture secara cepat dan merata.</p>
+            </div>
+          </article>
+          <article class="grid gap-4 rounded-2xl border border-white/25 bg-white/10 p-5 md:grid-cols-[140px_1fr] md:items-center" data-aos="fade-up" data-aos-delay="80">
+            <img src="./asset/Section-061-Fakta-Img-2.png" alt="Membersihkan area halaman" class="mx-auto w-24 md:w-28">
+            <div>
+              <h3 class="text-xl font-bold">Bisa bantu bersihkan area halaman</h3>
+              <p class="mt-2 text-sm leading-relaxed text-teal-50/90">Cocok untuk serpihan kering seperti daun dan debu ringan di teras atau area sekitar rumah.</p>
+            </div>
+          </article>
+          <article class="grid gap-4 rounded-2xl border border-white/25 bg-white/10 p-5 md:grid-cols-[140px_1fr] md:items-center" data-aos="fade-up" data-aos-delay="140">
+            <img src="./asset/Section-061-Fakta-Img-1.png" alt="Daya serap kuat" class="mx-auto w-24 md:w-28">
+            <div>
+              <h3 class="text-xl font-bold">Daya serap kuat hingga partikel kecil</h3>
+              <p class="mt-2 text-sm leading-relaxed text-teal-50/90">Teknologi hisap stabil menjaga performa tetap maksimal saat dipakai berkala setiap hari.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="keunggulan" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div data-aos="fade-right">
+          <p class="text-sm font-bold uppercase tracking-wide text-teal-700">Tentang vakumku</p>
+          <h2 class="mt-2 text-3xl font-extrabold">Kelebihan yang siap kerja tiap hari</h2>
+          <p class="mt-4 leading-relaxed text-slate-600">vakumku dibuat untuk penggunaan rumah tangga yang aktif: mudah dipindah, cepat digunakan, dan bisa menjangkau area sempit tanpa mengorbankan daya hisap.</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-slate-200 p-4">
+              <img src="./asset/icon-vacuum-cleaning.png" alt="Vacuum mode" class="h-10 w-10">
+              <p class="mt-2 text-sm font-bold">Suction Optimal</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <img src="./asset/icon-energi.png" alt="Hemat energi" class="h-10 w-10">
+              <p class="mt-2 text-sm font-bold">Efisien Energi</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <img src="./asset/icon-feather-filled.png" alt="Ringan" class="h-10 w-10">
+              <p class="mt-2 text-sm font-bold">Bodi Ringan</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 p-4">
+              <img src="./asset/icon-shower.png" alt="Mudah dibersihkan" class="h-10 w-10">
+              <p class="mt-2 text-sm font-bold">Mudah Dibersihkan</p>
+            </div>
+          </div>
+        </div>
+        <img src="./asset/Section-061-Tentang-Img-left.png" alt="Detail vakumku" data-aos="fade-left" class="mx-auto w-full max-w-sm">
+      </div>
+    </section>
+
+    <section class="bg-orange-500 py-16 text-white">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+        <div data-aos="fade-up">
+          <p class="text-sm font-bold uppercase tracking-wide text-orange-100">Keuntungan untuk anda</p>
+          <h2 class="mt-2 text-3xl font-extrabold">Rumah bersih, waktu lebih efisien</h2>
+          <ul class="mt-5 space-y-3 text-sm leading-relaxed text-orange-50">
+            <li class="rounded-xl border border-white/30 bg-white/10 px-4 py-3">Area rumah lebih nyaman untuk keluarga.</li>
+            <li class="rounded-xl border border-white/30 bg-white/10 px-4 py-3">Membersihkan debu jadi lebih cepat.</li>
+            <li class="rounded-xl border border-white/30 bg-white/10 px-4 py-3">Perawatan alat praktis untuk rutinitas harian.</li>
+          </ul>
+        </div>
+        <img src="./asset/Section-061-Keuntungan-Img-left.png" alt="Keuntungan menggunakan vakumku" data-aos="zoom-in" class="mx-auto w-full max-w-sm">
+      </div>
+    </section>
+
+    <section class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <h2 class="text-center text-3xl font-extrabold" data-aos="fade-up">Testimoni Pelanggan</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <article class="rounded-2xl border border-slate-200 p-6" data-aos="fade-up">
+          <p class="text-slate-600">"Produk ini bikin saya tidak perlu bersih-bersih berulang. Sekali jalan, ruangan langsung rapi."</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="./asset/Section-061-Testimoni-User-Img-1.png" alt="Testimoni pengguna 1" class="h-12 w-12 rounded-full">
+            <div>
+              <p class="text-sm font-bold">Nanda</p>
+              <p class="text-xs text-slate-500">Ibu Rumah Tangga</p>
+            </div>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-slate-200 p-6" data-aos="fade-up" data-aos-delay="100">
+          <p class="text-slate-600">"Daya hisapnya konsisten dan gampang dipakai. Sangat membantu untuk rumah dengan anak kecil."</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="./asset/Section-061-Testimoni-User-Img-2.png" alt="Testimoni pengguna 2" class="h-12 w-12 rounded-full">
+            <div>
+              <p class="text-sm font-bold">Rafael</p>
+              <p class="text-xs text-slate-500">Karyawan</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16">
+      <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-sm font-bold uppercase tracking-wide text-teal-700">Alasan banyak orang memilih</p>
+        <h2 class="mt-2 text-center text-3xl font-extrabold">vakumku Vacuum Cleaner</h2>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6" data-aos="fade-right">
+            <img src="./asset/Section-061-Alasan-Img-1.png" alt="Alasan 1" class="h-20 w-20">
+            <h3 class="mt-4 font-bold">Mudah digunakan semua anggota keluarga</h3>
+            <p class="mt-2 text-sm text-slate-600">Desain ringkas dan intuitif membuat proses bersih-bersih tidak lagi melelahkan.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-6" data-aos="fade-left">
+            <img src="./asset/Section-061-Alasan-Img-2.png" alt="Alasan 2" class="h-20 w-20">
+            <h3 class="mt-4 font-bold">Performa stabil untuk penggunaan harian</h3>
+            <p class="mt-2 text-sm text-slate-600">Kinerja hisap tetap kuat sehingga hasil bersih konsisten dari waktu ke waktu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+        <img src="./asset/Section-061-Bonus-Img-right.png" alt="Bonus pembelian" data-aos="fade-right" class="mx-auto w-full max-w-sm">
+        <div data-aos="fade-left">
+          <p class="text-sm font-bold uppercase tracking-wide text-orange-500">Bonus terbatas</p>
+          <h2 class="mt-2 text-3xl font-extrabold">Dapatkan bonus handuk terapi</h2>
+          <p class="mt-4 text-slate-600">Setiap pembelian vakumku berkesempatan mendapatkan bonus eksklusif selama persediaan masih ada.</p>
+          <a href="#order" class="mt-6 inline-block rounded-xl bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600">Booking Sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-900 py-16 text-white">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+        <div data-aos="fade-up">
+          <p class="text-sm font-bold uppercase tracking-wide text-orange-300">Kerugian</p>
+          <h2 class="mt-2 text-3xl font-extrabold">Jika anda tidak beli sekarang juga</h2>
+          <ul class="mt-5 space-y-3 text-sm text-slate-200">
+            <li class="rounded-xl border border-white/20 px-4 py-3">Waktu bersih-bersih lebih lama setiap hari.</li>
+            <li class="rounded-xl border border-white/20 px-4 py-3">Debu menumpuk dan menurunkan kenyamanan rumah.</li>
+            <li class="rounded-xl border border-white/20 px-4 py-3">Melewatkan promo harga dan bonus terbatas.</li>
+          </ul>
+        </div>
+        <img src="./asset/Section-061-Kerugian-Img-right.png" alt="Kerugian menunda pembelian" data-aos="zoom-in" class="mx-auto w-full max-w-sm">
+      </div>
+    </section>
+
+    <section id="harga" class="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm" data-aos="fade-up">
+        <h2 class="text-3xl font-extrabold">Harga vakumku Vacuum Cleaner</h2>
+        <p class="mt-3 text-slate-600">Penawaran khusus hari ini, stok terbatas.</p>
+        <p class="mt-6 text-xl font-bold text-slate-400 line-through">Rp 500.000</p>
+        <p class="mt-1 text-5xl font-extrabold text-orange-500">Rp 379.000</p>
+        <div class="mx-auto mt-6 max-w-sm rounded-xl bg-teal-100 px-4 py-3 text-sm font-bold text-teal-800">
+          Bonus: 1x handuk terapi gratis
+        </div>
+        <a id="order" href="https://api.whatsapp.com/send?phone=62812345678&text=Halo,%20saya%20tertarik%20dengan%20produk%20vakumku." class="mt-8 inline-block rounded-xl bg-orange-500 px-8 py-3 text-sm font-extrabold text-white transition hover:bg-orange-600">Booking Sekarang</a>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-slate-50 py-16">
+      <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-center text-3xl font-extrabold" data-aos="fade-up">Hal Yang Sering Ditanyakan</h2>
+        <div class="mt-8 space-y-3" data-aos="fade-up" data-aos-delay="80">
+          <details class="rounded-xl border border-slate-200 bg-white p-4">
+            <summary class="cursor-pointer font-bold">Apakah saya dapat menjadi reseller?</summary>
+            <p class="mt-2 text-sm text-slate-600">Bisa. Silakan hubungi tim kami untuk informasi skema kemitraan dan minimum order.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-4">
+            <summary class="cursor-pointer font-bold">Apakah produk ini bergaransi?</summary>
+            <p class="mt-2 text-sm text-slate-600">Ya, produk mendapatkan garansi resmi sesuai ketentuan pembelian.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-4">
+            <summary class="cursor-pointer font-bold">Berapa lama pengiriman?</summary>
+            <p class="mt-2 text-sm text-slate-600">Estimasi pengiriman 2-5 hari kerja tergantung lokasi tujuan.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden py-16 text-white" style="background: linear-gradient(145deg, #0f766e 0%, #14b8a6 100%);">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+        <img src="./asset/Footer-061-Img-User.png" alt="Maskot vakumku" data-aos="fade-right" class="mx-auto w-full max-w-sm">
+        <div data-aos="fade-left">
+          <h2 class="text-3xl font-extrabold">Siap bikin rumah lebih bersih setiap hari?</h2>
+          <p class="mt-4 text-teal-50">Amankan harga promo sekarang sebelum stok habis. Tim kami siap membantu proses order Anda.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo,%20saya%20tertarik%20dengan%20produk%20vakumku." class="rounded-xl bg-orange-500 px-6 py-3 text-sm font-bold text-white hover:bg-orange-600">Booking Sekarang</a>
+            <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo,%20saya%20ingin%20konsultasi%20produk%20vakumku." class="rounded-xl border border-white/60 px-6 py-3 text-sm font-bold text-white hover:bg-white hover:text-teal-700">Hubungi Saya</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 40
+    });
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  </script>
+</body>
+</html>

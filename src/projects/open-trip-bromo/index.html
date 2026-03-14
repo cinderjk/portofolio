@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenTripBromo | Sunrise Bromo yang Rapi, Seru, dan Siap Berangkat</title>
+  <meta name="description" content="OpenTripBromo menghadirkan paket open trip Bromo yang rapi, responsif, dan nyaman untuk traveler yang ingin mengejar sunrise, lautan pasir, dan momen terbaik tanpa ribet.">
+  <meta name="theme-color" content="#d96b2b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ember: '#d96b2b',
+            rust: '#8f3d1f',
+            ash: '#221912',
+            sand: '#f3eadf',
+            dune: '#e8dccd',
+            sage: '#5f6b56',
+            mist: '#f8f4ee'
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            body: ['Space Grotesk', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 24px 80px rgba(34, 25, 18, 0.14)',
+            panel: '0 14px 40px rgba(34, 25, 18, 0.1)'
+          },
+          backgroundImage: {
+            haze: 'radial-gradient(circle at top left, rgba(217, 107, 43, 0.18), transparent 40%), radial-gradient(circle at top right, rgba(95, 107, 86, 0.18), transparent 30%), linear-gradient(180deg, #f8f4ee 0%, #f3eadf 100%)',
+            gridline: 'linear-gradient(rgba(34,25,18,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(34,25,18,0.06) 1px, transparent 1px)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #221912;
+      background-color: #f8f4ee;
+      background-image: radial-gradient(circle at top left, rgba(217, 107, 43, 0.18), transparent 40%), radial-gradient(circle at top right, rgba(95, 107, 86, 0.18), transparent 30%), linear-gradient(180deg, #f8f4ee 0%, #f3eadf 100%);
+    }
+
+    .grid-overlay {
+      background-image: linear-gradient(rgba(34, 25, 18, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 25, 18, 0.06) 1px, transparent 1px);
+      background-size: 22px 22px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0));
+    }
+
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(248, 244, 238, 0.72);
+    }
+
+    .photo-stack::before {
+      content: '';
+      position: absolute;
+      inset: auto -22px -26px auto;
+      width: 120px;
+      height: 120px;
+      border-radius: 9999px;
+      background: rgba(217, 107, 43, 0.18);
+      filter: blur(10px);
+      z-index: -1;
+    }
+
+    .faq-answer[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-[560px] grid-overlay"></div>
+
+  <header class="sticky top-0 z-50 border-b border-ash/10 bg-mist/85 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-ash text-lg text-white shadow-panel">
+          <i class="fa-solid fa-mountain-sun"></i>
+        </span>
+        <div>
+          <p class="font-display text-xl font-bold leading-none text-ash">OpenTripBromo</p>
+          <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-rust/70">Bromo Sunrise Escape</p>
+        </div>
+      </a>
+
+      <button id="menuButton" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-ash/15 bg-white text-ash transition hover:border-ember hover:text-ember lg:hidden" aria-controls="mobileMenu" aria-expanded="false" aria-label="Buka menu navigasi">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="hidden items-center gap-7 lg:flex">
+        <a href="#highlight" class="text-sm font-bold text-ash/80 transition hover:text-ember">Highlight</a>
+        <a href="#pricing" class="text-sm font-bold text-ash/80 transition hover:text-ember">Pricing</a>
+        <a href="#kata-mereka" class="text-sm font-bold text-ash/80 transition hover:text-ember">Kata Mereka</a>
+        <a href="#faq" class="text-sm font-bold text-ash/80 transition hover:text-ember">FAQ</a>
+        <a href="#booking" class="rounded-full bg-ember px-5 py-2.5 text-sm font-bold text-white shadow-panel transition hover:-translate-y-0.5 hover:bg-rust">Pesan Slot</a>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-ash/10 bg-mist/95 lg:hidden">
+      <nav class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+        <a href="#highlight" class="rounded-2xl px-4 py-3 font-bold text-ash/80 transition hover:bg-white hover:text-ember">Highlight</a>
+        <a href="#pricing" class="rounded-2xl px-4 py-3 font-bold text-ash/80 transition hover:bg-white hover:text-ember">Pricing</a>
+        <a href="#kata-mereka" class="rounded-2xl px-4 py-3 font-bold text-ash/80 transition hover:bg-white hover:text-ember">Kata Mereka</a>
+        <a href="#faq" class="rounded-2xl px-4 py-3 font-bold text-ash/80 transition hover:bg-white hover:text-ember">FAQ</a>
+        <a href="#booking" class="mt-2 rounded-full bg-ember px-5 py-3 text-center font-bold text-white">Pesan Slot</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="relative overflow-hidden px-4 pb-14 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div data-aos="fade-right">
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/80 px-4 py-2 text-sm font-bold text-rust shadow-panel">
+            <span class="inline-flex h-2.5 w-2.5 rounded-full bg-ember"></span>
+            Batch mingguan Malang - Bromo - Madakaripura
+          </div>
+
+          <h1 class="mt-6 max-w-3xl font-display text-5xl leading-[0.94] text-ash sm:text-6xl lg:text-7xl">
+            Open trip Bromo
+            <span class="block text-ember">yang beres dari</span>
+            titik kumpul sampai sunrise.
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-base leading-8 text-ash/72 sm:text-lg">
+            Buat traveler yang ingin lihat Bromo tanpa repot mikirin jeep, rute, jam berangkat, dan spot foto. OpenTripBromo merapikan semuanya jadi satu perjalanan yang hangat, cepat, dan tetap nyaman di segala device maupun di lapangan.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href="#pricing" class="inline-flex items-center justify-center rounded-full bg-ash px-7 py-4 text-base font-extrabold text-white shadow-panel transition hover:-translate-y-0.5 hover:bg-rust">
+              Lihat paket open trip
+            </a>
+            <a href="#highlight" class="inline-flex items-center justify-center rounded-full border border-ash/15 bg-white px-7 py-4 text-base font-extrabold text-ash transition hover:border-ember hover:text-ember">
+              Cek detail trip
+            </a>
+          </div>
+
+          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <article class="rounded-[28px] border border-white/80 bg-white/75 p-5 shadow-panel">
+              <p class="text-3xl font-black text-ember">01</p>
+              <p class="mt-3 text-sm font-semibold leading-6 text-ash/70">Pickup point jelas dan rundown dikirim sebelum keberangkatan.</p>
+            </article>
+            <article class="rounded-[28px] border border-white/80 bg-white/75 p-5 shadow-panel">
+              <p class="text-3xl font-black text-ember">4.9/5</p>
+              <p class="mt-3 text-sm font-semibold leading-6 text-ash/70">Format trip dibuat ringkas supaya sunrise, pasir berbisik, dan savana tetap terkejar.</p>
+            </article>
+            <article class="rounded-[28px] border border-white/80 bg-white/75 p-5 shadow-panel">
+              <p class="text-3xl font-black text-ember">24/7</p>
+              <p class="mt-3 text-sm font-semibold leading-6 text-ash/70">Admin standby untuk konfirmasi seat, cuaca, dan perlengkapan yang perlu dibawa.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="relative photo-stack" data-aos="fade-left">
+          <div class="absolute -left-3 top-8 hidden rounded-[30px] border border-white/80 bg-white/80 px-4 py-3 shadow-panel sm:block">
+            <p class="text-xs font-black uppercase tracking-[0.26em] text-rust/75">Offer countdown</p>
+            <p class="mt-1 text-lg font-black text-ash">Berakhir dalam <span id="countdown">00:00:00</span></p>
+          </div>
+
+          <div class="glass-card relative rounded-[36px] border border-white/70 p-4 shadow-glow sm:p-6">
+            <div class="grid gap-4 sm:grid-cols-[1.05fr_0.95fr]">
+              <div class="space-y-4">
+                <div class="overflow-hidden rounded-[28px]">
+                  <img src="./asset/hero.jpg" alt="Lanskap Bromo saat golden hour" class="h-64 w-full object-cover sm:h-72">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="overflow-hidden rounded-[24px] bg-white shadow-panel">
+                    <img src="./asset/1.jpg" alt="Pemandangan jeep dan jalur menuju Bromo" class="h-32 w-full object-cover">
+                  </div>
+                  <div class="overflow-hidden rounded-[24px] bg-white shadow-panel">
+                    <img src="./asset/2.jpg" alt="Momen traveler menikmati area Bromo" class="h-32 w-full object-cover">
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="rounded-[24px] bg-ash p-5 text-white shadow-panel">
+                  <p class="text-xs font-black uppercase tracking-[0.26em] text-white/70">Yang didapat</p>
+                  <div class="mt-4 grid gap-3 text-sm font-medium text-white/88">
+                    <p><i class="fa-solid fa-check mr-2 text-ember"></i>Jeep sunrise & driver lokal</p>
+                    <p><i class="fa-solid fa-check mr-2 text-ember"></i>Rundown yang jelas sebelum hari H</p>
+                    <p><i class="fa-solid fa-check mr-2 text-ember"></i>Spot utama tanpa itinerary bertele-tele</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-8 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-4 rounded-[34px] border border-white/80 bg-white/70 p-5 shadow-panel md:grid-cols-3 md:p-6" data-aos="fade-up">
+        <article class="rounded-[26px] bg-sand p-5">
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-rust/70">Cocok untuk</p>
+          <p class="mt-3 text-xl font-bold text-ash">Solo traveler, pasangan, dan rombongan kecil</p>
+        </article>
+        <article class="rounded-[26px] bg-sand p-5">
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-rust/70">Waktu trip</p>
+          <p class="mt-3 text-xl font-bold text-ash">Midnight trip atau 2D1N dengan city stay</p>
+        </article>
+        <article class="rounded-[26px] bg-sand p-5">
+          <p class="text-sm font-black uppercase tracking-[0.24em] text-rust/70">Fokus utama</p>
+          <p class="mt-3 text-xl font-bold text-ash">Sunrise rapi, foto bagus, dan koordinasi gampang</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="highlight" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <div data-aos="fade-up" class="rounded-[34px] bg-ash p-8 text-white shadow-glow sm:p-10">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-white/60">Kenapa OpenTripBromo</p>
+          <h2 class="mt-4 font-display text-4xl leading-tight sm:text-5xl">Bukan sekadar ikut trip.</h2>
+          <h3 class="mt-4 font-display text-2xl leading-tight sm:text-3xl">Ini perjalanan yang dikurasi supaya tetap nyaman walau waktunya singkat.</h3>
+          <p class="mt-4 text-base leading-8 text-white/75">
+            Banyak open trip terasa tergesa-gesa karena informasi datang mendadak, titik kumpul membingungkan, atau rundown tidak realistis. Di sini, kami rapikan ekspektasi dari awal, pilih spot yang memang worth it, dan menjaga ritme supaya Anda masih sempat menikmati suasana, bukan cuma pindah titik foto.
+          </p>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-[24px] border border-white/12 bg-white/8 p-5">
+              <p class="font-bold">Rundown jelas</p>
+              <p class="mt-2 text-sm leading-6 text-white/72">Detail jam kumpul, estimasi sunrise, dan perlengkapan dikirim sebelum trip dimulai.</p>
+            </div>
+            <div class="rounded-[24px] border border-white/12 bg-white/8 p-5">
+              <p class="font-bold">Spot tetap prioritas</p>
+              <p class="mt-2 text-sm leading-6 text-white/72">Penanjakan, lautan pasir, savana, dan bukit teletubbies tetap jadi fokus utama.</p>
+            </div>
+            <div class="rounded-[24px] border border-white/12 bg-white/8 p-5">
+              <p class="font-bold">Admin responsif</p>
+              <p class="mt-2 text-sm leading-6 text-white/72">Cocok untuk first-timer yang butuh jawaban cepat soal cuaca, outfit, dan transport tambahan.</p>
+            </div>
+            <div class="rounded-[24px] border border-white/12 bg-white/8 p-5">
+              <p class="font-bold">Visual tetap dapat</p>
+              <p class="mt-2 text-sm leading-6 text-white/72">Komposisi perjalanan dibuat supaya momen sunrise dan area jeep tetap punya waktu untuk diabadikan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <article class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="zoom-in" data-aos-delay="20">
+            <img src="./asset/3.jpg" alt="Spot pemandangan Bromo saat pagi" class="h-60 w-full object-cover">
+            <div class="p-6">
+              <p class="text-xs font-black uppercase tracking-[0.26em] text-rust/65">Highlight 01</p>
+              <h3 class="mt-3 text-2xl font-bold text-ash">Sunrise Viewpoint</h3>
+              <p class="mt-3 text-sm leading-7 text-ash/72">Datang untuk cahaya pertama yang jadi alasan banyak orang kembali ke Bromo.</p>
+            </div>
+          </article>
+
+          <article class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="zoom-in" data-aos-delay="60">
+            <img src="./asset/4.jpg" alt="Area jeep dan lautan pasir Bromo" class="h-60 w-full object-cover">
+            <div class="p-6">
+              <p class="text-xs font-black uppercase tracking-[0.26em] text-rust/65">Highlight 02</p>
+              <h3 class="mt-3 text-2xl font-bold text-ash">Jeep Ride Lautan Pasir</h3>
+              <p class="mt-3 text-sm leading-7 text-ash/72">Sensasi perjalanan off-road yang jadi bagian paling ikonik dari trip Bromo.</p>
+            </div>
+          </article>
+
+          <article class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="zoom-in" data-aos-delay="100">
+            <img src="./asset/5.jpg" alt="Traveler di area savana Bromo" class="h-60 w-full object-cover">
+            <div class="p-6">
+              <p class="text-xs font-black uppercase tracking-[0.26em] text-rust/65">Highlight 03</p>
+              <h3 class="mt-3 text-2xl font-bold text-ash">Savana & Bukit Hijau</h3>
+              <p class="mt-3 text-sm leading-7 text-ash/72">Perubahan mood visual dari abu vulkanik ke hamparan hijau yang lebih lega.</p>
+            </div>
+          </article>
+
+          <article class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="zoom-in" data-aos-delay="140">
+            <img src="./asset/6.jpg" alt="Momen foto di area Bromo" class="h-60 w-full object-cover">
+            <div class="p-6">
+              <p class="text-xs font-black uppercase tracking-[0.26em] text-rust/65">Highlight 04</p>
+              <h3 class="mt-3 text-2xl font-bold text-ash">Foto yang Lebih Siap Upload</h3>
+              <p class="mt-3 text-sm leading-7 text-ash/72">Komposisi spot dan waktu berhenti dibuat pas agar hasil foto tidak terasa buru-buru.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl rounded-[34px] border border-ash/10 bg-white/75 p-6 shadow-panel sm:p-8" data-aos="fade-up">
+        <div class="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div>
+            <p class="text-sm font-black uppercase tracking-[0.28em] text-rust/70">Flow Perjalanan</p>
+            <h2 class="mt-3 font-display text-3xl text-ash sm:text-4xl">Itinerary yang padat, tapi tetap punya ruang untuk menikmati momennya.</h2>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <article class="rounded-[24px] bg-sand p-5">
+              <p class="text-sm font-black text-ember">01</p>
+              <p class="mt-3 font-bold text-ash">Meeting point</p>
+              <p class="mt-2 text-sm leading-6 text-ash/68">Briefing singkat, cek seat, lalu berangkat menuju jeep basecamp.</p>
+            </article>
+            <article class="rounded-[24px] bg-sand p-5">
+              <p class="text-sm font-black text-ember">02</p>
+              <p class="mt-3 font-bold text-ash">Sunrise dan spot inti</p>
+              <p class="mt-2 text-sm leading-6 text-ash/68">Penanjakan, lautan pasir, kawah, dan savana dikejar dalam urutan yang efisien.</p>
+            </article>
+            <article class="rounded-[24px] bg-sand p-5">
+              <p class="text-sm font-black text-ember">03</p>
+              <p class="mt-3 font-bold text-ash">Drop off aman</p>
+              <p class="mt-2 text-sm leading-6 text-ash/68">Kembali ke meeting point dengan estimasi waktu yang sudah dijelaskan sejak awal.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-7xl rounded-[38px] bg-ash p-8 text-white shadow-glow sm:p-10">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div data-aos="fade-up">
+            <p class="text-sm font-black uppercase tracking-[0.28em] text-white/55">Pricing Open Trip</p>
+            <h2 class="mt-3 font-display text-4xl sm:text-5xl">Pilih paket yang paling cocok dengan cara Anda menikmati Bromo.</h2>
+            <p class="mt-4 max-w-2xl text-base leading-8 text-white/72">Harga dibuat transparan dan mudah dibaca. Jika Anda ingin rombongan privat, tinggal gunakan paket paling fleksibel atau minta penyesuaian saat booking.</p>
+          </div>
+          <div class="rounded-[26px] border border-white/12 bg-white/8 px-5 py-4 text-sm font-semibold text-white/80" data-aos="fade-up" data-aos-delay="60">
+            Promo seat terbatas berakhir dalam <span id="countdownInline" class="font-black text-white">00:00:00</span>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="rounded-[30px] border border-white/12 bg-white/8 p-6" data-aos="fade-up" data-aos-delay="20">
+            <p class="text-xs font-black uppercase tracking-[0.28em] text-white/55">Paket Hemat</p>
+            <h3 class="mt-3 text-2xl font-bold">Midnight Open Trip</h3>
+            <p class="mt-3 text-sm leading-7 text-white/72">Berangkat malam, fokus sunrise dan spot inti. Cocok untuk first timer yang ingin perjalanan singkat.</p>
+            <p class="mt-6 text-4xl font-black text-white">Rp275.000</p>
+            <p class="mt-2 text-sm text-white/60">per orang</p>
+            <div class="mt-6 space-y-3 text-sm text-white/86">
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Transport lokal area trip</p>
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Jeep Bromo sharing</p>
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Tiket spot utama</p>
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Koordinator trip</p>
+            </div>
+          </article>
+
+          <article class="rounded-[30px] bg-ember p-6 text-white shadow-panel" data-aos="fade-up" data-aos-delay="70">
+            <p class="text-xs font-black uppercase tracking-[0.28em] text-white/75">Paling Dicari</p>
+            <h3 class="mt-3 text-2xl font-bold">Open Trip Sunrise Plus</h3>
+            <p class="mt-3 text-sm leading-7 text-white/88">Format paling seimbang untuk sunrise, kawah, savana, dan dokumentasi yang lebih leluasa.</p>
+            <p class="mt-6 text-4xl font-black text-white">Rp425.000</p>
+            <p class="mt-2 text-sm text-white/75">per orang</p>
+            <div class="mt-6 space-y-3 text-sm text-white">
+              <p><i class="fa-solid fa-check mr-2"></i>Semua benefit paket Midnight</p>
+              <p><i class="fa-solid fa-check mr-2"></i>Snack hangat & air mineral</p>
+              <p><i class="fa-solid fa-check mr-2"></i>Tambahan waktu di savana</p>
+              <p><i class="fa-solid fa-check mr-2"></i>Prioritas update info cuaca</p>
+            </div>
+          </article>
+
+          <article class="rounded-[30px] border border-white/12 bg-white/8 p-6" data-aos="fade-up" data-aos-delay="120">
+            <p class="text-xs font-black uppercase tracking-[0.28em] text-white/55">Paket Fleksibel</p>
+            <h3 class="mt-3 text-2xl font-bold">Private Small Group</h3>
+            <p class="mt-3 text-sm leading-7 text-white/72">Untuk pasangan atau rombongan kecil yang ingin jam, pace, dan pickup lebih fleksibel.</p>
+            <p class="mt-6 text-4xl font-black text-white">Rp1.850.000</p>
+            <p class="mt-2 text-sm text-white/60">mulai dari 1 jeep</p>
+            <div class="mt-6 space-y-3 text-sm text-white/86">
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Jeep privat</p>
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Bisa request pickup</p>
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Lebih leluasa untuk foto</p>
+              <p><i class="fa-solid fa-check mr-2 text-ember"></i>Cocok untuk couple atau family trip</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="fade-up">
+            <img src="./asset/1.jpg" alt="Galeri perjalanan OpenTripBromo" class="h-64 w-full object-cover">
+          </div>
+          <div class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="fade-up" data-aos-delay="40">
+            <img src="./asset/2.jpg" alt="Galeri pemandangan Bromo" class="h-64 w-full object-cover">
+          </div>
+          <div class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="fade-up" data-aos-delay="80">
+            <img src="./asset/5.jpg" alt="Galeri savana Bromo" class="h-64 w-full object-cover">
+          </div>
+          <div class="overflow-hidden rounded-[30px] border border-white/80 bg-white shadow-panel" data-aos="fade-up" data-aos-delay="120">
+            <img src="./asset/6.jpg" alt="Galeri momen wisatawan di Bromo" class="h-64 w-full object-cover">
+          </div>
+        </div>
+
+        <div data-aos="fade-left" class="rounded-[34px] border border-white/80 bg-white/80 p-8 shadow-panel sm:p-10">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-rust/70">Visual Trip</p>
+          <h2 class="mt-3 font-display text-4xl text-ash">Warna Bromo yang dramatis, tapi pengalaman booking-nya dibuat sederhana.</h2>
+          <p class="mt-5 text-base leading-8 text-ash/72">
+            Semua aset foto pada halaman ini diambil dari folder sumber open-trip, lalu ditata ulang menjadi visual yang lebih modern. Hasilnya bukan sekadar galeri, tapi presentasi perjalanan yang lebih siap jual dan lebih mudah dipahami calon peserta.
+          </p>
+          <a href="#booking" class="mt-8 inline-flex items-center rounded-full bg-ash px-6 py-3 font-extrabold text-white transition hover:bg-rust">Amankan kursi sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kata-mereka" class="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl" data-aos="fade-up">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-rust/70">Kata Mereka</p>
+          <h2 class="mt-3 font-display text-4xl text-ash sm:text-5xl">Testimoni peserta yang datang untuk sunrise dan pulang dengan pengalaman yang lebih rapi dari ekspektasi.</h2>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="rounded-[30px] border border-white/80 bg-white/85 p-6 shadow-panel" data-aos="fade-up" data-aos-delay="20">
+            <div class="flex items-center gap-1 text-ember">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="mt-5 text-base leading-8 text-ash/74">"Saya ikut yang Sunrise Plus. Briefing jelas, admin cepat jawab, dan itinerary-nya tidak bikin ngos-ngosan. Sunrise dapat, foto juga dapat."</p>
+            <div class="mt-6 border-t border-ash/10 pt-4">
+              <p class="font-bold text-ash">Nadia, Surabaya</p>
+              <p class="text-sm text-ash/55">Solo traveler</p>
+            </div>
+          </article>
+
+          <article class="rounded-[30px] border border-white/80 bg-white/85 p-6 shadow-panel" data-aos="fade-up" data-aos-delay="70">
+            <div class="flex items-center gap-1 text-ember">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="mt-5 text-base leading-8 text-ash/74">"Yang saya suka justru koordinasinya. Dari sebelum berangkat sudah dikasih list barang dan jam kumpul yang detail, jadi minim drama saat hari H."</p>
+            <div class="mt-6 border-t border-ash/10 pt-4">
+              <p class="font-bold text-ash">Rizky & Aulia, Malang</p>
+              <p class="text-sm text-ash/55">Couple trip</p>
+            </div>
+          </article>
+
+          <article class="rounded-[30px] border border-white/80 bg-white/85 p-6 shadow-panel" data-aos="fade-up" data-aos-delay="120">
+            <div class="flex items-center gap-1 text-ember">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="mt-5 text-base leading-8 text-ash/74">"Kami ambil private small group buat family. Pace-nya enak, tidak diburu-buru, dan anak-anak masih sempat menikmati savana. Worth it."</p>
+            <div class="mt-6 border-t border-ash/10 pt-4">
+              <p class="font-bold text-ash">Dian, Sidoarjo</p>
+              <p class="text-sm text-ash/55">Family trip</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div data-aos="fade-up" class="rounded-[34px] bg-sand p-8 shadow-panel sm:p-10">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-rust/70">FAQ</p>
+          <h2 class="mt-3 font-display text-4xl text-ash">Pertanyaan yang paling sering ditanyakan sebelum booking.</h2>
+          <p class="mt-5 text-base leading-8 text-ash/72">Kalau masih ada detail yang belum terjawab, Anda bisa lanjut ke tombol booking dan minta rundown lengkap ke admin.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="50">
+          <article class="rounded-[28px] border border-white/80 bg-white/85 p-2 shadow-panel">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 rounded-[22px] px-5 py-4 text-left" aria-expanded="false">
+              <span class="text-lg font-bold text-ash">Harga sudah termasuk tiket masuk Bromo?</span>
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand text-ash"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-sm leading-7 text-ash/70" hidden>
+              Ya, paket open trip yang ditampilkan sudah mencakup akses ke spot utama sesuai detail benefit pada tiap paket. Untuk request tambahan di luar itinerary, biaya akan diinformasikan dulu di awal.
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-white/80 bg-white/85 p-2 shadow-panel">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 rounded-[22px] px-5 py-4 text-left" aria-expanded="false">
+              <span class="text-lg font-bold text-ash">Apakah bisa berangkat sendiri tanpa rombongan?</span>
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand text-ash"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-sm leading-7 text-ash/70" hidden>
+              Bisa. Paket sharing memang dirancang untuk solo traveler atau pasangan yang ingin gabung dengan peserta lain supaya biaya tetap efisien.
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-white/80 bg-white/85 p-2 shadow-panel">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 rounded-[22px] px-5 py-4 text-left" aria-expanded="false">
+              <span class="text-lg font-bold text-ash">Apa yang sebaiknya dibawa saat trip Bromo?</span>
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand text-ash"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-sm leading-7 text-ash/70" hidden>
+              Jaket tebal, sepatu nyaman, sarung tangan bila perlu, masker, dan obat pribadi. Sebelum keberangkatan admin juga mengirim checklist yang lebih detail.
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-white/80 bg-white/85 p-2 shadow-panel">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 rounded-[22px] px-5 py-4 text-left" aria-expanded="false">
+              <span class="text-lg font-bold text-ash">Bagaimana kalau cuaca sedang kurang bagus?</span>
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand text-ash"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-sm leading-7 text-ash/70" hidden>
+              Kami akan update kondisi cuaca dan penyesuaian teknis sedini mungkin. Itinerary tetap diarahkan ke spot yang paling aman dan realistis untuk dikunjungi saat itu.
+            </div>
+          </article>
+
+          <article class="rounded-[28px] border border-white/80 bg-white/85 p-2 shadow-panel">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 rounded-[22px] px-5 py-4 text-left" aria-expanded="false">
+              <span class="text-lg font-bold text-ash">Bagaimana cara booking dan mengamankan kursi?</span>
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand text-ash"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-answer px-5 pb-5 text-sm leading-7 text-ash/70" hidden>
+              Klik tombol booking, kirim tanggal keberangkatan yang diinginkan, lalu admin akan konfirmasi ketersediaan seat dan langkah pembayaran DP untuk mengunci slot.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+      <div class="mx-auto max-w-7xl overflow-hidden rounded-[38px] border border-white/80 bg-white/80 shadow-glow">
+        <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+          <div class="p-8 sm:p-10 lg:p-12">
+            <p class="text-sm font-black uppercase tracking-[0.28em] text-rust/70">Booking CTA</p>
+            <h2 class="mt-3 font-display text-4xl text-ash sm:text-5xl">Siap ikut open trip Bromo tanpa ribet koordinasi dari nol?</h2>
+            <p class="mt-5 max-w-2xl text-base leading-8 text-ash/72">
+              Kirim tanggal yang Anda incar, jumlah peserta, dan titik keberangkatan. Tim OpenTripBromo akan bantu cek seat, sarankan paket, lalu kirim rundown supaya Anda bisa berangkat dengan lebih tenang.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a href="https://wa.me/6281234567890?text=Halo%20OpenTripBromo%2C%20saya%20ingin%20cek%20slot%20open%20trip%20Bromo." class="inline-flex items-center justify-center rounded-full bg-ember px-7 py-4 text-base font-extrabold text-white transition hover:bg-rust">
+                Booking via WhatsApp
+              </a>
+              <a href="#pricing" class="inline-flex items-center justify-center rounded-full border border-ash/15 px-7 py-4 text-base font-extrabold text-ash transition hover:border-ember hover:text-ember">
+                Bandingkan paket dulu
+              </a>
+            </div>
+          </div>
+
+          <div class="h-full min-h-[340px] overflow-hidden">
+            <img src="./asset/hero.jpg" alt="OpenTripBromo hero visual" class="h-full w-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-ash/10 px-4 py-8 text-center text-sm text-ash/60 sm:px-6 lg:px-8">
+    <p>OpenTripBromo - landing page remake berbasis Tailwind CSS dengan aset lokal dari folder open-trip.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobileMenu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const countdownTargets = ['countdown', 'countdownInline']
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    const offerDeadline = Date.now() + (19 * 60 * 60 + 42 * 60 + 15) * 1000;
+
+    function updateCountdown() {
+      const remaining = Math.max(0, offerDeadline - Date.now());
+      const hours = String(Math.floor(remaining / 3600000)).padStart(2, '0');
+      const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, '0');
+      const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
+      const value = hours + ':' + minutes + ':' + seconds;
+
+      countdownTargets.forEach((element) => {
+        element.textContent = value;
+      });
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.querySelectorAll('.faq-trigger').forEach((button) => {
+      button.addEventListener('click', () => {
+        const article = button.closest('article');
+        const answer = article.querySelector('.faq-answer');
+        const icon = button.querySelector('i');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+        button.setAttribute('aria-expanded', String(!isExpanded));
+        answer.hidden = isExpanded;
+        icon.classList.toggle('fa-plus', isExpanded);
+        icon.classList.toggle('fa-minus', !isExpanded);
+      });
+    });
+
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60
+    });
+  </script>
+</body>
+</html>

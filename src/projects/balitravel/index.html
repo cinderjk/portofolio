@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaliTravel - Jelajah Bali Lebih Berkesan</title>
+  <meta name="description" content="Paket wisata Bali modern untuk liburan santai, adventure, dan honeymoon. Siap berangkat dari berbagai kota di Indonesia.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --sand: #f6efe4;
+      --sea: #0b5d80;
+      --sun: #f59e0b;
+      --leaf: #2e7d5f;
+      --ink: #172026;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Sora", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 20% 20%, #fff7e8 0%, #f5f8fb 40%, #eef6fb 100%);
+    }
+
+    .title-font {
+      font-family: "Playfair Display", serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.78);
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-white/30 glass">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8" aria-label="Main Navigation">
+      <a href="#home" class="flex items-center gap-2">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--sea)] text-white"><i class="fa-solid fa-compass"></i></span>
+        <span class="title-font text-xl font-bold">BaliTravel</span>
+      </a>
+
+      <button id="menuButton" class="inline-flex items-center justify-center rounded-md border border-slate-300 px-3 py-2 text-slate-700 md:hidden" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="hidden items-center gap-7 text-sm font-medium md:flex">
+        <li><a href="#spot" class="hover:text-[var(--sea)]">Spot Bali</a></li>
+        <li><a href="#paket" class="hover:text-[var(--sea)]">Paket</a></li>
+        <li><a href="#testimoni" class="hover:text-[var(--sea)]">Testimoni</a></li>
+        <li><a href="#faq" class="hover:text-[var(--sea)]">FAQ</a></li>
+        <li><a href="#booking" class="rounded-full bg-[var(--sun)] px-5 py-2 text-white hover:brightness-95">Booking Sekarang</a></li>
+      </ul>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white/95 px-4 py-4 md:hidden">
+      <ul class="space-y-3 text-sm font-medium">
+        <li><a href="#spot" class="block">Spot Bali</a></li>
+        <li><a href="#paket" class="block">Paket</a></li>
+        <li><a href="#testimoni" class="block">Testimoni</a></li>
+        <li><a href="#faq" class="block">FAQ</a></li>
+        <li><a href="#booking" class="block rounded-lg bg-[var(--sun)] px-4 py-2 text-center text-white">Booking Sekarang</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="relative overflow-hidden px-4 pb-16 pt-14 md:px-8 md:pt-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
+        <div data-aos="fade-right">
+          <p class="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[var(--sea)] shadow">
+            <i class="fa-solid fa-plane-up"></i> Open Trip & Private Trip Bali 2026
+          </p>
+          <h1 class="title-font text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+            Jelajahi Bali<br>
+            Dengan Cara<br>
+            yang Lebih Personal
+          </h1>
+          <p class="mt-5 max-w-xl text-slate-600">
+            Dari tebing Uluwatu sampai sunrise Sanur, kami susun itinerary yang nyaman, fleksibel,
+            dan cocok untuk solo traveler, keluarga, sampai pasangan honeymoon.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#paket" class="rounded-full bg-[var(--sea)] px-6 py-3 font-semibold text-white hover:brightness-95">Lihat Paket</a>
+            <a href="#spot" class="rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold hover:bg-slate-50">Lihat Spot Wisata</a>
+          </div>
+        </div>
+
+        <div data-aos="fade-left">
+          <img src="./asset/hero.jpg" alt="Hero Bali" class="w-full rounded-3xl border border-white/60 shadow-xl">
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-8 md:px-8">
+      <div class="mx-auto grid max-w-7xl gap-4 rounded-3xl bg-white p-6 shadow-md sm:grid-cols-3" data-aos="fade-up">
+        <article class="rounded-2xl bg-[var(--sand)] p-5 text-center">
+          <p class="text-3xl font-extrabold text-[var(--sea)]">1200+</p>
+          <p class="text-sm text-slate-600">Traveler diberangkatkan</p>
+        </article>
+        <article class="rounded-2xl bg-[var(--sand)] p-5 text-center">
+          <p class="text-3xl font-extrabold text-[var(--sea)]">4.9/5</p>
+          <p class="text-sm text-slate-600">Rating kepuasan peserta</p>
+        </article>
+        <article class="rounded-2xl bg-[var(--sand)] p-5 text-center">
+          <p class="text-3xl font-extrabold text-[var(--sea)]">24/7</p>
+          <p class="text-sm text-slate-600">Support tim selama trip</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="spot" class="px-4 py-16 md:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 text-center" data-aos="fade-up">
+          <p class="text-sm font-semibold uppercase tracking-wider text-[var(--leaf)]">Spot Wisata Bali</p>
+          <h2 class="title-font mt-2 text-3xl font-bold md:text-5xl">Pilihan Destinasi Favorit</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-slate-600">Koleksi destinasi populer yang paling sering dipilih traveler BaliTravel.</p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="overflow-hidden rounded-2xl bg-white shadow" data-aos="zoom-in" data-aos-delay="20">
+            <img src="./asset/uluwatu.jpg" alt="Foto Uluwatu" class="h-52 w-full object-cover">
+            <div class="p-5"><h3 class="font-bold">Uluwatu Cliff & Kecak</h3><p class="mt-2 text-sm text-slate-600">Sunset dramatis dari atas tebing dengan pertunjukan tari Kecak.</p></div>
+          </article>
+          <article class="overflow-hidden rounded-2xl bg-white shadow" data-aos="zoom-in" data-aos-delay="60">
+            <img src="./asset/kintamani.avif" alt="Foto Kintamani" class="h-52 w-full object-cover">
+            <div class="p-5"><h3 class="font-bold">Kintamani & Batur</h3><p class="mt-2 text-sm text-slate-600">Panorama pegunungan dengan udara sejuk dan coffee stop.</p></div>
+          </article>
+          <article class="overflow-hidden rounded-2xl bg-white shadow" data-aos="zoom-in" data-aos-delay="100">
+            <img src="./asset/nusa-penida.jpg" alt="Foto Nusa Penida" class="h-52 w-full object-cover">
+            <div class="p-5"><h3 class="font-bold">Nusa Penida</h3><p class="mt-2 text-sm text-slate-600">Tebing ikonik, pantai eksotis, dan air laut biru jernih.</p></div>
+          </article>
+          <article class="overflow-hidden rounded-2xl bg-white shadow" data-aos="zoom-in" data-aos-delay="20">
+            <img src="./asset/ubud.jpg" alt="Foto Ubud" class="h-52 w-full object-cover">
+            <div class="p-5"><h3 class="font-bold">Ubud Nature Escape</h3><p class="mt-2 text-sm text-slate-600">Rice terrace, art village, dan suasana tenang khas Ubud.</p></div>
+          </article>
+          <article class="overflow-hidden rounded-2xl bg-white shadow" data-aos="zoom-in" data-aos-delay="60">
+            <img src="./asset/bedugul.jpg" alt="Foto Bedugul" class="h-52 w-full object-cover">
+            <div class="p-5"><h3 class="font-bold">Bedugul Highlands</h3><p class="mt-2 text-sm text-slate-600">Danau, pura, dan cuaca dingin untuk itinerary santai.</p></div>
+          </article>
+          <article class="overflow-hidden rounded-2xl bg-white shadow" data-aos="zoom-in" data-aos-delay="100">
+            <img src="./asset/sanur.jpg" alt="Foto Sanur" class="h-52 w-full object-cover">
+            <div class="p-5"><h3 class="font-bold">Sunrise Sanur</h3><p class="mt-2 text-sm text-slate-600">Momen pagi terbaik untuk jogging, sepeda, dan foto santai.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-6 md:px-8">
+      <div class="mx-auto max-w-7xl rounded-3xl border border-slate-200 bg-white px-6 py-10 text-slate-900 shadow" data-aos="fade-up">
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-wide text-[var(--leaf)]">Sebelum Booking</p>
+            <h2 class="title-font mt-2 text-3xl font-bold md:text-4xl">Pernahkah Anda kebingungan memilih tour guide yang terpercaya?</h2>
+            <p class="mt-4 text-slate-600">
+              Banyak traveler ragu karena takut itinerary berantakan, biaya mendadak, atau tim yang sulit dihubungi saat kondisi di lapangan berubah.
+              Keraguan ini wajar, apalagi saat liburan hanya punya waktu terbatas dan Anda ingin semuanya berjalan lancar.
+            </p>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <article class="rounded-2xl bg-[var(--sand)] p-4">
+              <p class="font-semibold">Jadwal sering molor</p>
+              <p class="mt-1 text-sm text-slate-600">Waktu habis di jalan, spot utama malah terlewat.</p>
+            </article>
+            <article class="rounded-2xl bg-[var(--sand)] p-4">
+              <p class="font-semibold">Biaya tidak transparan</p>
+              <p class="mt-1 text-sm text-slate-600">Ada tambahan biaya yang muncul di tengah perjalanan.</p>
+            </article>
+            <article class="rounded-2xl bg-[var(--sand)] p-4">
+              <p class="font-semibold">Respon lambat</p>
+              <p class="mt-1 text-sm text-slate-600">Sulit dapat jawaban cepat saat ada perubahan rencana.</p>
+            </article>
+            <article class="rounded-2xl bg-[var(--sand)] p-4">
+              <p class="font-semibold">Rute kurang efisien</p>
+              <p class="mt-1 text-sm text-slate-600">Terlalu capek karena urutan destinasi kurang tepat.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 md:px-8">
+      <div class="mx-auto max-w-7xl rounded-3xl bg-[var(--sea)] p-8 text-white md:p-10" data-aos="fade-up">
+        <div class="mb-8 text-center">
+          <h2 class="title-font text-3xl font-bold md:text-5xl">Kelebihan memilih Travel bersama Balitravel</h2>
+          <p class="mt-3 text-white/85">Kami bukan hanya antar jemput destinasi, tapi bantu Anda menikmati Bali dengan nyaman dari awal sampai pulang.</p>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20">
+            <p class="text-lg font-bold">Tim lokal berpengalaman</p>
+            <p class="mt-2 text-sm text-white/85">Memahami kondisi jalan, jam terbaik tiap spot, dan alternatif saat cuaca berubah.</p>
+          </article>
+          <article class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20">
+            <p class="text-lg font-bold">Itinerary fleksibel</p>
+            <p class="mt-2 text-sm text-white/85">Bisa disesuaikan dengan pace Anda, termasuk request destinasi prioritas.</p>
+          </article>
+          <article class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20">
+            <p class="text-lg font-bold">Harga jelas dari awal</p>
+            <p class="mt-2 text-sm text-white/85">Rincian paket transparan supaya Anda bisa budgeting tanpa was-was.</p>
+          </article>
+          <article class="rounded-2xl bg-white/10 p-5 ring-1 ring-white/20">
+            <p class="text-lg font-bold">Layanan responsif</p>
+            <p class="mt-2 text-sm text-white/85">Support cepat sebelum keberangkatan, saat trip, hingga selesai perjalanan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="paket" class="bg-[var(--sea)] px-4 py-16 text-white md:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-8 text-center" data-aos="fade-up">
+          <h2 class="title-font text-3xl font-bold md:text-5xl">Paket BaliTravel</h2>
+          <p class="mt-2 text-white/80">Harga promo dapat berubah sewaktu-waktu. Pilih paket sesuai gaya liburan Anda.</p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          <article class="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20" data-aos="fade-up" data-aos-delay="20">
+            <h3 class="text-xl font-bold">Bali Starter 3D2N</h3>
+            <p class="mt-2 text-sm text-white/80">Cocok untuk first timer yang ingin explore spot wajib.</p>
+            <p class="mt-6 text-3xl font-extrabold">Rp1.650.000</p>
+            <ul class="mt-4 space-y-2 text-sm text-white/90">
+              <li><i class="fa-solid fa-check mr-2"></i>Hotel 2 malam</li>
+              <li><i class="fa-solid fa-check mr-2"></i>Transport + driver</li>
+              <li><i class="fa-solid fa-check mr-2"></i>Dokumentasi basic</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl bg-[var(--sun)] p-6 text-slate-900 shadow-xl" data-aos="fade-up" data-aos-delay="60">
+            <p class="text-xs font-bold uppercase">Paling Laris</p>
+            <h3 class="mt-1 text-xl font-extrabold">Bali Highlight 4D3N</h3>
+            <p class="mt-2 text-sm">Mix adventure dan leisure untuk pengalaman paling lengkap.</p>
+            <p class="mt-6 text-3xl font-extrabold">Rp2.450.000</p>
+            <ul class="mt-4 space-y-2 text-sm">
+              <li><i class="fa-solid fa-check mr-2"></i>Hotel 3 malam</li>
+              <li><i class="fa-solid fa-check mr-2"></i>Trip Nusa Penida</li>
+              <li><i class="fa-solid fa-check mr-2"></i>Tour guide lokal</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-xl font-bold">Honeymoon 5D4N</h3>
+            <p class="mt-2 text-sm text-white/80">Paket romantis dengan private itinerary dan dinner special.</p>
+            <p class="mt-6 text-3xl font-extrabold">Rp3.850.000</p>
+            <ul class="mt-4 space-y-2 text-sm text-white/90">
+              <li><i class="fa-solid fa-check mr-2"></i>Resort 4 malam</li>
+              <li><i class="fa-solid fa-check mr-2"></i>Private transport</li>
+              <li><i class="fa-solid fa-check mr-2"></i>Candlelight dinner</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="px-4 py-14 md:px-8">
+      <div class="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-white p-8 text-center shadow" data-aos="fade-up">
+        <p class="text-sm font-semibold uppercase tracking-wide text-[var(--leaf)]">Limited Time Offer</p>
+        <h3 class="title-font mt-2 text-3xl font-bold">Promo booking berakhir dalam</h3>
+        <p id="countdown" class="mt-3 text-4xl font-extrabold text-[var(--sea)]">00:00:00</p>
+        <p class="mt-2 text-sm text-slate-600">Amankan harga promo hari ini sebelum slot habis.</p>
+        <a href="#" class="mt-6 inline-flex rounded-full bg-[var(--sea)] px-7 py-3 font-semibold text-white hover:brightness-95">Konsultasi via WhatsApp</a>
+      </div>
+    </section>
+
+    <section id="testimoni" class="px-4 pb-16 md:px-8">
+      <div class="mx-auto max-w-7xl">
+        <h2 class="title-font text-center text-3xl font-bold md:text-5xl" data-aos="fade-up">Cerita Traveler</h2>
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <blockquote class="rounded-2xl bg-white p-6 shadow" data-aos="fade-up" data-aos-delay="20">
+            <p class="text-sm text-slate-600">"Awalnya saya takut jadwalnya terlalu padat, tapi ternyata itinerary-nya rapi dan realistis. Driver selalu kasih opsi terbaik kalau spot lagi ramai, jadi waktu tidak kebuang. Selama 4 hari kami bisa nikmatin Ubud, Kintamani, dan Uluwatu tanpa berasa dikejar-kejar. Komunikasi tim juga enak, setiap malam dikasih briefing singkat untuk agenda besok."</p>
+            <footer class="mt-4 text-sm font-bold">- Dini, Jakarta</footer>
+          </blockquote>
+          <blockquote class="rounded-2xl bg-white p-6 shadow" data-aos="fade-up" data-aos-delay="60">
+            <p class="text-sm text-slate-600">"Trip Nusa Penida jadi highlight liburan saya. Waktu cuaca sempat berubah, tim cepat banget ubah urutan destinasi sehingga tetap aman dan tetap dapat spot foto terbaik. Saya juga suka karena semua biaya dijelaskan dari awal, jadi tidak ada kejutan di tengah jalan. Untuk saya yang baru pertama kali ke Bali, layanan seperti ini bikin jauh lebih tenang."</p>
+            <footer class="mt-4 text-sm font-bold">- Rama, Surabaya</footer>
+          </blockquote>
+          <blockquote class="rounded-2xl bg-white p-6 shadow" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-sm text-slate-600">"Kami ambil paket honeymoon dan pengalaman yang kami dapat benar-benar terasa personal. Hotelnya nyaman, transport selalu on time, dan itinerary dibuat santai supaya kami bisa menikmati momen tanpa buru-buru. Momen candlelight dinner-nya juga disiapkan detail dari dekor sampai timing sunset. Buat pasangan yang mau liburan romantis tapi tetap praktis, ini sangat recommended."</p>
+            <footer class="mt-4 text-sm font-bold">- Ayu & Dimas, Bandung</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-[var(--sand)] px-4 py-16 md:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="title-font text-center text-3xl font-bold md:text-5xl" data-aos="fade-up">FAQ</h2>
+        <div class="mt-8 space-y-4">
+          <details class="rounded-xl bg-white p-5" data-aos="fade-up" data-aos-delay="20">
+            <summary class="cursor-pointer font-semibold">Apakah bisa custom itinerary?</summary>
+            <p class="mt-2 text-sm text-slate-600">Bisa. Anda bisa request destinasi prioritas, jam berangkat, dan tipe aktivitas.</p>
+          </details>
+          <details class="rounded-xl bg-white p-5" data-aos="fade-up" data-aos-delay="60">
+            <summary class="cursor-pointer font-semibold">Apakah harga sudah termasuk tiket pesawat?</summary>
+            <p class="mt-2 text-sm text-slate-600">Belum. Paket fokus pada layanan di Bali, agar jadwal keberangkatan lebih fleksibel.</p>
+          </details>
+          <details class="rounded-xl bg-white p-5" data-aos="fade-up" data-aos-delay="100">
+            <summary class="cursor-pointer font-semibold">Bagaimana sistem pembayaran?</summary>
+            <p class="mt-2 text-sm text-slate-600">DP 30% untuk lock slot, pelunasan H-7 keberangkatan.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0b1b28] px-4 py-10 text-center text-sm text-white/80 md:px-8">
+    <p class="title-font text-lg font-bold text-white">BaliTravel</p>
+    <p class="mt-2">Trip nyaman, itinerary fleksibel, pengalaman berkesan.</p>
+    <p class="mt-3 text-xs text-white/60">Copyright 2026 BaliTravel. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", function () {
+      const isHidden = mobileMenu.classList.toggle("hidden");
+      menuButton.setAttribute("aria-expanded", String(!isHidden));
+    });
+
+    // Countdown sederhana 7 jam dari waktu pertama buka halaman.
+    const countdownEl = document.getElementById("countdown");
+    const sevenHours = 7 * 60 * 60 * 1000;
+    const storedEnd = localStorage.getItem("balitravelCountdownEnd");
+    const endAt = storedEnd ? Number(storedEnd) : Date.now() + sevenHours;
+    localStorage.setItem("balitravelCountdownEnd", String(endAt));
+
+    function updateCountdown() {
+      const now = Date.now();
+      let diff = Math.max(0, endAt - now);
+
+      const hours = Math.floor(diff / 3600000);
+      diff %= 3600000;
+      const minutes = Math.floor(diff / 60000);
+      diff %= 60000;
+      const seconds = Math.floor(diff / 1000);
+
+      countdownEl.textContent =
+        String(hours).padStart(2, "0") + ":" +
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    AOS.init({
+      duration: 700,
+      easing: "ease-out-cubic",
+      once: true
+    });
+  </script>
+</body>
+</html>

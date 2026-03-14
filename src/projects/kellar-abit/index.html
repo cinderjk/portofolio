@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kellar Abit - Vitalitas Pria Tahan Lama</title>
+  <meta name="description" content="Kellar Abit membantu menjaga stamina pria, meningkatkan percaya diri, dan mendukung performa harian. Promo terbatas hari ini.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <style>
+    :root {
+      --ink: #f3f4f6;
+      --wine: #991b1b;
+      --accent: #f59e0b;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(153, 27, 27, 0.35) 0%, rgba(153, 27, 27, 0) 30%),
+        radial-gradient(circle at 88% 6%, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0) 30%),
+        #000;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Sora", sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-shadow {
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .dark-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="./asset/logo.png" alt="Kellar Abit" class="h-8 w-auto">
+      </a>
+
+      <button id="menuBtn" class="rounded-lg border border-white/20 p-2 text-white md:hidden" aria-label="Buka menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <ul class="hidden items-center gap-6 text-sm font-semibold text-white md:flex">
+        <li><a href="#manfaat" class="hover:text-[#f59e0b]">Manfaat</a></li>
+        <li><a href="#komposisi" class="hover:text-[#f59e0b]">Komposisi</a></li>
+        <li><a href="#alasan" class="hover:text-[#f59e0b]">Alasan</a></li>
+        <li><a href="#harga" class="hover:text-[#f59e0b]">Harga</a></li>
+        <li><a href="#faq" class="hover:text-[#f59e0b]">FAQ</a></li>
+      </ul>
+
+      <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo%2C%20saya%20tertarik%20dengan%20Kellar%20Abit." class="hidden rounded-full bg-[#7f1d1d] px-5 py-2 text-sm font-bold text-white transition hover:bg-[#671515] md:inline-block">Pesan Sekarang</a>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-black px-4 py-3 md:hidden">
+      <div class="flex flex-col gap-3 text-sm font-semibold text-white">
+        <a href="#manfaat">Manfaat</a>
+        <a href="#komposisi">Komposisi</a>
+        <a href="#alasan">Alasan</a>
+        <a href="#harga">Harga</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo%2C%20saya%20tertarik%20dengan%20Kellar%20Abit." class="mt-1 rounded-full bg-[#7f1d1d] px-5 py-2 text-center text-white">Pesan Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-2 md:items-center md:px-6 md:py-20">
+      <div data-aos="fade-up">
+        <p class="mb-4 inline-block rounded-full bg-[#991b1b]/30 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#fca5a5]">Promo Vitalitas Pria</p>
+        <h1 class="text-3xl font-extrabold leading-tight text-white md:text-5xl">Kellar Abit: Obat Kuat Pria Tahan Lama, Aman dan Nyaman Digunakan</h1>
+        <p class="mt-4 text-base text-white/75 md:text-lg">Formula herbal modern untuk membantu menjaga stamina, kepercayaan diri, dan performa pria dewasa. Cocok untuk Anda yang ingin kembali bertenaga.</p>
+
+        <div class="mt-6 grid gap-3 text-sm text-white md:grid-cols-2">
+          <p class="dark-card rounded-xl p-3">Mendukung stamina harian</p>
+          <p class="dark-card rounded-xl p-3">Membantu menunda ejakulasi dini</p>
+          <p class="dark-card rounded-xl p-3">Membantu menjaga kebugaran vital pria</p>
+          <p class="dark-card rounded-xl p-3">Meningkatkan rasa percaya diri</p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo%2C%20saya%20mau%20order%20Kellar%20Abit." class="rounded-full bg-[#7f1d1d] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#671515]">Pesan via WhatsApp</a>
+          <a href="#harga" class="rounded-full border border-white/30 px-6 py-3 text-sm font-bold text-white/90">Lihat Harga Promo</a>
+        </div>
+
+        <img src="./asset/bpom.png" alt="Label BPOM" class="mt-6 h-auto w-48 md:w-56">
+      </div>
+
+      <div data-aos="zoom-in" class="hero-shadow rounded-3xl bg-gradient-to-b from-[#332015] to-[#1a1210] p-6">
+        <img src="./asset/Staminup-569x1024.png" alt="Produk Kellar Abit" class="mx-auto h-auto w-64 md:w-72">
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-8 md:px-6" data-aos="fade-up">
+      <div class="glass rounded-3xl border border-white/15 p-6 md:p-8">
+        <h2 class="text-2xl font-extrabold text-white md:text-3xl">Apa Kata Mereka Tentang Kellar Abit</h2>
+        <p class="mt-2 text-white/75">Testimoni pengguna yang merasakan peningkatan vitalitas dan energi.</p>
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          <article class="rounded-2xl bg-white/10 p-5 text-white">
+            <p class="text-sm text-white/80">"Baru konsumsi satu kapsul, performa terasa lebih stabil dan tidak gampang lelah."</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="./asset/Section-Testi1-093-User-Img-1.png" alt="Pengguna" class="h-10 w-10 rounded-full">
+              <div>
+                <p class="text-sm font-bold">Miss Christine</p>
+                <p class="text-xs text-white/60">Anonym</p>
+              </div>
+            </div>
+          </article>
+          <article class="rounded-2xl bg-white/10 p-5 text-white">
+            <p class="text-sm text-white/80">"Lebih percaya diri dan energi tetap terjaga, terutama setelah aktivitas kerja padat."</p>
+            <div class="mt-4 flex items-center gap-3">
+              <img src="./asset/Section-Testi1-093-User-Img-1.png" alt="Pengguna" class="h-10 w-10 rounded-full">
+              <div>
+                <p class="text-sm font-bold">Andi, 39 Tahun</p>
+                <p class="text-xs text-white/60">Pengguna Rutin</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="manfaat" class="mx-auto max-w-6xl px-4 py-12 md:px-6" data-aos="fade-up">
+      <h2 class="text-center text-2xl font-extrabold text-white md:text-3xl">Khasiat dan Manfaat untuk Vitalitas Anda</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl bg-[#111215] p-5 text-white">Membantu meningkatkan stamina tubuh pria.</div>
+        <div class="rounded-2xl bg-[#111215] p-5 text-white">Membantu mengurangi risiko ejakulasi dini.</div>
+        <div class="rounded-2xl bg-[#111215] p-5 text-white">Mendukung rasa percaya diri saat berhubungan.</div>
+        <div class="rounded-2xl bg-[#111215] p-5 text-white">Membantu menjaga performa dan energi harian.</div>
+      </div>
+
+      <div class="mt-8 grid items-center gap-6 rounded-3xl bg-white/8 p-6 md:grid-cols-2">
+        <img src="./asset/staminup-intro-1.png" alt="Visual Produk" class="mx-auto w-64">
+        <div>
+          <h3 class="text-xl font-bold text-white">Cocok untuk Anda yang ingin:</h3>
+          <ul class="mt-3 space-y-2 text-sm text-white/80">
+            <li>- Menjaga energi tetap prima sepanjang hari.</li>
+            <li>- Memiliki performa yang lebih stabil saat bersama pasangan.</li>
+            <li>- Mengurangi rasa cemas karena performa menurun.</li>
+            <li>- Kembali merasa bugar, percaya diri, dan siap setiap saat.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="komposisi" class="mx-auto max-w-6xl px-4 py-12 md:px-6" data-aos="fade-up">
+      <div class="mb-8 text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-[#f59e0b]">Komposisi Herbal</p>
+        <h2 class="mt-2 text-2xl font-extrabold text-white md:text-3xl">Komposisi Kellar Abit</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-sm text-white/70 md:text-base">Diracik dari kombinasi bahan alami yang umum digunakan untuk mendukung stamina, daya tahan tubuh, dan vitalitas pria dewasa.</p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white">
+          <img src="./asset/Epimedium.png" alt="Epimedium" class="mb-4 h-16 w-16 object-contain">
+          <h3 class="text-base font-bold">Epimedium</h3>
+          <p class="mt-2 text-sm text-white/75">Membantu menjaga energi pria dan mendukung performa agar tetap stabil.</p>
+        </article>
+
+        <article class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white">
+          <img src="./asset/ginseng.png" alt="Ginseng" class="mb-4 h-16 w-16 object-contain">
+          <h3 class="text-base font-bold">Ginseng</h3>
+          <p class="mt-2 text-sm text-white/75">Dikenal sebagai herbal adaptogen untuk membantu daya tahan tubuh dan stamina.</p>
+        </article>
+
+        <article class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white">
+          <img src="./asset/Putih-Telur.png" alt="Ekstrak Putih Telur" class="mb-4 h-16 w-16 object-contain">
+          <h3 class="text-base font-bold">Ekstrak Putih Telur</h3>
+          <p class="mt-2 text-sm text-white/75">Sumber protein yang membantu pemeliharaan kebugaran dan pemulihan tubuh.</p>
+        </article>
+
+        <article class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white">
+          <img src="./asset/Sayuran-Hijau.png" alt="Ekstrak Sayuran Hijau" class="mb-4 h-16 w-16 object-contain">
+          <h3 class="text-base font-bold">Ekstrak Sayuran Hijau</h3>
+          <p class="mt-2 text-sm text-white/75">Mendukung asupan mikronutrien untuk membantu tubuh tetap fit setiap hari.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="alasan" class="mx-auto max-w-6xl px-4 py-10 md:px-6" data-aos="fade-up">
+      <h2 class="text-center text-2xl font-extrabold text-white md:text-3xl">Alasan Memilih Kellar Abit</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white/85">Formula herbal pilihan dengan proses produksi modern.</div>
+        <div class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white/85">Mudah dikonsumsi, praktis untuk rutinitas harian.</div>
+        <div class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white/85">Didukung layanan pemesanan cepat via WhatsApp.</div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-12 md:px-6" data-aos="fade-up">
+      <div class="mb-8 text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#f59e0b]">Testimoni Pengguna</p>
+        <h2 class="mt-2 text-2xl font-extrabold text-white md:text-3xl">Mereka Sudah Mencoba, Ini Hasilnya</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-sm text-white/70 md:text-base">Cuplikan pengalaman pengguna setelah rutin memakai Kellar Abit sebagai pendukung vitalitas harian.</p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white">
+          <p class="text-[#f59e0b]">★★★★★</p>
+          <p class="mt-3 text-sm text-white/80">"Dulu cepat drop, sekarang lebih tahan dan tidak gampang kehilangan fokus saat momen penting."</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="./asset/Section-Testi1-093-User-Img-1.png" alt="Testimoni pengguna" class="h-10 w-10 rounded-full">
+            <div>
+              <p class="text-sm font-bold">Rian, 37 Tahun</p>
+              <p class="text-xs text-white/60">Karyawan Swasta</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white">
+          <p class="text-[#f59e0b]">★★★★★</p>
+          <p class="mt-3 text-sm text-white/80">"Badan tetap fit walau aktivitas padat. Sekarang lebih percaya diri bersama pasangan."</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="./asset/Section-Testi1-093-User-Img-1.png" alt="Testimoni pengguna" class="h-10 w-10 rounded-full">
+            <div>
+              <p class="text-sm font-bold">Hendra, 42 Tahun</p>
+              <p class="text-xs text-white/60">Wiraswasta</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-white/15 bg-white/8 p-5 text-white">
+          <p class="text-[#f59e0b]">★★★★★</p>
+          <p class="mt-3 text-sm text-white/80">"Baru beberapa kali konsumsi sudah kerasa bedanya. Energi lebih stabil, mood juga lebih baik."</p>
+          <div class="mt-4 flex items-center gap-3">
+            <img src="./asset/Section-Testi1-093-User-Img-1.png" alt="Testimoni pengguna" class="h-10 w-10 rounded-full">
+            <div>
+              <p class="text-sm font-bold">Dimas, 34 Tahun</p>
+              <p class="text-xs text-white/60">Pengusaha</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="kerugian" class="mx-auto max-w-6xl px-4 py-10 md:px-6" data-aos="fade-up">
+      <div class="rounded-3xl border border-red-400/20 bg-[#1a0b0b] p-6 md:p-8">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-red-300">Peringatan</p>
+        <h2 class="mt-2 text-2xl font-extrabold text-white md:text-3xl">Kerugian Jika Tidak Membeli Sekarang</h2>
+        <p class="mt-3 text-sm text-white/75 md:text-base">Menunda keputusan bisa membuat Anda kehilangan momentum dan kesempatan harga terbaik.</p>
+
+        <div class="mt-6 grid gap-3 md:grid-cols-2">
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/85">Harga promo berakhir dan kembali ke harga normal.</div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/85">Masalah stamina dan percaya diri berpotensi berlanjut.</div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/85">Anda kehilangan kesempatan dapat stok batch promo hari ini.</div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/85">Semakin lama menunda, semakin lama pula hasil yang Anda harapkan tertunda.</div>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo%2C%20saya%20siap%20order%20Kellar%20Abit%20sekarang." class="mt-6 inline-block rounded-full bg-red-600 px-7 py-3 text-sm font-extrabold text-white transition hover:bg-red-700">Saya Tidak Mau Kehilangan Promo</a>
+      </div>
+    </section>
+
+    <section id="harga" class="mx-auto max-w-6xl px-4 py-12 md:px-6" data-aos="zoom-in">
+      <div class="rounded-3xl bg-gradient-to-r from-[#7f1d1d] to-[#d97706] p-[1px]">
+        <div class="rounded-3xl bg-[#140f10] p-6 text-white md:p-10">
+          <p class="text-sm uppercase tracking-[0.2em] text-white/70">Harga Promo Terbatas</p>
+          <h2 class="mt-2 text-2xl font-extrabold md:text-4xl">Ambil Kellar Abit Sekarang</h2>
+          <p class="mt-3 text-white/80">Jangan tunggu sampai harga kembali normal. Promo berakhir dalam:</p>
+
+          <div class="mt-5 inline-flex gap-3 rounded-2xl bg-white/10 p-4 text-center">
+            <div>
+              <p id="hh" class="text-3xl font-extrabold">00</p>
+              <p class="text-xs text-white/70">Jam</p>
+            </div>
+            <div>
+              <p id="mm" class="text-3xl font-extrabold">00</p>
+              <p class="text-xs text-white/70">Menit</p>
+            </div>
+            <div>
+              <p id="ss" class="text-3xl font-extrabold">00</p>
+              <p class="text-xs text-white/70">Detik</p>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-end gap-4">
+            <div>
+              <p class="text-sm text-white/60">Harga normal</p>
+              <p class="text-xl line-through text-white/70">Rp350.000</p>
+            </div>
+            <div>
+              <p class="text-sm text-white/60">Harga promo hari ini</p>
+              <p class="text-3xl font-extrabold text-[#ffd089]">Rp199.000</p>
+            </div>
+          </div>
+
+          <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo%2C%20saya%20ingin%20order%20Kellar%20Abit%20harga%20promo." class="mt-6 inline-block rounded-full bg-[#ffd089] px-7 py-3 text-sm font-extrabold text-[#5a1600]">Ya, Saya Mau Pesan</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="mx-auto max-w-6xl px-4 py-10 md:px-6" data-aos="fade-up">
+      <h2 class="text-center text-2xl font-extrabold text-white md:text-3xl">Pertanyaan yang Sering Ditanyakan</h2>
+      <div class="mt-8 grid items-start gap-6 md:grid-cols-2">
+        <div class="space-y-3">
+          <details class="rounded-xl border border-white/15 bg-white/8 p-4 text-white" open>
+            <summary class="cursor-pointer font-semibold">Bagaimana cara konsumsinya?</summary>
+            <p class="mt-2 text-sm text-white/75">Ikuti anjuran konsumsi pada kemasan produk. Konsumsi teratur untuk hasil optimal.</p>
+          </details>
+          <details class="rounded-xl border border-white/15 bg-white/8 p-4 text-white">
+            <summary class="cursor-pointer font-semibold">Berapa batas usia konsumsi?</summary>
+            <p class="mt-2 text-sm text-white/75">Disarankan untuk pria dewasa. Untuk kondisi medis khusus, konsultasikan terlebih dahulu.</p>
+          </details>
+          <details class="rounded-xl border border-white/15 bg-white/8 p-4 text-white">
+            <summary class="cursor-pointer font-semibold">Apakah bisa kirim ke seluruh Indonesia?</summary>
+            <p class="mt-2 text-sm text-white/75">Ya, pengiriman tersedia ke berbagai kota dengan dukungan ekspedisi terpercaya.</p>
+          </details>
+        </div>
+        <img src="./asset/Section-106-FAQ-Img-1.png" alt="FAQ Kellar Abit" class="mx-auto w-72 md:w-80">
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 pb-16 md:px-6" data-aos="fade-up">
+      <div class="rounded-3xl bg-[#111215] p-6 text-white md:p-10">
+        <h2 class="text-2xl font-extrabold md:text-3xl">Punya Pertanyaan? Hubungi Kami</h2>
+        <div class="mt-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center gap-3">
+            <img src="./asset/Profilebak2.png" alt="Owner" class="h-14 w-14 rounded-full object-cover">
+            <div>
+              <p class="font-bold">Thomas Knol</p>
+              <p class="text-sm text-white/70">Owner Kellar Abit</p>
+            </div>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=62812345678&text=Halo%20tim%20Kellar%20Abit,%20saya%20ingin%20konsultasi." class="rounded-full bg-white px-6 py-3 text-center text-sm font-extrabold text-[#111215]">Chat WhatsApp Sekarang</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 650, once: true, offset: 60 });
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    const end = Date.now() + (6 * 60 * 60 + 37 * 60 + 29) * 1000;
+
+    function updateCountdown() {
+      const diff = Math.max(0, end - Date.now());
+      const total = Math.floor(diff / 1000);
+      const h = String(Math.floor(total / 3600)).padStart(2, "0");
+      const m = String(Math.floor((total % 3600) / 60)).padStart(2, "0");
+      const s = String(total % 60).padStart(2, "0");
+
+      document.getElementById("hh").textContent = h;
+      document.getElementById("mm").textContent = m;
+      document.getElementById("ss").textContent = s;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

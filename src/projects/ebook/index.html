@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CopyMaster - Belajar Copywriting yang Menjual</title>
+  <meta name="description" content="CopyMaster: ebook copywriting praktis untuk meningkatkan closing dan omzet bisnis online.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f0e8;
+      --paper-dark: #ece3d8;
+      --ink: #1f1d2a;
+      --muted: #645f73;
+      --brand: #bf4e30;
+      --brand-deep: #9c3d23;
+      --accent: #d8a75b;
+      --night: #11141e;
+      --card: #fffaf4;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 94% 4%, rgba(191, 78, 48, 0.15), transparent 24%),
+        radial-gradient(circle at 6% 16%, rgba(216, 167, 91, 0.16), transparent 20%),
+        linear-gradient(180deg, var(--paper) 0%, #faf7f2 52%, var(--paper-dark) 100%);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Playfair Display", serif;
+      letter-spacing: -0.02em;
+    }
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .card-soft {
+      background: var(--card);
+      border: 1px solid rgba(31, 29, 42, 0.08);
+      box-shadow: 0 18px 40px rgba(31, 29, 42, 0.08);
+    }
+
+    .headline-line {
+      display: inline-block;
+      width: 52px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand), var(--accent));
+    }
+
+    .hero-grid-bg {
+      background-image:
+        linear-gradient(rgba(31, 29, 42, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 29, 42, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .in {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: rise 0.7s ease forwards;
+    }
+
+    .in2 { animation-delay: 0.12s; }
+    .in3 { animation-delay: 0.24s; }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .book-float {
+      animation: floatY 4.6s ease-in-out infinite;
+    }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell pt-6 pb-4 in">
+    <div class="card-soft rounded-2xl px-4 py-3 flex items-center justify-between">
+      <img src="./asset/CopyMaster.png" alt="CopyMaster" class="h-8 md:h-9 w-auto">
+      <a href="#harga" class="rounded-xl bg-[var(--brand)] px-4 py-2 text-sm font-bold text-white hover:bg-[var(--brand-deep)] transition-colors">Beli Sekarang</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell pt-8 pb-14 md:pb-20">
+      <div class="hero-grid-bg rounded-3xl p-6 md:p-10 lg:p-12 grid gap-10 lg:grid-cols-2 items-center">
+        <div class="in in2">
+          <span class="inline-flex items-center gap-2 rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-bold tracking-wide text-[var(--brand-deep)]">
+            <span class="h-2 w-2 rounded-full bg-[var(--brand)]"></span>
+            eBook Copywriting Premium
+          </span>
+          <h1 class="mt-4 text-4xl md:text-6xl leading-tight">Kuasai copywriting untuk menaikkan omzet bisnis online</h1>
+          <p class="mt-5 text-[var(--muted)] md:text-lg">Materi langsung praktik, bukan teori berputar. Fokus ke copy yang bikin orang paham, percaya, lalu beli.</p>
+          <ul class="mt-6 space-y-2 text-sm md:text-base text-[var(--muted)]">
+            <li>Template headline dan offer siap pakai</li>
+            <li>Rumus copy untuk iklan, landing page, dan chat closing</li>
+            <li>Checklist revisi agar copy lebih tajam</li>
+          </ul>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#harga" class="rounded-xl bg-[var(--brand)] px-6 py-3 font-bold text-white hover:bg-[var(--brand-deep)] transition-colors">Ambil CopyMaster</a>
+            <a href="#materi" class="rounded-xl border border-[var(--ink)]/20 bg-white px-6 py-3 font-bold hover:bg-[var(--ink)]/5 transition-colors">Lihat Materi</a>
+          </div>
+        </div>
+        <div class="in in3 flex justify-center">
+          <img src="./asset/Cover2-boo-1.png" alt="Cover CopyMaster" class="book-float w-64 md:w-80 rounded-2xl shadow-2xl">
+        </div>
+      </div>
+    </section>
+
+    <section class="shell pb-12 md:pb-16">
+      <div class="card-soft rounded-3xl p-6 md:p-9">
+        <p class="text-center font-bold text-xl md:text-3xl">Dipercaya 6309+ pembaca</p>
+        <p class="text-center text-[var(--muted)] mt-2">Dipakai pebisnis, freelancer, dan marketer untuk memperbaiki performa konversi.</p>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 items-center">
+          <img src="./asset/logo-3.png" alt="Logo" class="mx-auto h-8 w-auto opacity-80">
+          <img src="./asset/logo-3.png" alt="Logo" class="mx-auto h-8 w-auto opacity-80">
+          <img src="./asset/logo-3.png" alt="Logo" class="mx-auto h-8 w-auto opacity-80">
+          <img src="./asset/logo-3.png" alt="Logo" class="mx-auto h-8 w-auto opacity-80">
+        </div>
+      </div>
+    </section>
+
+    <section class="shell pb-14 md:pb-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="headline-line"></span>
+        <h2 class="mt-3 text-3xl md:text-5xl">Apa kata mereka tentang CopyMaster</h2>
+      </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <article class="card-soft rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <img src="./asset/avatar-1.png" alt="Floyd Miles" class="h-12 w-12 rounded-full">
+            <div>
+              <p class="font-bold">Floyd Miles</p>
+              <p class="text-sm text-[var(--muted)]">Web Developer</p>
+            </div>
+          </div>
+          <p class="mt-4 text-[var(--muted)]">"Setelah pakai kerangka dari ebook ini, copy landing page saya jauh lebih jelas dan conversion naik."</p>
+        </article>
+        <article class="card-soft rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <img src="./asset/avatar-1-1.png" alt="Testimoni" class="h-12 w-12 rounded-full">
+            <div>
+              <p class="font-bold">Floyd Miles</p>
+              <p class="text-sm text-[var(--muted)]">Business Owner</p>
+            </div>
+          </div>
+          <p class="mt-4 text-[var(--muted)]">"Materinya to the point. Tinggal ikuti, edit sesuai produk, langsung dipakai."</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-[#efe6da] py-14 md:py-20 border-y border-[var(--ink)]/10">
+      <div class="shell grid gap-10 lg:grid-cols-2 items-center">
+        <div>
+          <span class="headline-line"></span>
+          <h2 class="mt-3 text-3xl md:text-5xl">Masih mengalami masalah ini?</h2>
+          <ul class="mt-6 space-y-3 text-[var(--muted)]">
+            <li class="card-soft rounded-xl p-4">Sulit menulis copy yang membuat orang beli</li>
+            <li class="card-soft rounded-xl p-4">Iklan jalan terus tapi closing kecil</li>
+            <li class="card-soft rounded-xl p-4">Konten banyak, conversion tetap datar</li>
+          </ul>
+        </div>
+        <div class="flex justify-center">
+          <img src="./asset/Cover2-boo-1.png" alt="Buku" class="w-60 md:w-72">
+        </div>
+      </div>
+    </section>
+
+    <section class="shell py-14 md:py-20 grid gap-10 lg:grid-cols-2 items-center">
+      <div>
+        <span class="headline-line"></span>
+        <h2 class="mt-3 text-3xl md:text-5xl">Rahasia Sukses Copywriting</h2>
+        <p class="mt-4 text-[var(--muted)]">Satu paket materi praktis untuk bikin copy yang meyakinkan, relevan, dan lebih mudah closing.</p>
+        <ul class="mt-5 grid gap-2 text-[var(--muted)]">
+          <li>15 eBook copywriting praktis</li>
+          <li>Contoh kalimat siap adaptasi</li>
+          <li>Sistem evaluasi copy sebelum publish</li>
+        </ul>
+      </div>
+      <div class="flex justify-center">
+        <img src="./asset/Cover2-boo-1.png" alt="Produk" class="w-56 md:w-72">
+      </div>
+    </section>
+
+    <section class="bg-[var(--night)] text-white py-14 md:py-20">
+      <div class="shell grid gap-10 lg:grid-cols-2 items-center">
+        <div>
+          <span class="headline-line"></span>
+          <h2 class="mt-3 text-3xl md:text-5xl">Tentang Penulis</h2>
+          <p class="mt-4 text-white/75">Robert Downey Jr aktif membantu bisnis online menyusun pesan yang tepat agar lebih mudah dipercaya pasar.</p>
+          <p class="mt-3 font-bold text-[var(--accent)]">Robert Downey Jr</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="./asset/penulis.png" alt="Penulis" class="w-72 md:w-96 rounded-3xl border border-white/20">
+        </div>
+      </div>
+    </section>
+
+    <section id="materi" class="shell py-14 md:py-20">
+      <div class="text-center">
+        <span class="headline-line"></span>
+        <h2 class="mt-3 text-3xl md:text-5xl">Semua Materi CopyMaster</h2>
+      </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <article class="card-soft rounded-2xl p-5"><h3 class="text-2xl">Modul #1</h3><ul class="mt-3 text-[var(--muted)] text-sm space-y-1"><li>Dasar Copywriting</li><li>Elemen Penting Copywriting</li><li>Trik Menulis Copywriting</li></ul></article>
+        <article class="card-soft rounded-2xl p-5"><h3 class="text-2xl">Modul #2</h3><ul class="mt-3 text-[var(--muted)] text-sm space-y-1"><li>Dasar Copywriting</li><li>Elemen Penting Copywriting</li><li>Trik Menulis Copywriting</li></ul></article>
+        <article class="card-soft rounded-2xl p-5"><h3 class="text-2xl">Modul #3</h3><ul class="mt-3 text-[var(--muted)] text-sm space-y-1"><li>Dasar Copywriting</li><li>Elemen Penting Copywriting</li><li>Trik Menulis Copywriting</li></ul></article>
+        <article class="card-soft rounded-2xl p-5"><h3 class="text-2xl">Modul #4</h3><ul class="mt-3 text-[var(--muted)] text-sm space-y-1"><li>Dasar Copywriting</li><li>Elemen Penting Copywriting</li><li>Trik Menulis Copywriting</li></ul></article>
+        <article class="card-soft rounded-2xl p-5"><h3 class="text-2xl">Modul #5</h3><ul class="mt-3 text-[var(--muted)] text-sm space-y-1"><li>Dasar Copywriting</li><li>Elemen Penting Copywriting</li><li>Trik Menulis Copywriting</li></ul></article>
+        <article class="card-soft rounded-2xl p-5"><h3 class="text-2xl">Modul #6</h3><ul class="mt-3 text-[var(--muted)] text-sm space-y-1"><li>Dasar Copywriting</li><li>Elemen Penting Copywriting</li><li>Trik Menulis Copywriting</li></ul></article>
+      </div>
+    </section>
+
+    <section class="bg-[#efe6da] py-14 md:py-20 border-y border-[var(--ink)]/10">
+      <div class="shell">
+        <div class="text-center">
+          <span class="headline-line"></span>
+          <h2 class="mt-3 text-3xl md:text-5xl">CopyMaster cocok untuk siapa saja</h2>
+        </div>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="card-soft rounded-2xl p-5"><img src="./asset/icon-1.png" alt="Facebook Marketer" class="h-14 w-14"><h3 class="mt-3 text-xl">Facebook Marketer</h3></div>
+          <div class="card-soft rounded-2xl p-5"><img src="./asset/icon-4.png" alt="Agency Owner" class="h-14 w-14"><h3 class="mt-3 text-xl">Agency Owner</h3></div>
+          <div class="card-soft rounded-2xl p-5"><img src="./asset/icon-2.png" alt="Freelancer" class="h-14 w-14"><h3 class="mt-3 text-xl">Freelancer</h3></div>
+          <div class="card-soft rounded-2xl p-5"><img src="./asset/icon-1.png" alt="Pebisnis UMKM" class="h-14 w-14"><h3 class="mt-3 text-xl">Pebisnis UMKM</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell py-14 md:py-20 grid gap-10 lg:grid-cols-2 items-center">
+      <div class="flex justify-center order-2 lg:order-1">
+        <img src="./asset/Alasan-ebook.png" alt="Alasan beli" class="w-64 md:w-80 rounded-2xl">
+      </div>
+      <div class="order-1 lg:order-2">
+        <span class="headline-line"></span>
+        <h2 class="mt-3 text-3xl md:text-5xl">Kenapa harus beli CopyMaster?</h2>
+        <div class="mt-6 space-y-3">
+          <div class="card-soft rounded-xl p-4 flex gap-3"><img src="./asset/icon-ebook-1.png" alt="Icon" class="h-10 w-10"><div><p class="font-bold">Meningkatkan Penghasilan</p><p class="text-sm text-[var(--muted)]">Copy yang tepat membuat offer lebih kuat dan mudah dipahami.</p></div></div>
+          <div class="card-soft rounded-xl p-4 flex gap-3"><img src="./asset/icon-ebook-2.png" alt="Icon" class="h-10 w-10"><div><p class="font-bold">Meningkatkan Closing</p><p class="text-sm text-[var(--muted)]">Susun pesan yang mendorong orang mengambil keputusan beli.</p></div></div>
+          <div class="card-soft rounded-xl p-4 flex gap-3"><img src="./asset/icon-ebook-3.png" alt="Icon" class="h-10 w-10"><div><p class="font-bold">Pelanggan Loyal Baru</p><p class="text-sm text-[var(--muted)]">Bangun hubungan jangka panjang lewat komunikasi yang relevan.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[var(--night)] py-14 md:py-20">
+      <div class="shell text-center text-white">
+        <span class="headline-line"></span>
+        <h2 class="mt-3 text-3xl md:text-5xl">Bukti dari pembaca CopyMaster</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-4">
+          <img src="./asset/image-28.png" alt="Screenshot testimoni" class="rounded-2xl w-full border border-white/15">
+          <img src="./asset/image-28.png" alt="Screenshot testimoni" class="rounded-2xl w-full border border-white/15">
+          <img src="./asset/image-28.png" alt="Screenshot testimoni" class="rounded-2xl w-full border border-white/15">
+          <img src="./asset/image-28.png" alt="Screenshot testimoni" class="rounded-2xl w-full border border-white/15">
+        </div>
+      </div>
+    </section>
+
+    <section id="harga" class="shell py-14 md:py-20">
+      <div class="card-soft rounded-3xl p-8 md:p-12">
+        <div class="grid gap-8 lg:grid-cols-2 items-center">
+          <div>
+            <span class="headline-line"></span>
+            <h2 class="mt-3 text-3xl md:text-5xl">Harga CopyMaster</h2>
+            <p class="mt-4 text-[var(--muted)]">Akses lengkap semua materi dengan harga promo terbatas.</p>
+          </div>
+          <div class="text-left lg:text-right">
+            <p class="text-2xl md:text-3xl line-through text-[var(--muted)]">Rp 845.000</p>
+            <p class="text-4xl md:text-6xl font-extrabold text-[var(--brand)]">Rp 445.000</p>
+          </div>
+        </div>
+        <ul class="mt-7 grid sm:grid-cols-2 gap-2 text-[var(--muted)]">
+          <li>Dasar Copywriting</li>
+          <li>Elemen Penting Copywriting</li>
+          <li>Trik Menulis Copywriting</li>
+          <li>Template yang siap dipakai</li>
+        </ul>
+        <a href="#" class="mt-8 inline-block rounded-xl bg-[var(--brand)] px-7 py-3 font-bold text-white hover:bg-[var(--brand-deep)] transition-colors">Beli Sekarang</a>
+      </div>
+    </section>
+
+    <section class="shell pb-14 md:pb-20">
+      <div class="text-center">
+        <span class="headline-line"></span>
+        <h2 class="mt-3 text-3xl md:text-5xl">Kerugian jika tidak ambil sekarang</h2>
+      </div>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="card-soft rounded-xl p-4"><p class="font-bold">Kerugian 01</p><p class="text-sm text-[var(--muted)]">Peluang closing hilang karena copy belum tajam.</p></div>
+        <div class="card-soft rounded-xl p-4"><p class="font-bold">Kerugian 02</p><p class="text-sm text-[var(--muted)]">Budget iklan boros karena pesan kurang tepat.</p></div>
+        <div class="card-soft rounded-xl p-4"><p class="font-bold">Kerugian 03</p><p class="text-sm text-[var(--muted)]">Brand susah menonjol di pasar ramai.</p></div>
+        <div class="card-soft rounded-xl p-4"><p class="font-bold">Kerugian 04</p><p class="text-sm text-[var(--muted)]">Leads datang tetapi conversion rendah.</p></div>
+        <div class="card-soft rounded-xl p-4"><p class="font-bold">Kerugian 05</p><p class="text-sm text-[var(--muted)]">Proses jualan lebih lama dari seharusnya.</p></div>
+        <div class="card-soft rounded-xl p-4"><p class="font-bold">Kerugian 06</p><p class="text-sm text-[var(--muted)]">Pertumbuhan omzet jadi lebih lambat.</p></div>
+      </div>
+    </section>
+
+    <section class="shell pb-14 md:pb-20">
+      <div class="rounded-3xl overflow-hidden bg-[#2a3042] text-white grid lg:grid-cols-2 items-center">
+        <div class="p-8 md:p-12">
+          <h3 class="text-3xl md:text-5xl">Siap upgrade skill copywriting Anda?</h3>
+          <p class="mt-4 text-white/75">Mulai dari materi yang bisa langsung dipakai untuk campaign Anda minggu ini.</p>
+          <a href="#harga" class="mt-6 inline-block rounded-xl bg-[var(--accent)] px-6 py-3 font-bold text-[var(--night)]">Beli Sekarang</a>
+        </div>
+        <img src="./asset/cta.png" alt="Visual CTA" class="w-full h-full object-cover">
+      </div>
+    </section>
+
+    <section class="shell pb-16 text-center">
+      <img src="./asset/Money-Back-Guarantee-1-1.png" alt="Money back guarantee" class="mx-auto w-44 md:w-52">
+      <h3 class="mt-4 text-2xl md:text-4xl">Garansi 100% Uang Kembali</h3>
+      <p class="mt-3 text-[var(--muted)]">Jika materi tidak sesuai kebutuhan Anda pada periode garansi, dana bisa dikembalikan sesuai ketentuan.</p>
+    </section>
+  </main>
+
+  <footer class="bg-[var(--night)] text-white py-12">
+    <div class="shell text-center">
+      <img src="./asset/ralpgh.png" alt="Creator" class="h-20 w-20 rounded-full object-cover mx-auto border-4 border-white/20">
+      <p class="mt-4 text-xl font-bold">CopyMaster Team</p>
+      <p class="text-white/65">Framework copywriting praktis untuk growth bisnis online.</p>
+    </div>
+  </footer>
+</body>
+</html>

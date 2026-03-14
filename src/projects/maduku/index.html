@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maduku - Madu Penambah Nafsu Makan</title>
+  <meta name="description" content="Maduku hadir dengan madu asli pilihan untuk bantu nafsu makan, stamina, dan kebugaran harian Anda." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    :root {
+      --bg: #fff8eb;
+      --ink: #4d2a08;
+      --brand: #f38519;
+      --brand-dark: #d16500;
+      --olive: #869401;
+      --coffee: #332209;
+      --soft: #ffe4be;
+      --card: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Nunito Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, #fff1d8 0%, rgba(255, 241, 216, 0) 40%),
+        radial-gradient(circle at 90% 20%, #ffe6bf 0%, rgba(255, 230, 191, 0) 35%),
+        var(--bg);
+    }
+
+    .font-title { font-family: "Baloo 2", cursive; }
+    .font-elegant { font-family: "Playfair Display", serif; }
+    .glass { backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.85); }
+    .honey-shadow { box-shadow: 0 28px 70px rgba(124, 67, 11, 0.2); }
+  </style>
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-amber-200/70 glass">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+      <a href="#home" class="font-title text-2xl font-extrabold text-amber-700">
+        <img src="./asset/logo.png" alt="Maduku" class="h-8 w-auto" />
+      </a>
+
+      <button id="menuBtn" class="md:hidden" aria-label="Buka menu">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <ul class="hidden items-center gap-6 text-sm font-bold md:flex">
+        <li><a href="#manfaat" class="hover:text-amber-700">Manfaat</a></li>
+        <li><a href="#testimoni" class="hover:text-amber-700">Testimoni</a></li>
+        <li><a href="#harga" class="hover:text-amber-700">Harga</a></li>
+        <li><a href="#faq" class="hover:text-amber-700">FAQ</a></li>
+        <li><a href="#harga" class="rounded-full bg-amber-500 px-4 py-2 text-white hover:bg-amber-600">Beli Sekarang</a></li>
+      </ul>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-amber-100 bg-white md:hidden">
+      <a href="#manfaat" class="block px-4 py-3">Manfaat</a>
+      <a href="#testimoni" class="block px-4 py-3">Testimoni</a>
+      <a href="#harga" class="block px-4 py-3">Harga</a>
+      <a href="#faq" class="block px-4 py-3">FAQ</a>
+    </div>
+  </header>
+
+  <main id="home" class="mx-auto max-w-6xl px-4 md:px-6">
+    <section class="grid items-center gap-10 py-12 md:grid-cols-2 md:py-20">
+      <div data-aos="fade-right">
+        <img src="./asset/logo.png" alt="Maduku" class="h-10 w-auto" />
+        <h1 class="font-title mt-4 text-4xl font-extrabold leading-tight md:text-5xl">Madu Penambah Nafsu Makan<br/>100% dari Madu Asli</h1>
+        <p class="mt-5 text-amber-900/80">Maduku membantu menjaga stamina, meningkatkan selera makan, dan mendukung kebugaran keluarga dengan rasa madu yang alami.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#harga" class="rounded-full bg-amber-500 px-6 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-amber-600">Beli Sekarang</a>
+          <a href="#proses" class="rounded-full border border-amber-400 px-6 py-3 font-bold text-amber-700">Lihat Proses Produksi</a>
+        </div>
+      </div>
+
+      <div data-aos="zoom-in" class="relative">
+        <div class="absolute -left-3 -top-3 h-24 w-24 rounded-3xl bg-amber-300/40"></div>
+        <img src="./asset/imgmaslahmadu.png" alt="Madu asli" class="honey-shadow relative mx-auto w-full max-w-md rounded-[2rem] bg-white p-3" />
+      </div>
+    </section>
+
+    <section class="rounded-3xl bg-white p-6 shadow-sm" data-aos="fade-up">
+      <h2 class="font-title text-center text-2xl">Lebih dari 2099+ konsumen menyukai Maduku</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <article class="rounded-2xl bg-amber-50 p-4">
+          <div class="flex items-center gap-3">
+            <img class="h-12 w-12 rounded-full" src="./asset/Mask-Group_7@3x.png" alt="Pelanggan" />
+            <div><p class="font-bold">William</p><p class="text-xs text-amber-800/70">Pelanggan Maduku</p></div>
+          </div>
+          <p class="mt-3 text-sm text-amber-900/80">Pelayanannya bagus, sangat profesional dan produknya cocok untuk konsumsi rutin.</p>
+        </article>
+        <article class="rounded-2xl bg-amber-50 p-4">
+          <div class="flex items-center gap-3">
+            <img class="h-12 w-12 rounded-full" src="./asset/Mask-Group_7@3x.png" alt="Pelanggan" />
+            <div><p class="font-bold">Dian</p><p class="text-xs text-amber-800/70">Pelanggan Maduku</p></div>
+          </div>
+          <p class="mt-3 text-sm text-amber-900/80">Anak jadi lebih lahap makan, dan rasanya tetap enak tanpa pemanis buatan.</p>
+        </article>
+        <article class="rounded-2xl bg-amber-50 p-4">
+          <div class="flex items-center gap-3">
+            <img class="h-12 w-12 rounded-full" src="./asset/Mask-Group_7@3x.png" alt="Pelanggan" />
+            <div><p class="font-bold">Rina</p><p class="text-xs text-amber-800/70">Pelanggan Maduku</p></div>
+          </div>
+          <p class="mt-3 text-sm text-amber-900/80">Pengiriman cepat dan kualitas madu konsisten dari pembelian pertama sampai sekarang.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="manfaat" class="grid items-center gap-8 py-16 md:grid-cols-2">
+      <img data-aos="fade-right" src="./asset/imgmanffat.png" alt="Manfaat madu" class="mx-auto w-full max-w-lg" />
+      <div data-aos="fade-left">
+        <h2 class="font-title text-3xl">Manfaat Madu untuk Kesehatan</h2>
+        <p class="mt-4 text-amber-900/80">Madu pilihan Maduku diformulasikan untuk membantu menjaga keseimbangan tubuh sehari-hari.</p>
+        <ul class="mt-6 space-y-4">
+          <li class="flex items-center gap-3"><img class="h-10 w-10" src="./asset/irice.png" alt="icon"/>Menambah nafsu makan</li>
+          <li class="flex items-center gap-3"><img class="h-10 w-10" src="./asset/iaman.png" alt="icon"/>Menjaga stamina dan kebugaran</li>
+          <li class="flex items-center gap-3"><img class="h-10 w-10" src="./asset/ibatuk.png" alt="icon"/>Membantu meredakan iritasi batuk</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="proses" class="grid items-center gap-8 rounded-3xl bg-lime-700 px-5 py-12 text-white md:grid-cols-2 md:px-8">
+      <div data-aos="fade-right">
+        <h2 class="font-title text-3xl">Proses Produksi Madu</h2>
+        <p class="mt-4 text-lime-100">Kami menjaga setiap tahap produksi agar madu tetap murni, higienis, dan aman dikonsumsi keluarga.</p>
+      </div>
+      <a data-aos="zoom-in" href="https://www.youtube.com/watch?v=gT2-dWO7u0Y" target="_blank" rel="noopener noreferrer" class="block">
+        <img src="./asset/imgproses.png" alt="Video proses produksi" class="mx-auto w-full max-w-sm" />
+      </a>
+    </section>
+
+    <section class="py-16" id="testimoni">
+      <h2 class="font-title text-center text-3xl" data-aos="fade-up">Cerita Jujur Dari Pelanggan Maduku</h2>
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        <article class="rounded-2xl bg-white p-5 shadow-sm" data-aos="fade-up" data-aos-delay="50"><p class="font-semibold">"Recommended banget"</p><p class="mt-2 text-sm text-amber-900/75">Pelayanannya bagus, sangat profesional dan kualitas madunya terasa asli.</p></article>
+        <article class="rounded-2xl bg-white p-5 shadow-sm" data-aos="fade-up" data-aos-delay="120"><p class="font-semibold">"Hasilnya terasa"</p><p class="mt-2 text-sm text-amber-900/75">Saya rutin konsumsi dan tubuh terasa lebih fit untuk aktivitas harian.</p></article>
+        <article class="rounded-2xl bg-white p-5 shadow-sm" data-aos="fade-up" data-aos-delay="190"><p class="font-semibold">"Anak lebih lahap"</p><p class="mt-2 text-sm text-amber-900/75">Nafsu makan anak meningkat dan rasanya mudah diterima.</p></article>
+      </div>
+    </section>
+
+    <section class="grid items-center gap-8 py-6 md:grid-cols-2">
+      <div data-aos="fade-right">
+        <h2 class="font-title text-3xl">Kenapa Harus Pilih Maduku?</h2>
+        <p class="mt-4 text-amber-900/80">Maduku menghadirkan madu pilihan berkualitas dengan rasa yang tetap natural, mudah dikonsumsi, dan cocok untuk keluarga.</p>
+      </div>
+      <img data-aos="fade-left" src="./asset/kenapaimg.png" alt="Kenapa pilih maduku" class="mx-auto w-full max-w-xs" />
+    </section>
+
+    <section class="py-10">
+      <img data-aos="zoom-in" src="./asset/imgbonus.png" alt="Bonus pembelian" class="mx-auto w-full max-w-xl" />
+    </section>
+
+    <section id="harga" class="grid items-center gap-8 rounded-3xl bg-[color:var(--coffee)] px-5 py-12 text-white md:grid-cols-2 md:px-8">
+      <div data-aos="fade-right">
+        <h2 class="font-title text-3xl">Saya Ingin Beli, Berapa Harganya?</h2>
+        <p class="mt-3 text-amber-100">Promo terbatas untuk pembelian hari ini. Klaim sebelum hitung mundur berakhir.</p>
+        <p class="mt-5 rounded-xl bg-white/10 px-4 py-3 font-semibold">
+          Diskon hangus dalam <span id="offerTimer" class="font-bold">00:00:00</span>
+        </p>
+        <p class="mt-4 text-lg line-through text-amber-200">Rp 75.000</p>
+        <p class="text-5xl font-extrabold text-amber-300">Rp 60.000</p>
+        <a href="#" class="mt-6 inline-block rounded-full bg-amber-500 px-6 py-3 font-bold text-white hover:bg-amber-600">Beli Sekarang</a>
+        <img src="./asset/bank-white-1-2.png" alt="Pembayaran" class="mt-6 h-5 w-auto" />
+      </div>
+      <img data-aos="fade-left" src="./asset/kisspng-ice-cream-honey-sweetness-food-sugar-honey-5a6a30b1dd3f64.png" alt="Produk madu" class="mx-auto w-full max-w-sm" />
+    </section>
+
+    <section id="faq" class="grid items-center gap-8 py-16 md:grid-cols-2">
+      <img data-aos="fade-right" src="./asset/pertanyaanimg.png" alt="Pertanyaan" class="mx-auto w-full max-w-md" />
+      <div data-aos="fade-left" class="space-y-4">
+        <h2 class="font-title text-3xl">Pertanyaan Yang Sering Diajukan</h2>
+        <details class="rounded-xl bg-white p-4 shadow-sm" open>
+          <summary class="cursor-pointer font-bold">Berapa harga Maduku?</summary>
+          <p class="mt-2 text-sm text-amber-900/80">Harga promo saat ini Rp 60.000 dari harga normal Rp 75.000.</p>
+        </details>
+        <details class="rounded-xl bg-white p-4 shadow-sm">
+          <summary class="cursor-pointer font-bold">Apakah ada toko daerah Bandung?</summary>
+          <p class="mt-2 text-sm text-amber-900/80">Untuk saat ini pemesanan utama melalui online dan pengiriman tersedia ke berbagai kota.</p>
+        </details>
+        <details class="rounded-xl bg-white p-4 shadow-sm">
+          <summary class="cursor-pointer font-bold">Apakah halal untuk dikonsumsi?</summary>
+          <p class="mt-2 text-sm text-amber-900/80">Maduku dibuat dari bahan madu asli pilihan dan aman untuk konsumsi harian.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-lime-700 px-4 py-14 text-white">
+    <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-3">
+      <div class="text-center md:text-left">
+        <h3 class="font-elegant text-2xl">Contact</h3>
+        <p class="mt-3 text-lime-100">0812 5534 2727 (Order)</p>
+        <p class="text-lime-100">(022) 233-8989 (Customer Service)</p>
+      </div>
+      <div class="text-center">
+        <img src="./asset/if3-1.png" alt="Maduku" class="mx-auto h-24 w-24" />
+        <p class="font-title mt-2 text-2xl">Maduku</p>
+        <p class="text-lime-100">www.maduku.com</p>
+      </div>
+      <div class="text-center md:text-right">
+        <h3 class="font-elegant text-2xl">Follow Us</h3>
+        <p class="mt-3 text-lime-100">Facebook | Twitter | Google+</p>
+      </div>
+    </div>
+    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-lime-100">Disclaimer: Informasi pada halaman ini bertujuan sebagai edukasi produk dan tidak menggantikan saran medis profesional.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    const timerElement = document.getElementById("offerTimer");
+    const storageKey = "madukuOfferEnd";
+    const now = Date.now();
+    const saved = Number(localStorage.getItem(storageKey));
+    const endTime = saved && saved > now ? saved : now + (8 * 60 * 60 * 1000);
+    localStorage.setItem(storageKey, String(endTime));
+
+    function updateTimer() {
+      const remain = Math.max(0, endTime - Date.now());
+      const totalSec = Math.floor(remain / 1000);
+      const hh = String(Math.floor(totalSec / 3600)).padStart(2, "0");
+      const mm = String(Math.floor((totalSec % 3600) / 60)).padStart(2, "0");
+      const ss = String(totalSec % 60).padStart(2, "0");
+      timerElement.textContent = `${hh}:${mm}:${ss}`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>

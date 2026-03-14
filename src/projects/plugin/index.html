@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlugApp - Lejitkan Bisnis Online Anda</title>
+  <meta name="description" content="Landing page remake PlugApp: modern, responsive, dan fokus konversi.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f5ef;
+      --ink: #151a24;
+      --brand: #0f766e;
+      --brand-deep: #134e4a;
+      --accent: #f97316;
+      --card: #ffffff;
+      --muted: #5b6370;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(15, 118, 110, 0.14), transparent 30%),
+        radial-gradient(circle at 95% 10%, rgba(249, 115, 22, 0.14), transparent 24%),
+        linear-gradient(180deg, #eef2ea 0%, #f8f8f4 60%, #edf2f2 100%);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Sora", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mesh-line {
+      background-image: linear-gradient(rgba(21, 26, 36, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21, 26, 36, 0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+  </style>
+</head>
+<body>
+  <header class="max-w-6xl mx-auto px-5 py-5 md:py-8 fade-up">
+    <div class="flex items-center justify-between rounded-2xl bg-[var(--brand)] px-4 py-3">
+      <img src="./asset/logo-plugapp.png" alt="Logo PlugApp" class="h-8 md:h-10 w-auto">
+      <a href="#harga" class="inline-flex items-center rounded-xl bg-[var(--brand)] px-4 py-2 text-sm font-bold text-white hover:bg-[var(--brand-deep)] transition-colors">Beli Sekarang</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="max-w-6xl mx-auto px-5 pb-14 md:pb-20">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
+        <div class="fade-up delay-1">
+          <span class="inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-bold text-[var(--brand-deep)]">Plugin Pertumbuhan Bisnis</span>
+          <h1 class="mt-5 text-4xl leading-tight md:text-6xl">Plugin terbaik untuk lejitkan bisnis online Anda</h1>
+          <p class="mt-5 max-w-xl text-base md:text-lg text-[var(--muted)]">PlugApp membantu menaikkan konversi, membangun trust pelanggan, dan mempercepat proses jualan dalam satu workflow yang lebih ringkas.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#harga" class="rounded-xl bg-[var(--accent)] px-6 py-3 font-bold text-white hover:brightness-95 transition">Beli Sekarang</a>
+            <a href="#fitur" class="rounded-xl border border-[var(--ink)]/20 bg-white px-6 py-3 font-bold hover:bg-[var(--ink)]/5 transition">Lihat Fitur</a>
+          </div>
+        </div>
+        <div class="fade-up delay-2">
+          <div class="rounded-3xl border border-white/70 bg-white/70 p-3 shadow-xl">
+            <img src="./asset/hero-plugin.png" alt="Preview dashboard PlugApp" class="w-full rounded-2xl">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mesh-line py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto fade-up">
+          <p class="text-xs font-bold tracking-[0.2em] text-[var(--accent)] uppercase">Testimoni</p>
+          <h2 class="mt-3 text-3xl md:text-5xl">Apa kata mereka tentang PlugApp</h2>
+          <p class="mt-3 text-[var(--muted)]">Cerita pengguna yang merasakan peningkatan performa pemasaran dan penjualan.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl bg-white p-6 shadow-sm fade-up delay-1">
+            <img src="./asset/avatar-1-2.png" alt="Floyd Miles" class="h-16 w-16 rounded-full object-cover">
+            <h3 class="mt-4 text-xl font-bold">Floyd Miles</h3>
+            <p class="text-sm text-[var(--muted)]">Web Developer</p>
+            <p class="mt-4 text-sm text-[var(--muted)]">"Setup cepat, tampilannya rapi, dan proses promosi jadi jauh lebih terarah."</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm fade-up delay-2">
+            <img src="./asset/avatar-2.png" alt="Jenny Wilson" class="h-16 w-16 rounded-full object-cover">
+            <h3 class="mt-4 text-xl font-bold">Jenny Wilson</h3>
+            <p class="text-sm text-[var(--muted)]">Business Owner</p>
+            <p class="mt-4 text-sm text-[var(--muted)]">"Tim kami lebih fokus karena funnel dan follow-up jadi lebih otomatis."</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm fade-up delay-3">
+            <img src="./asset/avatar-3.png" alt="Ralph Edwards" class="h-16 w-16 rounded-full object-cover">
+            <h3 class="mt-4 text-xl font-bold">Ralph Edwards</h3>
+            <p class="text-sm text-[var(--muted)]">Agency Partner</p>
+            <p class="mt-4 text-sm text-[var(--muted)]">"Kualitas hasil untuk klien meningkat, sekaligus menghemat waktu produksi."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 py-14 md:py-20">
+      <div class="grid gap-10 lg:grid-cols-2 items-center">
+        <img src="./asset/problem-img.png" alt="Permasalahan bisnis" class="w-full max-w-md mx-auto lg:max-w-none fade-up">
+        <div class="fade-up delay-1">
+          <p class="text-xs font-bold tracking-[0.2em] text-[var(--accent)] uppercase">Permasalahan</p>
+          <h2 class="mt-3 text-3xl md:text-5xl">Pernah mengalami hal ini?</h2>
+          <ul class="mt-6 space-y-3 text-[var(--muted)]">
+            <li class="rounded-xl bg-white p-4">Penjualan tidak pernah meningkat signifikan</li>
+            <li class="rounded-xl bg-white p-4">Calon pelanggan ragu dan kurang percaya</li>
+            <li class="rounded-xl bg-white p-4">Promosi terasa rumit dan melelahkan</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="fitur" class="bg-white/70 py-14 md:py-20 border-y border-[var(--ink)]/10">
+      <div class="max-w-6xl mx-auto px-5 space-y-12">
+        <div class="grid gap-8 lg:grid-cols-2 items-center">
+          <div>
+            <p class="text-xs font-bold tracking-[0.2em] text-[var(--accent)] uppercase">Fitur</p>
+            <h2 class="mt-3 text-3xl md:text-5xl">Fitur yang Anda dapatkan dari PlugApp</h2>
+            <p class="mt-4 text-[var(--muted)]">Bangun sistem promosi yang lebih efisien dengan fitur yang fokus ke hasil.</p>
+            <ul class="mt-5 space-y-2 text-sm md:text-base">
+              <li>• Meningkatkan penjualan</li>
+              <li>• Membangun kepercayaan pelanggan</li>
+              <li>• Mempermudah distribusi campaign</li>
+            </ul>
+          </div>
+          <img src="./asset/img-fitur1.png" alt="Fitur visual 1" class="w-full rounded-2xl shadow-sm">
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-2 items-center">
+          <img src="./asset/img-fitur2.png" alt="Fitur visual 2" class="w-full rounded-2xl shadow-sm order-2 lg:order-1">
+          <div class="order-1 lg:order-2">
+            <p class="text-xs font-bold tracking-[0.2em] text-[var(--accent)] uppercase">Fitur</p>
+            <h3 class="mt-3 text-2xl md:text-4xl">Untuk pebisnis yang ingin scale dengan cepat</h3>
+            <p class="mt-4 text-[var(--muted)]">PlugApp cocok untuk pemilik bisnis, marketer, affiliate, dan tim agency yang perlu sistem kerja rapi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 py-14 md:py-20">
+      <div class="text-center fade-up">
+        <p class="text-xs font-bold tracking-[0.2em] text-[var(--accent)] uppercase">Cocok Untuk</p>
+        <h2 class="mt-3 text-3xl md:text-5xl">PlugApp cocok bagi Anda</h2>
+      </div>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-2xl bg-white p-4"><img src="./asset/img-siapa-1.png" alt="Pebisnis Online" class="rounded-xl"><p class="mt-3 font-bold">Pebisnis Online</p></div>
+        <div class="rounded-2xl bg-white p-4"><img src="./asset/img-siapa-2.png" alt="Digital Marketer" class="rounded-xl"><p class="mt-3 font-bold">Digital Marketer</p></div>
+        <div class="rounded-2xl bg-white p-4"><img src="./asset/img-siapa-3.png" alt="Affiliate Marketing" class="rounded-xl"><p class="mt-3 font-bold">Affiliate Marketing</p></div>
+        <div class="rounded-2xl bg-white p-4"><img src="./asset/img-siapa-4.png" alt="Creator" class="rounded-xl"><p class="mt-3 font-bold">Creator & Agency</p></div>
+      </div>
+      <img src="./asset/img-plugin-about-1-1024x291.png" alt="Mockup fitur tambahan" class="mt-8 w-full rounded-2xl">
+    </section>
+
+    <section id="harga" class="bg-[#162231] text-white py-14 md:py-20">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="text-xs font-bold tracking-[0.2em] text-[#78d2cb] uppercase">Harga</p>
+          <h2 class="mt-3 text-3xl md:text-5xl">Beli PlugApp Sekarang</h2>
+          <p class="mt-3 text-white/75">Pilih paket yang sesuai kebutuhan bisnis Anda hari ini.</p>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          <article class="rounded-2xl bg-white text-[var(--ink)] p-7">
+            <p class="font-bold uppercase tracking-wide text-xs">Premium</p>
+            <p class="mt-3 text-sm text-gray-400 line-through">Rp 950.000,-</p>
+            <p class="text-4xl font-extrabold">Rp 550.000,-</p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li>Feedback System PlugApp</li>
+              <li>Social Integration</li>
+              <li>Planning Solution</li>
+              <li>Push Notification</li>
+            </ul>
+            <a href="#" class="mt-7 inline-block w-full rounded-xl bg-[var(--accent)] px-5 py-3 text-center font-bold text-white">Beli Sekarang</a>
+            <img src="./asset/bank-white-1.png" alt="Metode pembayaran" class="mt-4 h-4 w-auto">
+          </article>
+
+          <article class="rounded-2xl bg-[#2d3a50] p-7">
+            <p class="font-bold uppercase tracking-wide text-xs text-white/85">Basic</p>
+            <p class="mt-3 text-sm text-white/35 line-through">Rp 550.000,-</p>
+            <p class="text-4xl font-extrabold">Rp 250.000,-</p>
+            <ul class="mt-6 space-y-2 text-sm text-white/90">
+              <li>Feedback System PlugApp</li>
+              <li>Social Integration</li>
+              <li>Planning Solution</li>
+              <li>Push Notification</li>
+            </ul>
+            <button class="mt-7 w-full rounded-xl border border-white/40 px-5 py-3 text-center font-bold text-white/70" type="button">Tutup Sementara</button>
+            <img src="./asset/bank-white-2.png" alt="Metode pembayaran" class="mt-4 h-3 w-auto">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 py-14 md:py-20 text-center">
+      <img src="./asset/Money-Back-Guarantee-1-1.png" alt="Garansi uang kembali" class="mx-auto w-44 md:w-56">
+      <p class="mt-6 text-xs font-bold tracking-[0.2em] text-[var(--accent)] uppercase">Garansi</p>
+      <h2 class="mt-2 text-3xl md:text-5xl">Garansi 100% Uang Kembali</h2>
+      <p class="mt-4 max-w-3xl mx-auto text-[var(--muted)]">Jika produk tidak sesuai ekspektasi pada masa garansi, Anda berhak mendapatkan pengembalian dana sesuai ketentuan.</p>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 pb-14 md:pb-20">
+      <div class="rounded-3xl overflow-hidden bg-[#172338] text-white">
+        <div class="grid lg:grid-cols-2 items-center">
+          <div class="p-8 md:p-12">
+            <h3 class="text-3xl md:text-5xl">Yakin tidak beli sekarang juga?</h3>
+            <p class="mt-4 text-white/80">Amankan harga promo dan mulai bangun sistem pertumbuhan bisnis Anda hari ini.</p>
+            <a href="#harga" class="mt-6 inline-block rounded-xl bg-[var(--accent)] px-6 py-3 font-bold">Beli Sekarang</a>
+          </div>
+          <img src="./asset/Closing-img.png" alt="Closing visual" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-5 pb-16">
+      <div class="grid gap-8 lg:grid-cols-3">
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] text-[var(--accent)] uppercase">FAQ</p>
+          <h2 class="mt-3 text-3xl md:text-4xl">Pertanyaan yang sering diajukan</h2>
+          <p class="mt-3 text-[var(--muted)]">Tidak menemukan jawaban? Kontak tim kami untuk bantuan cepat.</p>
+        </div>
+        <div class="lg:col-span-2 space-y-4">
+          <details class="rounded-2xl bg-white p-5" open>
+            <summary class="cursor-pointer font-bold">Bisakah saya menggunakan PlugApp untuk klien?</summary>
+            <p class="mt-3 text-sm text-[var(--muted)]">Bisa. PlugApp mendukung kebutuhan bisnis personal maupun implementasi untuk project klien.</p>
+          </details>
+          <details class="rounded-2xl bg-white p-5">
+            <summary class="cursor-pointer font-bold">Apakah ini bisa untuk WordPress?</summary>
+            <p class="mt-3 text-sm text-[var(--muted)]">Ya, PlugApp dirancang agar kompatibel dengan setup WordPress pada use case umum.</p>
+          </details>
+          <details class="rounded-2xl bg-white p-5">
+            <summary class="cursor-pointer font-bold">Apakah ada support setelah pembelian?</summary>
+            <p class="mt-3 text-sm text-[var(--muted)]">Ada. Tim support siap membantu setup, onboarding, dan pertanyaan teknis.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#182335] text-white py-14">
+    <div class="max-w-4xl mx-auto px-5 text-center">
+      <img src="./asset/ralpgh.png" alt="Jenny Wilson" class="h-20 w-20 rounded-full mx-auto object-cover border-4 border-white/25">
+      <h3 class="mt-4 text-2xl font-bold">Jenny Wilson</h3>
+      <p class="text-white/60">Product Creator PlugApp</p>
+      <p class="mt-6 text-white/80">"PlugApp dibuat untuk membantu bisnis online bergerak lebih cepat, lebih rapi, dan lebih terukur."</p>
+      <p class="mt-7 text-xs text-white/50">Disclaimer: Informasi pada halaman ini untuk tujuan promosi produk.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lunare Parfume | The Silent Luxury</title>
+  <meta name="description" content="Lunare Parfume menghadirkan aroma berkarakter untuk energi, ketenangan, dan rasa percaya diri di setiap momen.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Prata&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#181513",
+            clay: "#A06D3E",
+            sand: "#EED9C6",
+            mist: "#FAF6F1",
+            pine: "#293A33"
+          },
+          fontFamily: {
+            heading: ["Prata", "serif"],
+            body: ["Manrope", "sans-serif"]
+          },
+          boxShadow: {
+            soft: "0 20px 45px -22px rgba(24, 21, 19, 0.35)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --warm-gradient: radial-gradient(circle at 10% 10%, #f7e7d8 0%, #efe0d1 28%, #f7f4ef 62%, #ffffff 100%);
+      --hero-gradient: linear-gradient(135deg, rgba(24, 21, 19, 0.88), rgba(41, 58, 51, 0.86));
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-body bg-mist text-ink antialiased">
+  <div class="fixed inset-x-0 top-0 z-50 border-b border-white/25 bg-white/80 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-8">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="./asset/logo.png" alt="Lunare Parfume" class="h-11 w-auto rounded-sm">
+      </a>
+
+      <button id="menuBtn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ink/20 md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="block h-0.5 w-5 bg-ink"></span>
+      </button>
+
+      <nav class="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.18em] md:flex">
+        <a href="#story" class="transition hover:text-clay">Story</a>
+        <a href="#collection" class="transition hover:text-clay">Collection</a>
+        <a href="#deospray" class="transition hover:text-clay">Deospray</a>
+        <a href="#order" class="rounded-full bg-ink px-5 py-2 text-xs text-white transition hover:bg-pine">Order</a>
+      </nav>
+    </div>
+
+    <nav id="mobileMenu" class="hidden border-t border-ink/10 bg-white px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-[0.16em]">
+        <a href="#story" class="mobile-link">Story</a>
+        <a href="#collection" class="mobile-link">Collection</a>
+        <a href="#deospray" class="mobile-link">Deospray</a>
+        <a href="#order" class="mobile-link">Order</a>
+      </div>
+    </nav>
+  </div>
+
+  <header id="home" class="relative isolate overflow-hidden pt-28">
+    <div class="absolute inset-0 -z-20" style="background: var(--warm-gradient);"></div>
+    <div class="absolute inset-0 -z-10 bg-[url('./asset/morning_veils.jpeg')] bg-cover bg-center opacity-25"></div>
+    <div class="absolute inset-0 -z-10" style="background: var(--hero-gradient);"></div>
+
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-20 pt-10 md:grid-cols-2 md:px-8">
+      <div data-aos="fade-up" data-aos-duration="900">
+        <p class="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-sand">Lunare Parfume</p>
+        <h1 class="font-heading text-4xl leading-tight text-white md:text-6xl">The Silent Luxury for Your Daily Aura</h1>
+        <p class="mt-6 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
+          Bukan sekadar wewangian. Setiap aroma dirancang untuk menguatkan energi, menenangkan batin,
+          dan membangun rasa percaya diri dalam langkah yang elegan.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#collection" class="rounded-full bg-clay px-7 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#8f5f34]">Discover Scents</a>
+          <a href="#order" class="rounded-full border border-white/55 px-7 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-white hover:text-ink">Limited Offer</a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-duration="900" data-aos-delay="100">
+        <img src="./asset/morning_veils.jpeg" alt="Morning Veils" class="h-44 w-full rounded-2xl object-cover shadow-soft md:h-56">
+        <img src="./asset/pure_light.jpeg" alt="Pure Light" class="h-44 w-full rounded-2xl object-cover shadow-soft md:h-56 md:translate-y-10">
+        <img src="./asset/soft_eclipse.jpeg" alt="Soft Eclipse" class="col-span-2 h-48 w-full rounded-2xl object-cover shadow-soft md:h-64">
+      </div>
+    </div>
+  </header>
+
+  <section id="story" class="mx-auto max-w-4xl px-5 py-20 text-center md:px-8">
+    <p class="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-clay" data-aos="fade-up">Our Story</p>
+    <h2 class="font-heading text-3xl md:text-5xl" data-aos="fade-up" data-aos-delay="80">Aroma Berkarakter, Energi yang Berbicara</h2>
+    <p class="mt-6 text-base leading-relaxed text-ink/75 md:text-lg" data-aos="fade-up" data-aos-delay="140">
+      Lunare menghadirkan karakter aroma yang membawa pesan: kebahagiaan, ketenangan, kekuatan,
+      dan intuisi. Wewangian ini menemani aktivitas harian agar setiap momen terasa lebih hidup,
+      lebih sadar, dan lebih bermakna.
+    </p>
+  </section>
+
+  <section id="collection" class="bg-white py-20">
+    <div class="mx-auto max-w-6xl px-5 md:px-8">
+      <div class="mb-12 flex items-end justify-between gap-6">
+        <div>
+          <p class="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-clay" data-aos="fade-right">Signature Collection</p>
+          <h2 class="font-heading text-3xl md:text-5xl" data-aos="fade-right" data-aos-delay="80">Three Scents, Three Intentions</h2>
+        </div>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        <article class="group rounded-2xl border border-ink/10 bg-mist p-5 shadow-soft transition duration-300 hover:-translate-y-1" data-aos="fade-up">
+          <img src="./asset/morning_veils.jpeg" alt="Morning Veils" class="h-56 w-full rounded-xl object-cover">
+          <h3 class="mt-5 font-heading text-3xl">Morning Veils</h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">Membuka hari dengan aura positif, semangat, dan rasa syukur yang menghadirkan energi kebahagiaan.</p>
+          <a href="#order" class="mt-5 inline-block text-xs font-extrabold uppercase tracking-[0.16em] text-pine hover:text-clay">Shop Now</a>
+        </article>
+
+        <article class="group rounded-2xl border border-ink/10 bg-mist p-5 shadow-soft transition duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="90">
+          <img src="./asset/pure_light.jpeg" alt="Pure Light" class="h-56 w-full rounded-xl object-cover">
+          <h3 class="mt-5 font-heading text-3xl">Pure Light</h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">Nuansa tenang yang menumbuhkan percaya diri, optimisme, dan keteguhan dalam meraih tujuan.</p>
+          <a href="#order" class="mt-5 inline-block text-xs font-extrabold uppercase tracking-[0.16em] text-pine hover:text-clay">Shop Now</a>
+        </article>
+
+        <article class="group rounded-2xl border border-ink/10 bg-mist p-5 shadow-soft transition duration-300 hover:-translate-y-1" data-aos="fade-up" data-aos-delay="160">
+          <img src="./asset/soft_eclipse.jpeg" alt="Soft Eclipse" class="h-56 w-full rounded-xl object-cover">
+          <h3 class="mt-5 font-heading text-3xl">Soft Eclipse</h3>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">Melambangkan kekuatan, keberlimpahan, dan intuisi tajam untuk keputusan yang lebih sadar.</p>
+          <a href="#order" class="mt-5 inline-block text-xs font-extrabold uppercase tracking-[0.16em] text-pine hover:text-clay">Shop Now</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="deospray" class="relative overflow-hidden py-20">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-sand/60 via-mist to-white"></div>
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2 md:px-8">
+      <div data-aos="zoom-in-up">
+        <img src="./asset/deodorant.jpeg" alt="Deospray Collection" class="w-full rounded-3xl object-cover shadow-soft">
+      </div>
+      <div data-aos="fade-left" data-aos-delay="120">
+        <p class="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-clay">Deospray Collection</p>
+        <h2 class="font-heading text-3xl md:text-5xl">Daily Essentials, Elevated</h2>
+        <p class="mt-5 text-base leading-relaxed text-ink/75">Tetap segar sepanjang hari dengan karakter aroma khas Lunare yang lembut namun berkelas.</p>
+        <div class="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.15em]">
+          <span class="rounded-full border border-ink/15 bg-white px-4 py-2">Scandaulos</span>
+          <span class="rounded-full border border-ink/15 bg-white px-4 py-2">Vanilla Mango</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" class="bg-ink py-20 text-white">
+    <div class="mx-auto max-w-6xl px-5 md:px-8">
+      <div class="rounded-3xl border border-white/20 bg-white/5 p-8 md:p-10">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-sand">Limited Time Offer</p>
+        <h2 class="mt-3 font-heading text-3xl md:text-5xl">Paket Signature Mulai Rp299.000</h2>
+        <p class="mt-4 max-w-3xl text-white/80">Dapatkan parfum favorit Lunare dengan promo khusus hari ini. Setelah waktu habis, harga kembali normal.</p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <div class="rounded-xl bg-white/10 px-5 py-4">
+            <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/70">Offer Ends In</p>
+            <p id="countdown" class="mt-1 font-heading text-3xl">00:00:00</p>
+          </div>
+          <a href="https://wa.me/6281234567890" class="rounded-full bg-clay px-7 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#8f5f34]">Order via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#120f0d] px-5 py-10 text-center text-sm text-white/70">
+    <img src="./asset/logo.png" alt="Lunare Parfume" class="mx-auto mb-4 h-12 w-auto rounded-sm">
+    <p class="font-heading text-xl text-white">Lunare Parfume</p>
+    <p class="mt-1 italic text-white/75">The Silent Luxury</p>
+    <div class="mt-6 flex items-center justify-center gap-5 text-xs font-semibold uppercase tracking-[0.12em]">
+      <a href="https://instagram.com/lunareparfume" class="hover:text-sand">Instagram</a>
+      <a href="https://wa.me/6281234567890" class="hover:text-sand">WhatsApp</a>
+      <a href="#home" class="hover:text-sand">Back to Top</a>
+    </div>
+    <p class="mt-6 text-[11px] uppercase tracking-[0.14em] text-white/40">© 2026 Lunare Parfume. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: "ease-out-cubic"
+    });
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    menuBtn.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuBtn.setAttribute("aria-expanded", String(isHidden));
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const countdownEl = document.getElementById("countdown");
+    const offerEnd = Date.now() + (6 * 60 * 60 * 1000);
+    let timer = null;
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = Math.max(offerEnd - now, 0);
+
+      const hours = String(Math.floor(distance / (1000 * 60 * 60))).padStart(2, "0");
+      const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0");
+      const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, "0");
+
+      countdownEl.textContent = `${hours}:${minutes}:${seconds}`;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+      }
+    }
+
+    updateCountdown();
+    timer = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

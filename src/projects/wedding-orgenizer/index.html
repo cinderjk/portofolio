@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weddingku | Wedding Organizer Terpercaya</title>
+  <meta name="description" content="Weddingku membantu kamu mewujudkan pernikahan impian yang rapi, elegan, dan bebas ribet dengan paket yang fleksibel.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+  <style>
+    :root {
+      --bg-cream: #fbf8f1;
+      --bg-sage: #e4edd9;
+      --brand-deep: #2f4b3f;
+      --brand-soft: #6f8d63;
+      --brand-accent: #c68a54;
+      --ink: #304139;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 20%, #ffffff 0%, #ffffff00 40%),
+        radial-gradient(circle at 90% 10%, #e8f3dd 0%, #ffffff00 35%),
+        var(--bg-cream);
+    }
+
+    .font-display {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .glass-card {
+      backdrop-filter: blur(8px);
+      background: linear-gradient(130deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.75));
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky top-0 z-50 border-b border-[#d7e1cd] bg-white/85 backdrop-blur-md">
+    <nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:px-6" aria-label="Navigasi utama">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="./asset/logo.png" alt="Logo Weddingku" class="h-8 w-auto md:h-9">
+      </a>
+
+      <button id="menu-btn" class="inline-flex items-center rounded-md border border-[#cdd9c0] px-3 py-2 text-sm font-semibold text-[#355142] md:hidden" aria-expanded="false" aria-controls="mobile-menu">
+        Menu
+      </button>
+
+      <ul class="hidden items-center gap-7 text-sm font-semibold md:flex">
+        <li><a href="#layanan" class="hover:text-[#c68a54]">Layanan</a></li>
+        <li><a href="#galeri" class="hover:text-[#c68a54]">Galeri</a></li>
+        <li><a href="#paket" class="hover:text-[#c68a54]">Paket</a></li>
+        <li><a href="#faq" class="hover:text-[#c68a54]">FAQ</a></li>
+      </ul>
+
+      <a href="#paket" class="hidden rounded-full bg-[#355142] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#2b4337] md:inline-flex">Booking Sekarang</a>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-[#d7e1cd] bg-white px-4 py-4 md:hidden">
+      <ul class="space-y-3 text-sm font-semibold">
+        <li><a href="#layanan" class="block">Layanan</a></li>
+        <li><a href="#galeri" class="block">Galeri</a></li>
+        <li><a href="#paket" class="block">Paket</a></li>
+        <li><a href="#faq" class="block">FAQ</a></li>
+        <li><a href="#paket" class="mt-2 inline-flex rounded-full bg-[#355142] px-5 py-2.5 text-white">Booking Sekarang</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="relative overflow-hidden">
+      <div class="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-16 pt-14 md:grid-cols-2 md:px-6 md:pt-20">
+        <div data-aos="fade-right">
+          <p class="inline-flex rounded-full border border-[#d7e1cd] bg-[#eff5e7] px-4 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#507360]">Wedding Organizer Premium</p>
+          <h1 class="font-display mt-5 text-5xl font-bold leading-tight text-[#2d4a3d] md:text-6xl">Wujudkan Hari Pernikahan Impian Bersama <span class="text-[#c68a54]">Weddingku</span></h1>
+          <p class="mt-5 max-w-xl text-base leading-relaxed text-[#496152] md:text-lg">Dari konsep acara, dekorasi, makeup, dokumentasi, hingga rundown hari H. Semua kami kelola rapi agar kamu dan keluarga bisa fokus menikmati momen terbaik.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#paket" class="rounded-full bg-[#355142] px-7 py-3 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-[#2b4337]">Cek Paket Wedding</a>
+            <a href="#galeri" class="rounded-full border border-[#355142] px-7 py-3 text-sm font-bold text-[#355142] transition hover:bg-[#eaf2df]">Lihat Portofolio</a>
+          </div>
+          <div class="mt-8 grid max-w-md grid-cols-3 gap-3 text-center">
+            <div class="rounded-xl bg-white p-3 shadow-sm">
+              <div class="text-xl font-extrabold text-[#355142]">1450+</div>
+              <div class="text-xs text-[#62796b]">Acara Selesai</div>
+            </div>
+            <div class="rounded-xl bg-white p-3 shadow-sm">
+              <div class="text-xl font-extrabold text-[#355142]">10 Tahun</div>
+              <div class="text-xs text-[#62796b]">Pengalaman</div>
+            </div>
+            <div class="rounded-xl bg-white p-3 shadow-sm">
+              <div class="text-xl font-extrabold text-[#355142]">4.9/5</div>
+              <div class="text-xs text-[#62796b]">Kepuasan Klien</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative" data-aos="fade-left" data-aos-delay="100">
+          <div class="glass-card rounded-[2rem] border border-white/70 p-4 shadow-xl md:p-6">
+            <img src="./asset/Header-017-Img-1.png" alt="Pengantin bersama Weddingku" class="w-full rounded-[1.4rem] object-cover">
+          </div>
+          <div class="absolute -bottom-5 -left-2 rounded-2xl bg-white p-3 shadow-lg md:-left-8">
+            <p class="text-xs font-semibold uppercase tracking-widest text-[#6b806f]">Klien Korporat & Personal</p>
+            <img src="./asset/bank-warna.png" alt="Partner pembayaran" class="mt-2 h-8 w-auto">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#f0f5e8] py-16" id="layanan">
+      <div class="mx-auto w-full max-w-6xl px-4 md:px-6">
+        <div class="text-center" data-aos="fade-up">
+          <h2 class="font-display text-4xl font-bold text-[#2f4b3f] md:text-5xl">Layanan Utama Weddingku</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-[#5d7366]">Semua kebutuhan pernikahan tersedia dalam satu tim dengan eksekusi detail dan timeline yang terukur.</p>
+        </div>
+
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="50">
+            <img src="./asset/107-icon_light_green-gatewedd.png" alt="Dekorasi" class="h-12 w-12">
+            <h3 class="mt-4 text-lg font-bold text-[#355142]">Dekorasi & Pelaminan</h3>
+            <p class="mt-2 text-sm text-[#62796b]">Konsep elegan yang disesuaikan dengan tema, venue, dan budget.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+            <img src="./asset/107-icon_light_green-dress.png" alt="Busana" class="h-12 w-12">
+            <h3 class="mt-4 text-lg font-bold text-[#355142]">Busana Pengantin</h3>
+            <p class="mt-2 text-sm text-[#62796b]">Pilihan busana modern dan adat, termasuk styling profesional.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="150">
+            <img src="./asset/107-icon_light_green-wovect.png" alt="Makeup" class="h-12 w-12">
+            <h3 class="mt-4 text-lg font-bold text-[#355142]">Makeup Artist</h3>
+            <p class="mt-2 text-sm text-[#62796b]">Look tahan lama untuk akad, resepsi, dan sesi foto.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+            <img src="./asset/107-icon_light_green-vcam.png" alt="Dokumentasi" class="h-12 w-12">
+            <h3 class="mt-4 text-lg font-bold text-[#355142]">Dokumentasi</h3>
+            <p class="mt-2 text-sm text-[#62796b]">Tim foto-video untuk menangkap momen emosional tanpa terlewat.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="250">
+            <img src="./asset/107-icon_light_green-melody.png" alt="Hiburan" class="h-12 w-12">
+            <h3 class="mt-4 text-lg font-bold text-[#355142]">Entertainment</h3>
+            <p class="mt-2 text-sm text-[#62796b]">Live music, MC, dan konsep hiburan yang disesuaikan mood acara.</p>
+          </article>
+          <article class="rounded-2xl bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+            <img src="./asset/107-icon_light_green-cheers.png" alt="Catering" class="h-12 w-12">
+            <h3 class="mt-4 text-lg font-bold text-[#355142]">Catering</h3>
+            <p class="mt-2 text-sm text-[#62796b]">Menu utama hingga dessert table dengan rasa dan tampilan premium.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 md:grid-cols-2 md:px-6">
+        <div class="rounded-3xl bg-white p-4 shadow-sm" data-aos="zoom-in">
+          <img src="./asset/Section-107-Pain-Img-1.png" alt="Tantangan persiapan wedding" class="w-full rounded-2xl">
+        </div>
+        <div class="rounded-3xl bg-[#e4edd9] p-7 md:p-10" data-aos="fade-left">
+          <h2 class="font-display text-4xl font-bold text-[#2f4b3f]">Kenapa calon pengantin memilih Weddingku?</h2>
+          <ul class="mt-5 space-y-4 text-[#4f6658]">
+            <li class="rounded-xl bg-white/80 p-4">Timeline terstruktur, jadi tidak bingung mengatur vendor dan rundown.</li>
+            <li class="rounded-xl bg-white/80 p-4">Pilihan paket fleksibel dengan harga transparan dan jelas dari awal.</li>
+            <li class="rounded-xl bg-white/80 p-4">Tim pendamping di hari H agar acara berjalan lancar tanpa drama.</li>
+            <li class="rounded-xl bg-white/80 p-4">Reputasi terpercaya dengan ratusan testimoni positif dari klien.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeri" class="bg-white py-16">
+      <div class="mx-auto w-full max-w-6xl px-4 md:px-6">
+        <div class="text-center" data-aos="fade-up">
+          <h2 class="font-display text-4xl font-bold text-[#2f4b3f] md:text-5xl">Galeri Klien Weddingku</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-[#60776a]">Dokumentasi momen asli klien yang telah mempercayakan acara kepada tim kami.</p>
+        </div>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <img src="./asset/Section-107-Gallery-Img-1.png" alt="Galeri wedding 1" class="h-full w-full rounded-2xl object-cover" data-aos="zoom-in" data-aos-delay="50">
+          <img src="./asset/Section-107-Gallery-Img-2.png" alt="Galeri wedding 2" class="h-full w-full rounded-2xl object-cover" data-aos="zoom-in" data-aos-delay="100">
+          <img src="./asset/Section-107-Gallery-Img-3.png" alt="Galeri wedding 3" class="h-full w-full rounded-2xl object-cover" data-aos="zoom-in" data-aos-delay="150">
+          <img src="./asset/Section-107-Gallery-Img-4.png" alt="Galeri wedding 4" class="h-full w-full rounded-2xl object-cover" data-aos="zoom-in" data-aos-delay="200">
+        </div>
+      </div>
+    </section>
+
+    <section id="paket" class="bg-[#f3f7ec] py-16">
+      <div class="mx-auto w-full max-w-6xl px-4 md:px-6">
+        <div class="text-center" data-aos="fade-up">
+          <h2 class="font-display text-4xl font-bold text-[#2f4b3f] md:text-5xl">Paket Weddingku</h2>
+          <p class="mt-3 text-[#60776a]">Pilih paket yang paling sesuai dengan kebutuhan acara kamu.</p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-3xl border border-[#d9e3cf] bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="80">
+            <img src="./asset/Section-107-Pricing-Img-1.png" alt="Paket Medium" class="w-full rounded-2xl">
+            <h3 class="mt-5 text-2xl font-extrabold text-[#2f4b3f]">Paket Medium</h3>
+            <p class="mt-1 text-3xl font-black text-[#c68a54]">Rp 18.000.000</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#5c7365]">
+              <li>Koordinator wedding day</li>
+              <li>Dekorasi basic elegan</li>
+              <li>Makeup pengantin</li>
+              <li>Foto dokumentasi</li>
+            </ul>
+            <a href="#" class="mt-6 inline-flex rounded-full bg-[#355142] px-6 py-3 text-sm font-bold text-white">Ambil Paket Medium</a>
+          </article>
+
+          <article class="relative rounded-3xl border border-[#b7c9aa] bg-[#355142] p-6 text-white shadow-xl" data-aos="fade-up" data-aos-delay="130">
+            <span class="absolute right-6 top-6 rounded-full bg-[#c68a54] px-3 py-1 text-xs font-extrabold uppercase tracking-wider">Best Value</span>
+            <img src="./asset/Section-107-Pricing-Img-2.png" alt="Paket Special" class="w-full rounded-2xl">
+            <h3 class="mt-5 text-2xl font-extrabold">Paket Special</h3>
+            <p class="mt-1 text-3xl font-black text-[#ffd6ad]">Rp 25.000.000</p>
+            <ul class="mt-4 space-y-2 text-sm text-[#dce9d6]">
+              <li>Semua fitur paket medium</li>
+              <li>Dekorasi premium + custom layout</li>
+              <li>Video cinematic highlight</li>
+              <li>Support tim full-day event</li>
+            </ul>
+            <a href="#" class="mt-6 inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-[#2f4b3f]">Ambil Paket Special</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#2f4b3f] py-16 text-white">
+      <div class="mx-auto w-full max-w-6xl px-4 md:px-6">
+        <div class="text-center" data-aos="fade-up">
+          <h2 class="font-display text-4xl font-bold md:text-5xl">Bonus Eksklusif Klien Weddingku</h2>
+          <p class="mx-auto mt-3 max-w-2xl text-[#dce8d7]">Booking di periode ini dan dapatkan bonus tambahan untuk melengkapi momen spesialmu.</p>
+        </div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl bg-white/10 p-5" data-aos="fade-up" data-aos-delay="50">
+            <img src="./asset/Section-107-Bonus-Img-1.png" alt="Bonus souvenir" class="h-28 w-auto">
+            <h3 class="mt-4 font-bold">100 pcs Souvenir Pernikahan</h3>
+          </article>
+          <article class="rounded-2xl bg-white/10 p-5" data-aos="fade-up" data-aos-delay="100">
+            <img src="./asset/Section-107-Bonus-Img-2.png" alt="Bonus cincin" class="h-28 w-auto">
+            <h3 class="mt-4 font-bold">1 Pasang Cincin Pernikahan</h3>
+          </article>
+          <article class="rounded-2xl bg-white/10 p-5" data-aos="fade-up" data-aos-delay="150">
+            <img src="./asset/Section-107-Bonus-Img-3.png" alt="Bonus kue" class="h-28 w-auto">
+            <h3 class="mt-4 font-bold">1 Kue Pernikahan</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-16">
+      <div class="mx-auto w-full max-w-4xl px-4 md:px-6">
+        <div class="text-center" data-aos="fade-up">
+          <h2 class="font-display text-4xl font-bold text-[#2f4b3f] md:text-5xl">Pertanyaan Umum</h2>
+        </div>
+        <div class="mt-8 space-y-4">
+          <details class="rounded-2xl border border-[#d7e1cd] bg-white p-5" data-aos="fade-up" data-aos-delay="50">
+            <summary class="cursor-pointer font-bold text-[#355142]">Apakah tersedia paket wedding rumahan?</summary>
+            <p class="mt-3 text-sm text-[#61786a]">Ya. Weddingku menyiapkan paket khusus untuk konsep intimate wedding di rumah atau venue kecil.</p>
+          </details>
+          <details class="rounded-2xl border border-[#d7e1cd] bg-white p-5" data-aos="fade-up" data-aos-delay="100">
+            <summary class="cursor-pointer font-bold text-[#355142]">Bisakah custom sesuai budget?</summary>
+            <p class="mt-3 text-sm text-[#61786a]">Bisa. Tim kami membantu menyesuaikan prioritas layanan agar tetap optimal di budget yang kamu tentukan.</p>
+          </details>
+          <details class="rounded-2xl border border-[#d7e1cd] bg-white p-5" data-aos="fade-up" data-aos-delay="150">
+            <summary class="cursor-pointer font-bold text-[#355142]">Kapan sebaiknya booking?</summary>
+            <p class="mt-3 text-sm text-[#61786a]">Idealnya 3-6 bulan sebelum hari H, supaya persiapan vendor dan konsep acara lebih matang.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#e4edd9] py-10">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center md:px-6">
+      <img src="./asset/logo.png" alt="Weddingku" class="mx-auto h-9 w-auto">
+      <p class="mt-3 text-sm text-[#5d7366]">Weddingku - Wedding Organizer Terpercaya untuk momen sekali seumur hidup.</p>
+      <p class="mt-1 text-xs text-[#6f8377]">Copyright 2026 Weddingku. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+      offset: 90
+    });
+
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", function () {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
+  </script>
+</body>
+</html>

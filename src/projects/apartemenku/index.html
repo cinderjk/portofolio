@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apartemenku - Hunian Cerdas untuk Keluarga Modern</title>
+    <meta
+      name="description"
+      content="Apartemenku membantu Anda mendapatkan hunian impian dengan lokasi strategis, cicilan ringan, dan fasilitas lengkap untuk keluarga modern."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f4efe6;
+        --card: #fffdfa;
+        --ink: #16202a;
+        --muted: #5d6772;
+        --brand: #ef8f00;
+        --brand-dark: #c57300;
+        --line: #e8dfd2;
+        --mint: #ccebd7;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 0%, #fff4d8 0%, transparent 40%),
+          radial-gradient(circle at 90% 20%, #dbf5e4 0%, transparent 30%),
+          var(--bg);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Sora", sans-serif;
+      }
+
+      .grid-bg {
+        background-image:
+          linear-gradient(to right, rgba(22, 32, 42, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(22, 32, 42, 0.04) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: fadeUp 0.65s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-5 py-6 sm:px-8 lg:px-10">
+        <div class="flex items-center justify-between rounded-2xl border border-[var(--line)] bg-[var(--card)]/90 px-4 py-3 backdrop-blur md:px-6">
+          <div class="flex items-center gap-3">
+            <img src="./asset/logo-3.png" alt="Logo apartemenku" class="h-8 w-auto" />
+            <p class="text-sm font-bold uppercase tracking-wider text-[var(--muted)]">Apartemenku</p>
+          </div>
+          <a
+            href="#harga"
+            class="rounded-xl bg-[var(--ink)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-black"
+            >Lihat Harga</a
+          >
+        </div>
+      </div>
+
+      <section class="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-16 pt-4 sm:px-8 lg:grid-cols-2 lg:px-10 lg:pb-24">
+        <div class="fade-up">
+          <p class="mb-4 inline-flex rounded-full border border-[var(--line)] bg-white px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[var(--muted)]">
+            Launching Terbatas
+          </p>
+          <h1 class="text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            Saatnya Wujudkan Hunian Impian Bersama
+            <span class="text-[var(--brand)]">Apartemenku</span>
+          </h1>
+          <p class="mt-5 max-w-xl text-base text-[var(--muted)] sm:text-lg">
+            Apartemen modern untuk keluarga aktif: lokasi strategis, akses transportasi mudah, dan lingkungan nyaman untuk tumbuh bersama.
+          </p>
+          <ul class="mt-7 space-y-3 text-[var(--ink)]">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-[var(--brand)]"></span>
+              Cicilan ringan dengan simulasi transparan
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-[var(--brand)]"></span>
+              Fasilitas keluarga lengkap dalam satu kawasan
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-[var(--brand)]"></span>
+              Nilai investasi properti yang terus bertumbuh
+            </li>
+          </ul>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#harga"
+              class="rounded-xl bg-[var(--brand)] px-6 py-3 font-semibold text-white transition hover:bg-[var(--brand-dark)]"
+              >Beli Sekarang</a
+            >
+            <a href="#fasilitas" class="rounded-xl border border-[var(--line)] bg-white px-6 py-3 font-semibold text-[var(--ink)]">Lihat Fasilitas</a>
+          </div>
+        </div>
+
+        <div class="fade-up delay-2">
+          <div class="relative rounded-[2rem] border border-[var(--line)] bg-white p-3 shadow-[0_20px_60px_rgba(22,32,42,0.12)]">
+            <div class="grid-bg rounded-[1.5rem] bg-[#fff7ec] p-5">
+              <img src="./asset/img-realestate.png" alt="Visual apartemen modern" class="mx-auto w-full max-w-md" />
+            </div>
+            <div class="absolute -bottom-5 -left-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 shadow-lg">
+              <p class="text-xs uppercase tracking-wider text-[var(--muted)]">Unit Tersedia</p>
+              <p class="text-lg font-extrabold">Tersisa 24 Unit</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="mx-auto max-w-7xl px-5 pb-14 sm:px-8 lg:px-10">
+      <div class="rounded-3xl border border-[var(--line)] bg-white px-5 py-6 sm:px-8">
+        <p class="text-center text-sm font-semibold uppercase tracking-[0.15em] text-[var(--muted)]">Dipercaya Keluarga Indonesia</p>
+        <div class="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          <img src="./asset/logo-3.png" alt="Partner 1" class="mx-auto h-9 w-auto opacity-70" />
+          <img src="./asset/logo-3.png" alt="Partner 2" class="mx-auto h-9 w-auto opacity-70" />
+          <img src="./asset/logo-3.png" alt="Partner 3" class="mx-auto h-9 w-auto opacity-70" />
+          <img src="./asset/logo-3.png" alt="Partner 4" class="mx-auto h-9 w-auto opacity-70" />
+          <img src="./asset/logo-3.png" alt="Partner 5" class="mx-auto h-9 w-auto opacity-70" />
+          <img src="./asset/logo-3.png" alt="Partner 6" class="mx-auto h-9 w-auto opacity-70" />
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-7xl gap-10 px-5 py-8 sm:px-8 lg:grid-cols-2 lg:px-10" id="problem">
+      <div>
+        <img src="./asset/img-permasalahan.png" alt="Masalah memilih hunian" class="mx-auto w-full max-w-md" />
+      </div>
+      <div>
+        <p class="text-sm font-extrabold uppercase tracking-[0.15em] text-[var(--brand)]">Permasalahan</p>
+        <h2 class="mt-3 text-3xl leading-tight sm:text-4xl">Pernah mengalami hal seperti ini saat cari rumah?</h2>
+        <p class="mt-4 text-[var(--muted)]">Banyak keluarga tertahan di tahap keputusan karena informasi tidak jelas, lokasi kurang ideal, dan biaya tambahan yang tidak terduga.</p>
+        <ul class="mt-6 space-y-3 text-[var(--ink)]">
+          <li class="rounded-xl border border-[var(--line)] bg-white px-4 py-3">Sulit menemukan hunian strategis dengan harga masuk akal</li>
+          <li class="rounded-xl border border-[var(--line)] bg-white px-4 py-3">Khawatir biaya maintenance dan fasilitas tidak sesuai janji</li>
+          <li class="rounded-xl border border-[var(--line)] bg-white px-4 py-3">Bingung memilih unit yang benar-benar cocok untuk keluarga</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10" id="fasilitas">
+      <div class="mb-8 text-center">
+        <p class="text-sm font-extrabold uppercase tracking-[0.15em] text-[var(--brand)]">Solusi Apartemenku</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Fasilitas yang Dirancang untuk Hidup Lebih Nyaman</h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <img src="./asset/fasilitas-realhome-1.png" alt="Fasilitas 1" class="h-14 w-14" />
+          <h3 class="mt-4 text-xl">Keamanan 24 Jam</h3>
+          <p class="mt-2 text-[var(--muted)]">Sistem keamanan modern dengan akses smart gate dan pemantauan CCTV nonstop.</p>
+        </article>
+        <article class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <img src="./asset/fasilitas-realhome-2.png" alt="Fasilitas 2" class="h-14 w-14" />
+          <h3 class="mt-4 text-xl">Ruang Komunal Aktif</h3>
+          <p class="mt-2 text-[var(--muted)]">Area hijau, lounge, dan kids corner untuk mendukung aktivitas harian keluarga.</p>
+        </article>
+        <article class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <img src="./asset/fasilitas-realhome-3.png" alt="Fasilitas 3" class="h-14 w-14" />
+          <h3 class="mt-4 text-xl">Akses Transport Mudah</h3>
+          <p class="mt-2 text-[var(--muted)]">Dekat stasiun, halte, dan pusat kota sehingga mobilitas lebih hemat waktu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-[var(--mint)]/35 py-14" id="testimoni">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <div class="mb-8 text-center">
+          <p class="text-sm font-extrabold uppercase tracking-[0.15em] text-[var(--brand)]">Testimoni</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl">Apa Kata Pembeli Apartemenku</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="rounded-2xl border border-[var(--line)] bg-white p-6">
+            <p class="text-[var(--muted)]">"Prosesnya jelas, unitnya sesuai ekspektasi, dan timnya sangat membantu sampai akad."</p>
+            <div class="mt-5 flex items-center gap-3">
+              <img src="./asset/avatar-1-1-1.png" alt="Floyd Miles" class="h-11 w-11 rounded-full" />
+              <div>
+                <p class="font-semibold">Floyd Miles</p>
+                <p class="text-sm text-[var(--muted)]">Pembeli di Apartemenku</p>
+              </div>
+            </div>
+          </article>
+          <article class="rounded-2xl border border-[var(--line)] bg-white p-6">
+            <p class="text-[var(--muted)]">"Saya suka karena akses ke kantor cepat, dan fasilitas anak lengkap dalam area apartemen."</p>
+            <div class="mt-5 flex items-center gap-3">
+              <img src="./asset/avatar-2-1-1.png" alt="Rina Prasetyo" class="h-11 w-11 rounded-full" />
+              <div>
+                <p class="font-semibold">Rina Prasetyo</p>
+                <p class="text-sm text-[var(--muted)]">Pembeli di Apartemenku</p>
+              </div>
+            </div>
+          </article>
+          <article class="rounded-2xl border border-[var(--line)] bg-white p-6">
+            <p class="text-[var(--muted)]">"Salah satu keputusan terbaik, nilai properti naik dan lingkungan terasa aman untuk keluarga."</p>
+            <div class="mt-5 flex items-center gap-3">
+              <img src="./asset/avatar-3-1-1.png" alt="Dian Wicaksono" class="h-11 w-11 rounded-full" />
+              <div>
+                <p class="font-semibold">Dian Wicaksono</p>
+                <p class="text-sm text-[var(--muted)]">Pembeli di Apartemenku</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10" id="harga">
+      <div class="mb-8 text-center">
+        <p class="text-sm font-extrabold uppercase tracking-[0.15em] text-[var(--brand)]">Harga Spesial</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Pilih Paket Unit Sesuai Kebutuhan Anda</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <article class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <img src="./asset/Harga-RH-1.png" alt="Paket studio" class="h-32 w-full rounded-xl object-cover" />
+          <h3 class="mt-4 text-lg">Studio Smart</h3>
+          <p class="mt-1 text-sm text-[var(--muted)] line-through">Rp 520.000.000</p>
+          <p class="text-2xl font-extrabold">Rp 449.000.000</p>
+          <a href="#" class="mt-4 inline-block rounded-lg bg-[var(--brand)] px-4 py-2 font-semibold text-white">Ambil Paket</a>
+        </article>
+        <article class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <img src="./asset/Harga-RH-2.png" alt="Paket one bedroom" class="h-32 w-full rounded-xl object-cover" />
+          <h3 class="mt-4 text-lg">One Bedroom Plus</h3>
+          <p class="mt-1 text-sm text-[var(--muted)] line-through">Rp 670.000.000</p>
+          <p class="text-2xl font-extrabold">Rp 589.000.000</p>
+          <a href="#" class="mt-4 inline-block rounded-lg bg-[var(--brand)] px-4 py-2 font-semibold text-white">Ambil Paket</a>
+        </article>
+        <article class="rounded-2xl border-2 border-[var(--brand)] bg-white p-5 shadow-lg">
+          <img src="./asset/Harga-RH-3.png" alt="Paket family" class="h-32 w-full rounded-xl object-cover" />
+          <h3 class="mt-4 text-lg">Family Signature</h3>
+          <p class="mt-1 text-sm text-[var(--muted)] line-through">Rp 920.000.000</p>
+          <p class="text-2xl font-extrabold">Rp 799.000.000</p>
+          <a href="#" class="mt-4 inline-block rounded-lg bg-[var(--ink)] px-4 py-2 font-semibold text-white">Paling Favorit</a>
+        </article>
+        <article class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <img src="./asset/Harga-RH-4.png" alt="Paket premium" class="h-32 w-full rounded-xl object-cover" />
+          <h3 class="mt-4 text-lg">Premium Corner</h3>
+          <p class="mt-1 text-sm text-[var(--muted)] line-through">Rp 1.200.000.000</p>
+          <p class="text-2xl font-extrabold">Rp 1.049.000.000</p>
+          <a href="#" class="mt-4 inline-block rounded-lg bg-[var(--brand)] px-4 py-2 font-semibold text-white">Ambil Paket</a>
+        </article>
+      </div>
+      <div class="mt-8 flex items-center justify-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-5 py-4">
+        <img src="./asset/Money-Back-Guarantee.png" alt="Jaminan uang kembali" class="h-14 w-auto" />
+        <p class="text-sm text-[var(--muted)]">Garansi konsultasi dan pendampingan pembelian sampai tuntas.</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-5 pb-16 sm:px-8" id="faq">
+      <div class="mb-8 text-center">
+        <p class="text-sm font-extrabold uppercase tracking-[0.15em] text-[var(--brand)]">FAQ</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl">Pertanyaan yang Sering Ditanyakan</h2>
+      </div>
+      <div class="space-y-4">
+        <details class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <summary class="cursor-pointer font-semibold">Apakah bisa cicilan bertahap?</summary>
+          <p class="mt-3 text-[var(--muted)]">Ya, tersedia opsi DP ringan dan cicilan sesuai profil keuangan Anda.</p>
+        </details>
+        <details class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <summary class="cursor-pointer font-semibold">Bagaimana proses survei unit?</summary>
+          <p class="mt-3 text-[var(--muted)]">Anda bisa jadwalkan visit melalui tim Apartemenku, termasuk virtual tour jika diperlukan.</p>
+        </details>
+        <details class="rounded-2xl border border-[var(--line)] bg-white p-5">
+          <summary class="cursor-pointer font-semibold">Apakah cocok untuk investasi?</summary>
+          <p class="mt-3 text-[var(--muted)]">Sangat cocok karena lokasi strategis dan demand sewa tinggi di area sekitar proyek.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer class="bg-[var(--ink)] px-5 py-14 text-white sm:px-8">
+      <div class="mx-auto max-w-5xl text-center">
+        <h2 class="text-3xl sm:text-4xl">Siap Punya Hunian Nyaman Bersama Apartemenku?</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-white/80">Amankan unit terbaik sebelum kuota promo habis. Tim kami siap bantu dari konsultasi sampai serah terima.</p>
+        <a href="#harga" class="mt-7 inline-block rounded-xl bg-[var(--brand)] px-7 py-3 font-bold text-white transition hover:bg-[var(--brand-dark)]">Booking Sekarang</a>
+      </div>
+    </footer>
+  </body>
+</html>

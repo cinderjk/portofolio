@@ -2,24 +2,9 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getLocalProjects } from '../utils/localProjects';
 
-interface PortofolioItem {
-	name: string;
-	slug: string;
-	thumbnail_url: string;
-	updated_at: string;
-}
-
-let portofolio: PortofolioItem[] = [];
-
-try {
-	const res = await fetch('https://p.foe.my.id/api.php');
-	if (!res.ok) throw new Error(`HTTP ${res.status}`);
-	const json = JSON.parse(await res.text()) as { data?: PortofolioItem[] };
-	portofolio = (json.data ?? []).sort(() => Math.random() - 0.5).slice(0, 4);
-} catch {
-	portofolio = [];
-}
+const portofolio = getLocalProjects().sort(() => Math.random() - 0.5).slice(0, 4);
 
 const paketList = [
 	{
@@ -205,18 +190,18 @@ const faqList = [
 						portofolio.map((item) => (
 							<li class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
 								<div class="block h-full">
-									{item.thumbnail_url && (
+									{item.thumbnailUrl && (
 										<div class="overflow-hidden">
 											<img
-												src={item.thumbnail_url}
-												alt={item.name}
+												src={item.thumbnailUrl}
+												alt={item.title}
 												class="w-full object-cover transition duration-500 group-hover:scale-105"
 											/>
 										</div>
 									)}
 									<div class="space-y-2 p-5">
-										<h3 class="text-lg font-bold text-gray-900 dark:text-white">{item.name}</h3>
-										<p class="text-sm text-gray-600 dark:text-gray-300">Update terakhir: {item.updated_at}</p>
+										<h3 class="text-lg font-bold text-gray-900 dark:text-white">{item.title}</h3>
+										<p class="text-sm text-gray-600 dark:text-gray-300">Update terakhir: {item.updatedAt}</p>
 									</div>
 								</div>
 							</li>

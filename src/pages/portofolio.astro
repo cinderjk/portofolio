@@ -2,25 +2,9 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getLocalProjects } from '../utils/localProjects';
 
-interface PortofolioItem {
-	name: string;
-	slug: string;
-	thumbnail_url: string;
-	updated_at: string;
-}
-
-let items: PortofolioItem[] = [];
-let error = false;
-
-try {
-	const res = await fetch('https://p.foe.my.id/api.php');
-	if (!res.ok) throw new Error(`HTTP ${res.status}`);
-	const json = JSON.parse(await res.text()) as { data?: PortofolioItem[] };
-	items = json.data ?? [];
-} catch {
-	error = true;
-}
+const items = getLocalProjects();
 ---
 
 <!doctype html>
@@ -45,15 +29,7 @@ try {
 				</div>
 
 				{
-					error && (
-						<div class="rounded-xl border border-red-200 bg-red-50 p-6 text-center text-red-700 dark:border-red-800 dark:bg-red-900/20 dark:text-red-400">
-							Gagal memuat data portofolio. Silakan coba lagi nanti.
-						</div>
-					)
-				}
-
-				{
-					!error && items.length === 0 && (
+					items.length === 0 && (
 						<div class="rounded-xl border border-gray-200 bg-gray-50 p-6 text-center text-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400">
 							Belum ada data portofolio.
 						</div>
@@ -61,30 +37,30 @@ try {
 				}
 
 				{
-					!error && items.length > 0 && (
+					items.length > 0 && (
 						<ul class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 							{items.map((item) => (
 								<li class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
 									<a
-										href={`https://p.foe.my.id/p/${item.slug}/`}
-										target="_blank"
-										rel="noopener noreferrer"
+										href={`/p/${item.slug}/`}
 										class="block h-full"
 									>
-										<div class="overflow-hidden">
-											<img
-												src={item.thumbnail_url}
-												alt={item.name}
-												loading="lazy"
-												class="w-full object-cover transition duration-500 group-hover:scale-105"
-											/>
-										</div>
+										{item.thumbnailUrl && (
+											<div class="overflow-hidden">
+												<img
+													src={item.thumbnailUrl}
+													alt={item.title}
+													loading="lazy"
+													class="w-full object-cover transition duration-500 group-hover:scale-105"
+												/>
+											</div>
+										)}
 										<div class="space-y-2 p-5">
 											<h2 class="text-lg font-bold leading-tight text-gray-900 transition group-hover:text-primary-700 dark:text-white dark:group-hover:text-primary-300">
-												{item.name}
+												{item.title}
 											</h2>
 											<p class="text-xs text-gray-500 dark:text-gray-400">
-												Diperbarui: {item.updated_at}
+												Diperbarui: {item.updatedAt}
 											</p>
 											<span class="inline-flex items-center gap-1 text-sm font-semibold text-primary-700 group-hover:underline dark:text-primary-300">
 												Lihat website

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bayarin - Payment Gateway Cepat dan Transparan</title>
+  <meta name="description" content="Bayarin membantu bisnis menerima pembayaran, kirim dana, dan kelola transaksi online lebih cepat dan transparan.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #051a36;
+      --ink: #0c2450;
+      --sky: #17b9d4;
+      --brand: #0347a8;
+      --brand-soft: #e8f1ff;
+      --mist: #f2f8ff;
+      --line: #cfe0fb;
+    }
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, #e3f0ff 0, transparent 38%),
+        radial-gradient(circle at 90% 10%, #dffafd 0, transparent 34%),
+        #ffffff;
+    }
+    h1, h2, h3, h4, .display-font {
+      font-family: "Sora", sans-serif;
+    }
+    .hero-mesh {
+      background:
+        radial-gradient(1200px 500px at 20% -20%, #2f88ff55, transparent 50%),
+        radial-gradient(700px 320px at 90% 0%, #22d3ee55, transparent 55%),
+        linear-gradient(145deg, #071d3f 0%, #0347a8 55%, #0b69ca 100%);
+    }
+    .glass {
+      background: linear-gradient(145deg, #ffffff35, #ffffff15);
+      border: 1px solid #ffffff45;
+      backdrop-filter: blur(10px);
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .fade-up.delay-1 { animation-delay: .1s; }
+    .fade-up.delay-2 { animation-delay: .2s; }
+    .fade-up.delay-3 { animation-delay: .3s; }
+    .fade-up.delay-4 { animation-delay: .4s; }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <header class="sticky top-0 z-40 border-b border-[#dbe9ff] bg-white/85 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <div class="flex items-center gap-3">
+        <img src="./asset/bayarin.png" alt="Logo Bayarin" class="h-9 w-auto">
+      </div>
+      <a href="#harga" class="rounded-full bg-[#0347a8] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#083985]">Mulai Gratis</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-mesh relative overflow-hidden text-white">
+      <div class="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-200/20 blur-3xl"></div>
+      <div class="absolute -right-10 top-14 h-80 w-80 rounded-full bg-blue-300/20 blur-3xl"></div>
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:items-center md:py-20">
+        <div>
+          <p class="fade-up text-xs font-bold uppercase tracking-[0.25em] text-cyan-100">Payment Gateway Untuk Bisnis Modern</p>
+          <h1 class="fade-up delay-1 mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">Terima Pembayaran Lebih Mudah Bersama Bayarin</h1>
+          <p class="fade-up delay-2 mt-4 text-blue-100">Satu dashboard untuk kartu kredit, transfer bank, e-wallet, dan pembayaran instan yang siap dipakai dalam hitungan menit.</p>
+          <div class="fade-up delay-3 mt-7 flex flex-wrap gap-3">
+            <a href="#harga" class="rounded-full bg-white px-6 py-3 text-sm font-extrabold text-[#0347a8] transition hover:bg-[#e9f2ff]">Coba Sekarang</a>
+            <a href="#fitur" class="rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white transition hover:border-white">Eksplor Fitur</a>
+          </div>
+          <div class="fade-up delay-4 mt-6 grid gap-3 sm:grid-cols-3">
+            <div class="glass rounded-xl px-4 py-3 text-sm"><p class="text-xl font-extrabold">99.9%</p><p class="text-blue-100">Uptime layanan</p></div>
+            <div class="glass rounded-xl px-4 py-3 text-sm"><p class="text-xl font-extrabold">+24 jam</p><p class="text-blue-100">Monitoring transaksi</p></div>
+            <div class="glass rounded-xl px-4 py-3 text-sm"><p class="text-xl font-extrabold">+2000</p><p class="text-blue-100">Merchant aktif</p></div>
+          </div>
+        </div>
+        <div class="fade-up delay-2">
+          <img src="./asset/hero-fintech.png" alt="Ilustrasi aplikasi fintech Bayarin" class="mx-auto w-full max-w-md">
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <h2 class="text-center text-lg font-bold text-[#24456f]">Dipercaya Merchant Ternama di Indonesia</h2>
+      <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+        <div class="rounded-xl border border-[#d9e8ff] bg-white p-4"><img src="./asset/bayarin.png" alt="Logo merchant" class="mx-auto h-7 w-auto"></div>
+        <div class="rounded-xl border border-[#d9e8ff] bg-white p-4"><img src="./asset/bayarin.png" alt="Logo merchant" class="mx-auto h-7 w-auto"></div>
+        <div class="rounded-xl border border-[#d9e8ff] bg-white p-4"><img src="./asset/bayarin.png" alt="Logo merchant" class="mx-auto h-7 w-auto"></div>
+        <div class="rounded-xl border border-[#d9e8ff] bg-white p-4"><img src="./asset/bayarin.png" alt="Logo merchant" class="mx-auto h-7 w-auto"></div>
+        <div class="rounded-xl border border-[#d9e8ff] bg-white p-4"><img src="./asset/bayarin.png" alt="Logo merchant" class="mx-auto h-7 w-auto"></div>
+        <div class="rounded-xl border border-[#d9e8ff] bg-white p-4"><img src="./asset/bayarin.png" alt="Logo merchant" class="mx-auto h-7 w-auto"></div>
+      </div>
+    </section>
+
+    <section class="bg-white" id="fitur">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#0b61c0]">Permasalahan</p>
+        <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">Pernah mengalami hal ini?</h2>
+        <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-2xl border border-[#d7e6fb] bg-[#f3f8ff] p-5">
+            <img src="./asset/icon-fintech-1.png" alt="Ikon masalah" class="h-11 w-11">
+            <p class="mt-4 text-sm font-semibold text-[#32517a]">Belanja online terhambat karena tidak punya kartu kredit.</p>
+          </article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-[#f3f8ff] p-5">
+            <img src="./asset/icon-fintech-3.png" alt="Ikon masalah" class="h-11 w-11">
+            <p class="mt-4 text-sm font-semibold text-[#32517a]">Checkout gagal saat metode pembayaran terbatas.</p>
+          </article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-[#f3f8ff] p-5">
+            <img src="./asset/icon-fintech-4.png" alt="Ikon masalah" class="h-11 w-11">
+            <p class="mt-4 text-sm font-semibold text-[#32517a]">Rekonsiliasi transaksi memakan waktu terlalu lama.</p>
+          </article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-[#f3f8ff] p-5">
+            <img src="./asset/icon-fintech-5.png" alt="Ikon masalah" class="h-11 w-11">
+            <p class="mt-4 text-sm font-semibold text-[#32517a]">Biaya payment gateway sulit diprediksi karena banyak hidden fee.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#edf4ff]">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#0b61c0]">Fitur-Fitur</p>
+        <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">Puluhan fitur siap membantu Anda</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5 shadow-sm"><img src="./asset/fitur-1.png" alt="Shopping Online Offline" class="h-20 w-auto"><h3 class="mt-4 text-lg font-bold">Shopping Online / Offline</h3></article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5 shadow-sm"><img src="./asset/Fitur-2.png" alt="Transfer Antar Bank" class="h-20 w-auto"><h3 class="mt-4 text-lg font-bold">Tarik Tunai & Transfer Antar Bank</h3></article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5 shadow-sm"><img src="./asset/Fitur-3.png" alt="Transfer Sesama" class="h-20 w-auto"><h3 class="mt-4 text-lg font-bold">Transfer Sesama Pengguna</h3></article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5 shadow-sm"><img src="./asset/Fitur-4.png" alt="Meningkatkan Penjualan" class="h-20 w-auto"><h3 class="mt-4 text-lg font-bold">Meningkatkan Penjualan</h3></article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5 shadow-sm"><img src="./asset/Fitur-5.png" alt="Integrasi" class="h-20 w-auto"><h3 class="mt-4 text-lg font-bold">Integrasi Cepat ke Website</h3></article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5 shadow-sm"><img src="./asset/Fitur-6.png" alt="Invoice" class="h-20 w-auto"><h3 class="mt-4 text-lg font-bold">Invoice Otomatis</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#071d3f] text-white">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <p class="text-xs text-center font-bold uppercase tracking-[0.25em] text-cyan-200">Untuk Siapa</p>
+        <h2 class="mt-2 text-2xl text-center font-extrabold sm:text-3xl">Bayarin Cocok Untuk Anda</h2>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+            <img src="./asset/img-fintech-1.png" alt="Pebisnis online" class="mx-auto h-24 w-auto">
+            <h3 class="mt-4 text-lg font-bold">Pebisnis Online</h3>
+            <p class="mt-2 text-sm text-gray-300">Solusi finansial lengkap untuk bisnis online Anda</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+            <img src="./asset/img-fintech-2.png" alt="Entrepreneur" class="mx-auto h-24 w-auto">
+            <h3 class="mt-4 text-lg font-bold">Entrepreneur</h3>
+            <p class="mt-2 text-sm text-gray-300">Solusi finansial lengkap untuk entrepreneur Anda</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+            <img src="./asset/img-fintech-3.png" alt="Digital Marketer" class="mx-auto h-24 w-auto">
+            <h3 class="mt-4 text-lg font-bold">Digital Marketer</h3>
+            <p class="mt-2 text-sm text-gray-300">Solusi finansial lengkap untuk digital marketer Anda</p>
+          </article>
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
+            <img src="./asset/img-fintech-4.png" alt="Internet Marketer" class="mx-auto h-24 w-auto">
+            <h3 class="mt-4 text-lg font-bold">Internet Marketer</h3>
+            <p class="mt-2 text-sm text-gray-300">Solusi finansial lengkap untuk internet marketer Anda</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3 md:items-center">
+        <div class="md:col-span-2">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#0b61c0]">Keuntungan</p>
+          <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">Keuntungan yang Anda dapatkan</h2>
+          <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+            <li class="rounded-xl border border-[#d7e6fb] p-4">Tanpa biaya berlangganan</li>
+            <li class="rounded-xl border border-[#d7e6fb] p-4">Pendaftaran gratis</li>
+            <li class="rounded-xl border border-[#d7e6fb] p-4">Terima pembayaran cepat</li>
+            <li class="rounded-xl border border-[#d7e6fb] p-4">Terintegrasi ke website</li>
+          </ul>
+        </div>
+        <div>
+          <img src="./asset/fintech-keuntungan.png" alt="Keuntungan Bayarin" class="mx-auto w-full max-w-xs">
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#edf4ff]">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#0b61c0]">Alasan</p>
+        <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">Kenapa Harus Memilih Bayarin</h2>
+        <div class="mt-7 grid gap-4 sm:grid-cols-2">
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5">Payment yang mudah dan sederhana</article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5">Integrasi yang cepat</article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5">Notifikasi instan</article>
+          <article class="rounded-2xl border border-[#d7e6fb] bg-white p-5">Invoice otomatis</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#0b61c0]">Testimoni</p>
+        <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">Cerita jujur dari pelanggan</h2>
+        <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <img src="./asset/image-28.png" alt="Testimoni pengguna" class="w-full rounded-2xl border border-[#d7e6fb]">
+          <img src="./asset/image-28.png" alt="Testimoni pengguna" class="w-full rounded-2xl border border-[#d7e6fb]">
+          <img src="./asset/image-28.png" alt="Testimoni pengguna" class="w-full rounded-2xl border border-[#d7e6fb]">
+          <img src="./asset/image-28.png" alt="Testimoni pengguna" class="w-full rounded-2xl border border-[#d7e6fb]">
+        </div>
+      </div>
+    </section>
+
+    <section id="harga" class="bg-[#071d3f] text-white">
+      <div class="mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:px-6 lg:grid-cols-3">
+        <div class="lg:col-span-1">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-cyan-200">Harga</p>
+          <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">Harga Terbaik Bayarin</h2>
+          <p class="mt-4 text-slate-300">Pilihan fleksibel untuk skala bisnis kecil hingga enterprise.</p>
+        </div>
+
+        <article class="rounded-2xl bg-white p-6 text-slate-900">
+          <h3 class="display-font text-xl font-bold">BISNIS</h3>
+          <p class="mt-2 text-sm text-slate-600">Untuk proses transaksi lebih dari 200 juta per bulan.</p>
+          <ul class="mt-5 space-y-2 text-sm">
+            <li>Fee khusus per transaksi</li>
+            <li>Kartu Kredit</li>
+            <li>Cash on Delivery (COD)</li>
+            <li>Integrasi e-Commerce</li>
+          </ul>
+          <a href="#" class="mt-6 inline-block rounded-full bg-[#0347a8] px-5 py-2 text-sm font-bold text-white">Hubungi Kami</a>
+        </article>
+
+        <article class="rounded-2xl border border-cyan-200/25 bg-[#0b2f63] p-6">
+          <h3 class="display-font text-xl font-bold">PAY AS YOU GO</h3>
+          <div class="mt-4 space-y-3 text-sm text-slate-200">
+            <p>Credit Card + Bayarin Fee</p>
+            <p class="text-2xl font-extrabold text-cyan-200">3% + Rp. 2500</p>
+            <p>Tanpa biaya bulanan, setup, maintenance, atau hidden fee lain.</p>
+          </div>
+          <a href="#" class="mt-6 inline-block rounded-full border border-cyan-200 px-5 py-2 text-sm font-bold text-cyan-200">Buat Akun Sekarang</a>
+          <img src="./asset/bank-white-2.png" alt="Logo bank" class="mt-6 rounded-lg p-2">
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="mx-auto max-w-4xl px-4 py-12 text-center sm:px-6">
+        <img src="./asset/Money-Back-Guarantee-1-1.png" alt="Garansi uang kembali" class="mx-auto w-44">
+        <p class="mt-4 text-xs font-bold uppercase tracking-[0.25em] text-[#0b61c0]">Garansi</p>
+        <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">Garansi 100% Uang Kembali</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-slate-600">Jika layanan tidak sesuai kebutuhan integrasi bisnis Anda, tim kami siap bantu evaluasi penuh dan skema pengembalian sesuai ketentuan.</p>
+      </div>
+    </section>
+
+    <section class="bg-[#071d3f] text-white">
+      <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+        <p class="text-center text-xs font-bold uppercase tracking-[0.25em] text-cyan-200">FAQ</p>
+        <h2 class="mt-2 text-center text-2xl font-extrabold sm:text-3xl">Pertanyaan yang sering diajukan</h2>
+        <div class="mt-7 space-y-3">
+          <details class="rounded-xl border border-cyan-200/20 bg-white/10 p-4">
+            <summary class="cursor-pointer font-bold">Apakah ada support?</summary>
+            <p class="mt-2 text-sm text-slate-300">Ada. Tim support membantu onboarding, integrasi, dan troubleshooting setiap hari kerja.</p>
+          </details>
+          <details class="rounded-xl border border-cyan-200/20 bg-white/10 p-4">
+            <summary class="cursor-pointer font-bold">Apakah bisa dipakai di WordPress?</summary>
+            <p class="mt-2 text-sm text-slate-300">Bisa. Anda dapat menghubungkan Bayarin ke WordPress dan berbagai platform e-commerce populer.</p>
+          </details>
+          <details class="rounded-xl border border-cyan-200/20 bg-white/10 p-4">
+            <summary class="cursor-pointer font-bold">Berapa biaya Bayarin?</summary>
+            <p class="mt-2 text-sm text-slate-300">Skema standar dimulai dari 3% + Rp. 2500 per transaksi, dengan opsi negosiasi untuk volume besar.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-[#0347a8] via-[#0d61bf] to-[#13adc6]">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-10 text-center sm:px-6 md:flex-row md:text-left">
+        <div>
+          <h2 class="text-2xl font-extrabold text-white">Siap naik kelas dengan sistem pembayaran yang rapi?</h2>
+          <p class="mt-2 text-blue-100">Mulai terima pembayaran online dengan setup cepat, dashboard jelas, dan biaya transparan.</p>
+        </div>
+        <a href="#" class="rounded-full bg-white px-6 py-3 text-sm font-extrabold text-[#0347a8]">Hubungi Kami</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#051a36] py-6 text-center text-sm text-blue-200/70">
+    <p>Copyright 2026, Bayarin. All rights reserved.</p>
+  </footer>
+</body>
+</html>

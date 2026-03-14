@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Street Sushi | Halal, Murah, Enak</title>
+  <meta name="description" content="Street Sushi Indonesia adalah konsep sushi jalanan yang halal, enak, dan terjangkau. Nikmati vibe seru untuk anak muda, keluarga, dan momen spesial bareng Street Sushi.">
+  <meta name="theme-color" content="#ff6b2c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#fff7ef',
+            peach: '#ffd9c8',
+            mango: '#ffb703',
+            orange: '#FF4C4C',
+            coral: '#f53478',
+            ink: '#211b1b',
+            teal: '#14b8a6',
+            sky: '#75d7ff'
+          },
+          fontFamily: {
+            display: ['Fredoka', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          boxShadow: {
+            jelly: '0 18px 50px rgba(255, 107, 44, 0.18)',
+            floaty: '0 14px 35px rgba(33, 27, 27, 0.12)'
+          },
+          backgroundImage: {
+            confetti: 'radial-gradient(circle at 20% 20%, rgba(255, 183, 3, 0.22) 0, rgba(255, 183, 3, 0.22) 8px, transparent 8px), radial-gradient(circle at 80% 15%, rgba(117, 215, 255, 0.22) 0, rgba(117, 215, 255, 0.22) 10px, transparent 10px), radial-gradient(circle at 60% 80%, rgba(255, 77, 109, 0.16) 0, rgba(255, 77, 109, 0.16) 12px, transparent 12px)',
+            sunset: 'linear-gradient(135deg, #fff7ef 0%, #ffd9c8 44%, #ffe8a3 100%)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fff7ef;
+      color: #211b1b;
+    }
+
+    .hero-orb {
+      filter: blur(20px);
+      opacity: 0.75;
+    }
+
+    .outline-text {
+      -webkit-text-stroke: 2px #ffffff;
+    }
+
+    .section-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .section-card::before {
+      content: '';
+      position: absolute;
+      inset: auto -40px -50px auto;
+      width: 140px;
+      height: 140px;
+      border-radius: 9999px;
+      background: rgba(255, 183, 3, 0.18);
+      z-index: -1;
+    }
+
+    .marquee-track {
+      animation: marquee 24s linear infinite;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .floating-card {
+      animation: floatY 5s ease-in-out infinite;
+    }
+
+    @keyframes floatY {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body class="bg-cream bg-confetti">
+  <header class="sticky top-0 z-50 border-b border-orange/10 bg-cream/85 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="./asset/logo.png" alt="Street Sushi" class="h-11 w-auto sm:h-12">
+      </a>
+
+      <button id="menuButton" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-orange/20 bg-white text-orange shadow-sm transition hover:scale-105 lg:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka navigasi">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+
+      <nav class="hidden items-center gap-7 lg:flex">
+        <a href="#cerita" class="text-sm font-semibold text-ink/80 transition hover:text-orange">Cerita</a>
+        <a href="#menu" class="text-sm font-semibold text-ink/80 transition hover:text-orange">Favorit</a>
+        <a href="#keseruan" class="text-sm font-semibold text-ink/80 transition hover:text-orange">Keseruan</a>
+        <a href="#kemitraan" class="text-sm font-semibold text-ink/80 transition hover:text-orange">Kemitraan</a>
+        <a href="#kontak" class="rounded-full bg-orange px-5 py-2.5 text-sm font-bold text-white shadow-jelly transition hover:-translate-y-0.5 hover:bg-coral">Pesan Sekarang</a>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-orange/10 bg-white/95 lg:hidden">
+      <nav class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+        <a href="#cerita" class="rounded-2xl px-4 py-3 font-semibold text-ink/80 transition hover:bg-orange/5 hover:text-orange">Cerita</a>
+        <a href="#menu" class="rounded-2xl px-4 py-3 font-semibold text-ink/80 transition hover:bg-orange/5 hover:text-orange">Favorit</a>
+        <a href="#keseruan" class="rounded-2xl px-4 py-3 font-semibold text-ink/80 transition hover:bg-orange/5 hover:text-orange">Keseruan</a>
+        <a href="#kemitraan" class="rounded-2xl px-4 py-3 font-semibold text-ink/80 transition hover:bg-orange/5 hover:text-orange">Kemitraan</a>
+        <a href="#kontak" class="mt-2 rounded-full bg-orange px-5 py-3 text-center font-bold text-white">Pesan Sekarang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-x-0 top-0 -z-10 h-full bg-sunset"></div>
+      <div class="hero-orb absolute -left-12 top-20 -z-10 h-40 w-40 rounded-full bg-mango"></div>
+      <div class="hero-orb absolute right-0 top-28 -z-10 h-52 w-52 rounded-full bg-sky"></div>
+      <div class="hero-orb absolute bottom-12 left-1/2 -z-10 h-44 w-44 -translate-x-1/2 rounded-full bg-coral"></div>
+
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-24">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-orange/20 bg-white/80 px-4 py-2 text-sm font-bold text-orange shadow-sm">
+            <span class="inline-flex h-2.5 w-2.5 rounded-full bg-teal"></span>
+            Halal, murah, enak sejak 2013
+          </div>
+
+          <h1 class="mt-6 max-w-3xl font-display text-5xl leading-[0.95] text-ink sm:text-6xl lg:text-7xl">
+            Sushi seru
+            <span class="block text-orange outline-text">buat nongkrong,</span>
+            main, dan bikin hari jadi lebih rame.
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-base leading-8 text-ink/75 sm:text-lg">
+            Street Sushi adalah konsep sushi jalanan yang ramah, playful, dan terjangkau. Cocok buat anak muda yang suka tempat asik, keluarga yang cari menu seru, sampai anak-anak yang ingin pengalaman makan yang fun.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href="#kontak" class="inline-flex items-center justify-center rounded-full bg-orange px-7 py-4 text-base font-extrabold text-white shadow-jelly transition hover:-translate-y-1 hover:bg-coral">
+              Pesan untuk hari ini
+            </a>
+            <a href="#kemitraan" class="inline-flex items-center justify-center rounded-full border-2 border-ink/10 bg-white px-7 py-4 text-base font-extrabold text-ink transition hover:border-orange hover:text-orange">
+              Lihat peluang kemitraan
+            </a>
+          </div>
+
+          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <div class="section-card rounded-[28px] bg-white p-5 shadow-floaty">
+              <p class="font-display text-3xl text-orange">15K+</p>
+              <p class="mt-2 text-sm font-semibold text-ink/70">Mulai dari harga yang ramah dompet menurut testimoni pelanggan.</p>
+            </div>
+            <div class="section-card rounded-[28px] bg-white p-5 shadow-floaty">
+              <p class="font-display text-3xl text-orange">5 Kota</p>
+              <p class="mt-2 text-sm font-semibold text-ink/70">Jakarta, Depok, Cibinong, Cibubur, dan Bandung.</p>
+            </div>
+            <div class="section-card rounded-[28px] bg-white p-5 shadow-floaty">
+              <p class="font-display text-3xl text-orange">100%</p>
+              <p class="mt-2 text-sm font-semibold text-ink/70">Vibe ceria untuk lunch, birthday, workshop, dan momen rame-rame.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-4 top-10 hidden rounded-[28px] bg-white px-4 py-3 shadow-floaty sm:block floating-card">
+            <p class="font-display text-xl text-coral">Ohayou, Streeters!</p>
+            <p class="text-sm font-semibold text-ink/60">Masuk, pilih roll favoritmu.</p>
+          </div>
+
+          <div class="absolute -right-2 bottom-6 hidden rounded-[28px] bg-teal px-4 py-3 text-white shadow-floaty sm:block floating-card" style="animation-delay: 1s;">
+            <p class="text-xs font-black uppercase tracking-[0.24em]">Promo fun bundle</p>
+            <p class="mt-1 text-lg font-black">Berakhir dalam <span id="countdown">00:00:00</span></p>
+          </div>
+
+          <div class="relative rounded-[38px] border border-white/70 bg-white/70 p-4 shadow-[0_30px_80px_rgba(33,27,27,0.14)] backdrop-blur sm:p-6">
+            <div class="grid gap-4 sm:grid-cols-[1.05fr_0.95fr]">
+              <div class="space-y-4">
+                <div class="overflow-hidden rounded-[30px] bg-coral/10">
+                  <img src="./asset/21_ .jpg" alt="Street Sushi crew dan suasana hangat" class="h-full w-full object-cover">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="rounded-[26px] bg-mango/15 p-4">
+                    <img src="./asset/halal.png" alt="Label halal Street Sushi" class="mx-auto w-auto">
+                    <p class="mt-3 text-center text-sm font-bold text-ink/70">Sushi halal yang bisa dinikmati lebih santai.</p>
+                  </div>
+                  <div class="rounded-[26px] bg-orange/10 p-4">
+                    <img src="./asset/logo.png" alt="Logo Street Sushi" class="mx-auto w-auto">
+                    <p class="mt-4 text-center text-sm font-bold text-ink/70">Brand lokal dengan energi street food yang khas.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="overflow-hidden rounded-[30px] bg-white shadow-floaty">
+                  <img src="./asset/088527_03cd27a6f3f94c0e8a4d073ec97cf9d2~mv2.jpg" alt="Menu Street Sushi favorit" class="h-64 w-full object-cover sm:h-72">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="overflow-hidden rounded-[24px] shadow-floaty">
+                    <img src="./asset/088527_258d327a96464a329d47a9889e85010f~mv2.jpg" alt="Pilihan sushi Street Sushi" class="h-36 w-full object-cover">
+                  </div>
+                  <div class="overflow-hidden rounded-[24px] shadow-floaty">
+                    <img src="./asset/088527_8fd6b016ea4b4988b08728558b740fc4~mv2.jpg" alt="Suasana pelanggan Street Sushi" class="h-36 w-full object-cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-hidden border-y border-orange/10 bg-white py-4">
+      <div class="marquee-track flex min-w-max gap-4 text-sm font-black uppercase tracking-[0.28em] text-ink/55">
+        <span>halal sushi place</span>
+        <span>-</span>
+        <span>fun lunch spot</span>
+        <span>-</span>
+        <span>sushi buat hangout</span>
+        <span>-</span>
+        <span>kemitraan street sushi</span>
+        <span>-</span>
+        <span>katering & event</span>
+        <span>-</span>
+        <span>one roll at a time</span>
+        <span>-</span>
+      </div>
+    </section>
+
+    <section id="cerita" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div data-aos="fade-up" class="rounded-[34px] bg-ink p-7 text-white shadow-floaty sm:p-10">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-mango">Cerita Brand</p>
+          <h2 class="mt-4 font-display text-4xl sm:text-5xl">Dari gerobak kayu ke tempat sushi yang selalu rame.</h2>
+          <p class="mt-6 text-base leading-8 text-white/80">
+            Pada tahun 2013, Street Sushi lahir dari gerobak kayu sederhana di pinggir jalan Jakarta Barat. Saat banyak orang menganggap sushi itu mahal atau terlalu formal, Street Sushi hadir dengan energi yang lebih dekat, lebih santai, dan lebih terjangkau.
+          </p>
+          <p class="mt-4 text-base leading-8 text-white/80">
+            Dari awal, tujuannya bukan cuma jual sushi. Brand ini dibangun untuk menciptakan ruang yang hangat, penuh keramahan, tumbuh bersama komunitas, dan jadi tempat belajar serta merayakan momen seru.
+          </p>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <article class="section-card rounded-[30px] bg-white p-6 shadow-floaty">
+            <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-orange text-2xl text-white">
+              <i class="fa-solid fa-face-smile"></i>
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-ink">Keramahan</h3>
+            <p class="mt-3 text-sm leading-7 text-ink/70">Setiap kunjungan dibuat terasa ringan, fun, dan nggak kaku. Tempatnya cocok untuk nongkrong santai, makan siang, atau ajak adik dan ponakan ikut seru-seruan.</p>
+          </article>
+
+          <article class="section-card rounded-[30px] bg-white p-6 shadow-floaty">
+            <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-teal text-2xl text-white">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-ink">Komunitas</h3>
+            <p class="mt-3 text-sm leading-7 text-ink/70">Street Sushi tumbuh bersama pelanggan yang suka tempat asik, rasa yang konsisten, dan harga yang bersahabat. Bukan cuma beli makanan, tapi ikut masuk ke kultur yang hidup.</p>
+          </article>
+
+          <article class="section-card rounded-[30px] bg-white p-6 shadow-floaty sm:col-span-2">
+            <div class="grid gap-6 sm:grid-cols-[0.9fr_1.1fr] sm:items-center">
+              <div>
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-coral text-2xl text-white">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <h3 class="mt-5 font-display text-2xl text-ink">Belajar, Terhubung, Merayakan</h3>
+                <p class="mt-3 text-sm leading-7 text-ink/70">Mulai dari makan siang, kelas membuat sushi, sampai katering ulang tahun, Street Sushi dirancang sebagai pengalaman yang menyatukan orang dalam suasana menyenangkan.</p>
+              </div>
+              <div class="overflow-hidden rounded-[26px] bg-peach">
+                <img src="./asset/088527_03cd27a6f3f94c0e8a4d073ec97cf9d2~mv2.jpg" alt="Aktivitas seru Street Sushi" class="h-60 w-full object-cover">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="bg-white py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div data-aos="fade-up">
+            <p class="text-sm font-black uppercase tracking-[0.28em] text-orange">Favorit Anak Muda</p>
+            <h2 class="mt-3 font-display text-4xl text-ink sm:text-5xl">Roll yang bikin “satu lagi, deh”.</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-ink/70 sm:text-base">
+            Dari sushi untuk lunch santai sampai paket rame-rame buat hangout, Street Sushi dikenal dengan rasa yang gampang disukai dan harga yang terasa masuk akal.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <article class="rounded-[30px] bg-cream p-5 shadow-floaty">
+            <div class="overflow-hidden rounded-[24px]">
+              <img src="./asset/088527_03cd27a6f3f94c0e8a4d073ec97cf9d2~mv2.jpg" alt="Pilihan sushi signature Street Sushi" class="h-56 w-full object-cover transition duration-500 hover:scale-105">
+            </div>
+            <div class="mt-5 flex items-center justify-between gap-3">
+              <h3 class="font-display text-2xl text-ink">Signature Roll</h3>
+              <span class="rounded-full bg-orange/10 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-orange">Best pick</span>
+            </div>
+            <p class="mt-3 text-sm leading-7 text-ink/70">Rasa gurih, tekstur lembut, dan presentasi yang bikin foto dulu sebelum makan.</p>
+          </article>
+
+          <article class="rounded-[30px] bg-cream p-5 shadow-floaty">
+            <div class="overflow-hidden rounded-[24px]">
+              <img src="./asset/088527_03cd27a6f3f94c0e8a4d073ec97cf9d2~mv2.jpg" alt="Sushi untuk makan bareng" class="h-56 w-full object-cover transition duration-500 hover:scale-105">
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-ink">Mood Booster Box</h3>
+            <p class="mt-3 text-sm leading-7 text-ink/70">Cocok buat teman kelas, tim kantor, atau mabar sambil ngemil sushi halal yang bikin suasana tambah cair.</p>
+          </article>
+
+          <article class="rounded-[30px] bg-cream p-5 shadow-floaty">
+            <div class="overflow-hidden rounded-[24px]">
+              <img src="./asset/088527_03cd27a6f3f94c0e8a4d073ec97cf9d2~mv2.jpg" alt="Menu mentaiko dan topping creamy" class="h-56 w-full object-cover transition duration-500 hover:scale-105">
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-ink">Mentaiko Mood</h3>
+            <p class="mt-3 text-sm leading-7 text-ink/70">Keyword favorit pelanggan pun menyebut salmon mentaiko. Creamy, rich, dan tetap ramah di lidah lokal.</p>
+          </article>
+
+          <article class="rounded-[30px] bg-cream p-5 shadow-floaty">
+            <div class="overflow-hidden rounded-[24px]">
+              <img src="./asset/088527_03cd27a6f3f94c0e8a4d073ec97cf9d2~mv2.jpg" alt="Suasana Street Sushi untuk perayaan" class="h-56 w-full object-cover transition duration-500 hover:scale-105">
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-ink">Party & Event</h3>
+            <p class="mt-3 text-sm leading-7 text-ink/70">Untuk ulang tahun, acara sekolah, sampai momen komunitas, Street Sushi punya vibe yang gampang disukai semua umur.</p>
+          </article>
+        </div>
+
+        <div data-aos="fade-up" class="mt-10 rounded-[34px] bg-ink px-6 py-7 text-white shadow-floaty sm:px-8">
+          <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p class="text-sm font-black uppercase tracking-[0.28em] text-mango">Fun Bundle Hari Ini</p>
+              <h3 class="mt-3 font-display text-3xl">Promo rame-rame buat nongkrong setelah kelas atau kerja.</h3>
+              <p class="mt-3 max-w-2xl text-sm leading-7 text-white/75 sm:text-base">Amankan slot promo hari ini sekarang juga. Klik tombol di bawah untuk order cepat, reservasi, atau tanya paket event sebelum waktu habis.</p>
+              <a href="#kontak" class="mt-5 inline-flex items-center justify-center rounded-full bg-mango px-6 py-3 text-sm font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-white">
+                Klaim Promo Sekarang
+              </a>
+            </div>
+            <div class="rounded-[24px] bg-white/10 px-6 py-5 text-center">
+              <p class="text-xs font-black uppercase tracking-[0.28em] text-mango">Offer ends in</p>
+              <p id="countdownSecondary" class="mt-2 font-display text-4xl text-white">00:00:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="keseruan" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div>
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-orange">Kenapa Disukai</p>
+          <h2 class="mt-3 font-display text-4xl text-ink sm:text-5xl">Tempat sushi yang nggak bikin sungkan.</h2>
+          <div class="mt-8 space-y-4">
+            <div class="rounded-[26px] bg-white p-5 shadow-floaty">
+              <h3 class="font-display text-2xl text-ink">Buat anak muda</h3>
+              <p class="mt-2 text-sm leading-7 text-ink/70">Desain brand-nya energik, tempatnya terasa kasual, dan menunya mudah dinikmati. Cocok buat hangout, nugas, atau content-an.</p>
+            </div>
+            <div class="rounded-[26px] bg-white p-5 shadow-floaty">
+              <h3 class="font-display text-2xl text-ink">Buat anak-anak</h3>
+              <p class="mt-2 text-sm leading-7 text-ink/70">Warna yang ceria, bentuk penyajian yang menarik, dan vibe yang friendly bikin pengalaman makan terasa lebih seru, bukan tegang.</p>
+            </div>
+            <div class="rounded-[26px] bg-white p-5 shadow-floaty">
+              <h3 class="font-display text-2xl text-ink">Buat momen rame-rame</h3>
+              <p class="mt-2 text-sm leading-7 text-ink/70">Dari workshop sampai birthday catering, Street Sushi memang punya DNA untuk jadi bagian dari momen yang dirayakan bersama.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="overflow-hidden rounded-[30px] bg-white shadow-floaty sm:translate-y-8">
+            <img src="./asset/088527_03cd27a6f3f94c0e8a4d073ec97cf9d2~mv2.jpg" alt="Momen menikmati Street Sushi" class="h-72 w-full object-cover">
+          </div>
+          <div class="overflow-hidden rounded-[30px] bg-white shadow-floaty">
+            <img src="./asset/088527_258d327a96464a329d47a9889e85010f~mv2.jpg" alt="Street Sushi platter" class="h-72 w-full object-cover">
+          </div>
+          <div class="overflow-hidden rounded-[30px] bg-white shadow-floaty">
+            <img src="./asset/21_ .jpg" alt="Tim Street Sushi" class="h-72 w-full object-cover">
+          </div>
+          <div class="rounded-[30px] bg-orange p-7 text-white shadow-jelly">
+            <p class="text-sm font-black uppercase tracking-[0.28em] text-white/70">Jangkauan Brand</p>
+            <ul class="mt-5 space-y-3 text-base font-bold">
+              <li>Jakarta</li>
+              <li>Depok</li>
+              <li>Cibinong</li>
+              <li>Cibubur</li>
+              <li>Bandung</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div data-aos="fade-up" class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-orange">Testimoni</p>
+          <h2 class="mt-3 font-display text-4xl text-ink sm:text-5xl">Yang mereka bilang setelah coba.</h2>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-4">
+          <figure class="rounded-[30px] bg-cream p-6 shadow-floaty">
+            <blockquote class="text-sm leading-7 text-ink/75">"Nggak kalah sama sushi-sushi restoran!!"</blockquote>
+            <figcaption class="mt-5 font-display text-2xl text-orange">@virandakeke</figcaption>
+          </figure>
+
+          <figure class="rounded-[30px] bg-cream p-6 shadow-floaty">
+            <blockquote class="text-sm leading-7 text-ink/75">"Suasana Jepangnya dapet banget, menunya banyak dan menarik. Jadi pengen makan tiap hari."</blockquote>
+            <figcaption class="mt-5 font-display text-2xl text-orange">@duolemak</figcaption>
+          </figure>
+
+          <figure class="rounded-[30px] bg-cream p-6 shadow-floaty">
+            <blockquote class="text-sm leading-7 text-ink/75">"Yang lagi pengen makan sushi tapi dompet lagi kering, cobain ini. Start from 15k aja!"</blockquote>
+            <figcaption class="mt-5 font-display text-2xl text-orange">@veradutdut</figcaption>
+          </figure>
+
+          <figure class="rounded-[30px] bg-cream p-6 shadow-floaty">
+            <blockquote class="text-sm leading-7 text-ink/75">"Variannya banyak, porsinya besar, rasanya enak, dan harganya terjangkau. Kurang apalagi?"</blockquote>
+            <figcaption class="mt-5 font-display text-2xl text-orange">@nashyasyara</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="kemitraan" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+        <div data-aos="fade-up" class="rounded-[36px] bg-gradient-to-br from-orange to-coral p-8 text-white shadow-jelly sm:p-10">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-white/75">Peluang Tumbuh Bareng</p>
+          <h2 class="mt-4 font-display text-4xl sm:text-5xl">Kemitraan Street Sushi yang terasa lebih hidup.</h2>
+          <p class="mt-5 max-w-2xl text-sm leading-8 text-white/85 sm:text-base">
+            Dari sumber aslinya, Street Sushi memang membuka peluang kemitraan yang bermakna. Kalau kamu tertarik membangun brand kuliner dengan energi yang hangat, accessible, dan sudah punya identitas kuat, ini titik masuk yang pas.
+          </p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href="https://wa.me/62123456789?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20franchise%20opportunity..." target="_blank" rel="noreferrer noopener" class="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-extrabold text-orange transition hover:-translate-y-1 hover:bg-cream">
+              Hubungi Franchise Hotline
+            </a>
+            <a href="mailto:contoh@fahripano.lp" class="inline-flex items-center justify-center rounded-full border border-white/40 px-7 py-4 text-base font-extrabold text-white transition hover:bg-white/10">
+              Kirim Email
+            </a>
+          </div>
+        </div>
+
+        <div data-aos="fade-up" class="rounded-[36px] bg-white p-7 shadow-floaty sm:p-8">
+          <p class="text-sm font-black uppercase tracking-[0.28em] text-orange">Yang Ditawarkan</p>
+          <div class="mt-6 space-y-4">
+            <div class="rounded-[24px] border border-orange/10 bg-cream p-5">
+              <h3 class="font-display text-2xl text-ink">Brand yang sudah punya cerita</h3>
+              <p class="mt-2 text-sm leading-7 text-ink/70">Lahir dari street culture, berkembang lewat komunitas, dan punya positioning yang jelas: halal, murah, enak.</p>
+            </div>
+            <div class="rounded-[24px] border border-orange/10 bg-cream p-5">
+              <h3 class="font-display text-2xl text-ink">Cocok untuk pasar luas</h3>
+              <p class="mt-2 text-sm leading-7 text-ink/70">Bisa masuk ke kebutuhan lunch, hangout, family moment, sekolah, event, sampai ulang tahun.</p>
+            </div>
+            <div class="rounded-[24px] border border-orange/10 bg-cream p-5">
+              <h3 class="font-display text-2xl text-ink">Energi visual yang kuat</h3>
+              <p class="mt-2 text-sm leading-7 text-ink/70">Brand asset Street Sushi sudah punya daya tarik tinggi untuk digital campaign dan landing page conversion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" class="bg-ink py-16 text-white sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div data-aos="fade-up">
+            <p class="text-sm font-black uppercase tracking-[0.28em] text-mango">Hubungi Kami</p>
+            <h2 class="mt-3 font-display text-4xl sm:text-5xl">Mau order, reservasi, atau kolaborasi?</h2>
+            <p class="mt-5 max-w-xl text-sm leading-8 text-white/75 sm:text-base">
+              Klik WhatsApp sekarang untuk booking meja, kunci jadwal event, atau konsultasi kemitraan. Tim Street Sushi siap balas cepat dan bantu kamu mulai hari ini.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <a href="https://wa.me/62123456789?text=Hello%20Street%20Sushi!" target="_blank" rel="noreferrer noopener" class="flex items-center gap-4 rounded-[24px] border border-white/10 bg-white/5 p-5 transition hover:bg-white/10">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal text-xl text-white">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </span>
+                <span>
+                  <span class="block text-xs font-black uppercase tracking-[0.24em] text-white/55">Info & Booking</span>
+                  <span class="mt-1 block font-display text-2xl">62 123456789</span>
+                </span>
+              </a>
+
+              <a href="https://wa.me/62123456789?text=Hello%20I%20would%20like%20to%20know%20more%20about%20your%20franchise%20opportunity..." target="_blank" rel="noreferrer noopener" class="flex items-center gap-4 rounded-[24px] border border-white/10 bg-white/5 p-5 transition hover:bg-white/10">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-orange text-xl text-white">
+                  <i class="fa-solid fa-store"></i>
+                </span>
+                <span>
+                  <span class="block text-xs font-black uppercase tracking-[0.24em] text-white/55">Franchise Hotline</span>
+                  <span class="mt-1 block font-display text-2xl">62 123456789</span>
+                </span>
+              </a>
+
+              <a href="mailto:contoh@fahripano.lp" class="flex items-center gap-4 rounded-[24px] border border-white/10 bg-white/5 p-5 transition hover:bg-white/10">
+                <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-mango text-xl text-ink">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span>
+                  <span class="block text-xs font-black uppercase tracking-[0.24em] text-white/55">Email</span>
+                  <span class="mt-1 block font-display text-2xl">contoh@fahripano.lp</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-[34px] bg-white p-6 text-ink shadow-floaty sm:p-8">
+            <div class="flex flex-wrap items-center gap-4">
+              <img src="./asset/logo.png" alt="Street Sushi" class="h-14 w-auto">
+              <img src="./asset/halal.png" alt="Label halal" class="h-14 w-auto">
+            </div>
+
+            <div class="mt-7 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[24px] bg-cream p-5">
+                <p class="text-xs font-black uppercase tracking-[0.24em] text-orange">Navigasi Cepat</p>
+                <ul class="mt-4 space-y-3 text-sm font-bold text-ink/75">
+                  <li><a href="#cerita" class="transition hover:text-orange">Tentang kami</a></li>
+                  <li><a href="#menu" class="transition hover:text-orange">Favorit menu</a></li>
+                  <li><a href="#keseruan" class="transition hover:text-orange">Keseruan brand</a></li>
+                  <li><a href="#kemitraan" class="transition hover:text-orange">Waralaba</a></li>
+                </ul>
+              </div>
+
+              <div class="rounded-[24px] bg-cream p-5">
+                <p class="text-xs font-black uppercase tracking-[0.24em] text-orange">Sosial Media</p>
+                <div class="mt-4 flex flex-wrap gap-3">
+                  <a href="https://instagram.com/streetsushi.id" target="_blank" rel="noreferrer noopener" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-orange shadow-sm transition hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.facebook.com/streetsushi.id" target="_blank" rel="noreferrer noopener" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-orange shadow-sm transition hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="https://www.tiktok.com/@streetsushi.id" target="_blank" rel="noreferrer noopener" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-orange shadow-sm transition hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
+                  <a href="https://id.linkedin.com/company/street-sushi-indonesia" target="_blank" rel="noreferrer noopener" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-orange shadow-sm transition hover:-translate-y-1"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-[24px] bg-orange p-5 text-white">
+              <p class="text-xs font-black uppercase tracking-[0.24em] text-white/70">Brand Reminder</p>
+              <p class="mt-3 font-display text-3xl">Friendly halal sushi place.</p>
+              <p class="mt-3 max-w-xl text-sm leading-7 text-white/80">Street Sushi tidak cuma menyajikan sushi. Brand ini membangun budaya merayakan keseharian, one roll at a time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#181212] px-4 py-6 text-center text-sm font-semibold text-white/55 sm:px-6 lg:px-8">
+    ©2026 Street Sushi Indonesia.
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 700,
+      easing: 'ease-out-cubic'
+    });
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.innerHTML = isOpen
+        ? '<i class="fa-solid fa-bars text-lg"></i>'
+        : '<i class="fa-solid fa-xmark text-lg"></i>';
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.innerHTML = '<i class="fa-solid fa-bars text-lg"></i>';
+      });
+    });
+
+    const countdownTargets = [
+      document.getElementById('countdown'),
+      document.getElementById('countdownSecondary')
+    ];
+
+    const endTime = new Date();
+    endTime.setHours(endTime.getHours() + 7);
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = Math.max(0, endTime - now);
+
+      const hours = String(Math.floor(diff / 3600000)).padStart(2, '0');
+      diff %= 3600000;
+      const minutes = String(Math.floor(diff / 60000)).padStart(2, '0');
+      diff %= 60000;
+      const seconds = String(Math.floor(diff / 1000)).padStart(2, '0');
+      const formatted = `${hours}:${minutes}:${seconds}`;
+
+      countdownTargets.forEach((element) => {
+        element.textContent = formatted;
+      });
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
