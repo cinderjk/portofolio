@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const frameSrc = `/project-assets/${project.slug}/index.html`;
+const frameSrc = `/projects/${project.slug}/index.html`;
 const waMessage = encodeURIComponent(`Halo, saya tertarik dengan project ${project.title}. Bisa dibantu diskusi lebih lanjut?`);
 const waLink = `https://wa.me/628991245050?text=${waMessage}`;
 ---

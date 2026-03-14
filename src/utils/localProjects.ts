@@ -18,13 +18,13 @@ function toTitle(slug: string) {
 }
 
 function pickThumbnail(slug: string): string | null {
-	const thumbnailPath = join(process.cwd(), "src", "projects", slug, "thumbnail.png");
+	const thumbnailPath = join(process.cwd(), "public", "projects", slug, "thumbnail.png");
 	if (!existsSync(thumbnailPath)) return null;
-	return `/project-assets/${slug}/thumbnail.png`;
+	return `/projects/${slug}/thumbnail.png`;
 }
 
 export function getLocalProjects(): LocalProject[] {
-	const projectsRoot = join(process.cwd(), "src", "projects");
+	const projectsRoot = join(process.cwd(), "public", "projects");
 	if (!existsSync(projectsRoot)) return [];
 
 	return readdirSync(projectsRoot, { withFileTypes: true })

@@ -13,70 +13,43 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="id">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
 	</head>
 
-	<body>
+	<body class="bg-white text-gray-900 dark:bg-gray-800 dark:text-white">
 		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Diperbarui pada <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
+		<main class="mx-auto max-w-5xl px-4 pb-16 pt-28">
+			<article class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
+				{heroImage && (
+					<div class="overflow-hidden border-b border-gray-200 dark:border-gray-700">
+						<img
+							width={1020}
+							height={510}
+							src={heroImage}
+							alt={title}
+							class="h-auto w-full object-cover"
+						/>
 					</div>
-					<slot />
+				)}
+
+				<div class="space-y-8 p-6 md:p-8">
+					<header class="space-y-4 border-b border-gray-200 pb-6 dark:border-gray-700">
+						<div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide">
+							<span class="rounded-full bg-primary-100 px-3 py-1 text-primary-800 dark:bg-primary-900/50 dark:text-primary-200">
+								Dipublikasikan <FormattedDate date={pubDate} />
+							</span>
+							{updatedDate && (
+								<span class="rounded-full bg-gray-100 px-3 py-1 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+									Diperbarui <FormattedDate date={updatedDate} />
+								</span>
+							)}
+						</div>
+						<h1 class="text-3xl font-extrabold leading-tight text-gray-900 dark:text-white md:text-4xl">{title}</h1>
+						{description && <p class="max-w-3xl text-base leading-relaxed text-gray-600 dark:text-gray-300">{description}</p>}
+					</header>
+
+					<div class="space-y-4 text-base leading-relaxed text-gray-700 dark:text-gray-200 [&_h2]:mt-8 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-gray-900 dark:[&_h2]:text-white [&_h3]:mt-6 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-gray-900 dark:[&_h3]:text-white [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:mb-2 [&_a]:font-semibold [&_a]:text-primary-700 hover:[&_a]:underline dark:[&_a]:text-primary-300 [&_blockquote]:rounded-r-lg [&_blockquote]:border-l-4 [&_blockquote]:border-primary-400 [&_blockquote]:bg-primary-50 [&_blockquote]:px-4 [&_blockquote]:py-3 dark:[&_blockquote]:bg-gray-800 [&_code]:rounded [&_code]:bg-gray-100 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm dark:[&_code]:bg-gray-800 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-gray-950 [&_pre]:p-4 [&_pre]:text-gray-100">
+						<slot />
+					</div>
 				</div>
 			</article>
 		</main>
