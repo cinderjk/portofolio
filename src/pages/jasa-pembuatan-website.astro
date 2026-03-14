@@ -1,0 +1,329 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface PortofolioItem {
+	name: string;
+	slug: string;
+	thumbnail_url: string;
+	updated_at: string;
+}
+
+let portofolio: PortofolioItem[] = [];
+
+try {
+	const res = await fetch('https://foe.my.id/api.php');
+	if (!res.ok) throw new Error(`HTTP ${res.status}`);
+	const json = JSON.parse(await res.text()) as { data?: PortofolioItem[] };
+	portofolio = (json.data ?? []).sort(() => Math.random() - 0.5).slice(0, 4);
+} catch {
+	portofolio = [];
+}
+
+const paketList = [
+	{
+		name: 'Paket Landingpage',
+		price: '99rb',
+		renewal: 'Perpanjangan hosting dan domain hanya 49rb/tahun',
+		recommended: false,
+		features: [
+			{ label: '1 Halaman (Responsif)', included: true },
+			{ label: 'Gratis SSL', included: true },
+			{ label: 'LiteSpeed Web Server', included: true },
+			{ label: 'Gratis Domain .my.id / .web.id', included: true },
+			{ label: 'Bisa dipasang Facebook Pixel untuk beriklan', included: true },
+			{ label: 'Gratis Revisi Setelah Jadi', included: true },
+			{ label: 'E-Commerce Ready (WooCommerce)', included: false },
+			{ label: 'Login WordPress & cPanel', included: false },
+			{ label: 'DDoS Protection Cloudflare', included: false },
+			{ label: 'Email Bisnis (halo@namausaha.com)', included: false },
+			{ label: 'Gratis Update Plugin selama 6 Bulan', included: false },
+		],
+	},
+	{
+		name: 'Paket Hemat',
+		price: '299rb',
+		renewal: 'Perpanjangan hosting dan domain hanya 200rb/tahun',
+		recommended: false,
+		features: [
+			{ label: '2-5 Halaman (Responsif)', included: true },
+			{ label: 'Hosting 0,6 GB (Gratis SSL)', included: true },
+			{ label: 'LiteSpeed Web Server', included: true },
+			{ label: 'Gratis Domain 1 Tahun .xyz / .online / .my.id / .web.id / .biz.id', included: true },
+			{ label: 'Login WordPress & cPanel', included: true },
+			{ label: 'DDoS Protection Cloudflare', included: true },
+			{ label: 'Bisa dipasang Facebook Pixel untuk beriklan', included: true },
+			{ label: 'Gratis Revisi Setelah Jadi', included: true },
+			{ label: 'E-Commerce Ready (WooCommerce)', included: true },
+			{ label: 'Email Bisnis (halo@namausaha.com)', included: false },
+			{ label: 'Gratis Update Plugin selama 6 Bulan', included: false },
+		],
+	},
+	{
+		name: 'Paket Bisnis',
+		price: '599rb',
+		renewal: 'Perpanjangan hosting dan domain hanya 445rb/tahun',
+		recommended: true,
+		features: [
+			{ label: '5-9 Halaman (Responsif)', included: true },
+			{ label: 'Hosting 5 GB (Gratis SSL)', included: true },
+			{ label: 'LiteSpeed Web Server', included: true },
+			{ label: 'Gratis Domain 1 Tahun .xyz / .online / .my.id / .web.id / .biz.id', included: true },
+			{ label: 'Login WordPress & cPanel', included: true },
+			{ label: 'DDoS Protection Cloudflare', included: true },
+			{ label: 'Bisa dipasang Facebook Pixel untuk beriklan', included: true },
+			{ label: 'Gratis Revisi Setelah Jadi', included: true },
+			{ label: 'E-Commerce Ready (WooCommerce)', included: true },
+			{ label: 'Email Bisnis (halo@namausaha.com)', included: true },
+			{ label: 'Gratis Update Plugin selama 6 Bulan', included: true },
+		],
+	},
+];
+
+const langkahPesan = [
+	{
+		title: 'Langkah 1: Pilih Paket Layanan',
+		description:
+			'Saya menawarkan berbagai paket layanan untuk website Anda. Pilih paket yang paling sesuai dengan kebutuhan bisnis Anda.',
+	},
+	{
+		title: 'Langkah 2: Diskusi Kebutuhan',
+		description:
+			'Setelah memilih paket, kita bahas kebutuhan dan target website Anda melalui chat atau telepon sesuai kenyamanan.',
+	},
+	{
+		title: 'Langkah 3: Proses Pembayaran',
+		description:
+			'Saya kirimkan quote resmi. Anda dapat melakukan pembayaran lunas 100% atau DP minimal 50%.',
+	},
+	{
+		title: 'Langkah 4: Pengerjaan Website',
+		description:
+			'Saya mulai mengerjakan website dan membagikan progress agar Anda bisa memantau perkembangan.',
+	},
+	{
+		title: 'Langkah 5: Website Siap Digunakan',
+		description:
+			'Saya kirimkan hasil akhir secara online. Anda dapat memberikan masukan untuk revisi minor pada konten.',
+	},
+];
+
+const faqList = [
+	{
+		q: 'Bagaimana cara pesannya?',
+		a: [
+			'Pilih paket dan informasikan kebutuhan Anda.',
+			'Saya buatkan penawaran resmi dan invoice.',
+			'Lakukan pembayaran DP sesuai invoice.',
+			'Kirimkan data atau konten website.',
+			'Setelah selesai, lakukan pelunasan lalu website siap dipakai.',
+		],
+	},
+	{
+		q: 'Apa saja yang harus saya siapkan?',
+		a: [
+			'Nama website (domain).',
+			'Logo usaha.',
+			'Informasi usaha: nama, alamat, nomor telepon, email.',
+			'Data layanan atau produk.',
+			'Gambar dan deskripsi konten lainnya.',
+		],
+	},
+	{
+		q: 'Berapa lama waktu pengerjaan?',
+		a: [
+			'Landing Page: sekitar 1 hari kerja.',
+			'Company Profile: sekitar 3 hari kerja.',
+			'Toko Online: sekitar 5 hari kerja.',
+			'Estimasi bisa menyesuaikan jika ada fitur tambahan.',
+		],
+	},
+	{
+		q: 'Apakah bisa maintenance setelah website jadi?',
+		a: ['Ya, tersedia layanan maintenance website agar website tetap aman, cepat, dan selalu update.'],
+	},
+	{
+		q: 'Apakah website bisa menerima pembayaran online?',
+		a: ['Bisa. Untuk website e-commerce, saya dapat membantu integrasi metode pembayaran online.'],
+	},
+];
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<BaseHead
+			title="Jasa Pembuatan Website - Fahri Pano"
+			description="Jasa pembuatan website perusahaan dan UMKM dengan fitur lengkap dan harga terjangkau."
+		/>
+	</head>
+	<body class="bg-white text-gray-900 dark:bg-gray-800 dark:text-white">
+		<Header />
+		<main class="mx-auto max-w-6xl space-y-16 px-4 pb-16 pt-28">
+			<section class="grid items-center gap-10 lg:grid-cols-2">
+				<div class="space-y-5">
+					<p class="inline-flex rounded-full bg-primary-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-800 dark:bg-primary-900/40 dark:text-primary-200">
+						Jasa Pembuatan Website
+					</p>
+					<h1 class="text-2xl font-extrabold leading-tight text-primary-700 dark:text-primary-200 lg:text-3xl">
+						Penyedia jasa pembuatan website Perusahaan dan UMKM dengan fitur lengkap harga terjangkau
+					</h1>
+					<p class="text-base text-gray-700 dark:text-gray-200 lg:text-lg">
+						Wujudkan ide bisnis Anda dengan website profesional yang cepat, responsif, dan siap membantu
+						penjualan maupun branding.
+					</p>
+					<div class="flex flex-wrap gap-3">
+						<a href="/portofolio" class="rounded-full bg-primary-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-800">
+							Lihat Portofolio
+						</a>
+						<a href="/hubungi" class="rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-800 transition hover:border-primary-500 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-200">
+							Hubungi Saya
+						</a>
+					</div>
+				</div>
+                <div class="mx-auto order-first lg:order-none">
+					<img
+						src="/decor-dot-yellow.png"
+						alt="decor"
+						class="pointer-events-none absolute right-4 top-48 -z-10 hidden w-20 opacity-80 md:block lg:right-28 lg:top-24 lg:w-28"
+					/>
+					<img
+						src="/hero-jasa-pembuatan-website.webp"
+						alt="Jasa pembuatan website"
+						class="w-64 lg:w-[420px]"
+					/>
+				</div>
+			</section>
+
+			<section class="space-y-6">
+				<div class="space-y-2 text-center">
+					<h2 class="text-3xl font-extrabold">Miliki website-mu sekarang, seperti...</h2>
+				</div>
+				<ul class="grid gap-6 md:grid-cols-2">
+					{
+						portofolio.map((item) => (
+							<li class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+								<div class="block h-full">
+									{item.thumbnail_url && (
+										<div class="overflow-hidden">
+											<img
+												src={item.thumbnail_url}
+												alt={item.name}
+												class="w-full object-cover transition duration-500 group-hover:scale-105"
+											/>
+										</div>
+									)}
+									<div class="space-y-2 p-5">
+										<h3 class="text-lg font-bold text-gray-900 dark:text-white">{item.name}</h3>
+										<p class="text-sm text-gray-600 dark:text-gray-300">Update terakhir: {item.updated_at}</p>
+									</div>
+								</div>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="space-y-6">
+				<div class="space-y-2 text-center">
+					<h2 class="text-3xl font-extrabold">Dipercaya lebih dari 20+ Perusahaan dan UMKM</h2>
+				</div>
+				<div class="grid grid-cols-3 gap-4 rounded-2xl border border-primary-100 bg-primary-100 p-6 dark:border-primary-900 dark:bg-primary-950 md:grid-cols-5">
+					{
+						Array.from({ length: 10 }, (_, index) => index + 1).map((num) => (
+							<img
+								src={`/logo-client/${num}.png`}
+								alt={`Logo Client ${num}`}
+								class="mx-auto h-24 w-auto object-contain opacity-85 transition duration-300 hover:opacity-100"
+							/>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="space-y-8">
+				<div class="space-y-2 text-center">
+					<h2 class="text-3xl font-extrabold">Harga Pembuatan Website</h2>
+					<p class="text-sm text-gray-600 dark:text-gray-300">Jangan ragu untuk bertanya jika Anda bingung memilih, saya selalu siap membantu.</p>
+				</div>
+				<ul class="grid gap-6 lg:grid-cols-3">
+					{
+						paketList.map((paket) => (
+							<li class={`rounded-2xl border p-6 shadow-sm ${paket.recommended ? 'border-primary-600 bg-primary-50 dark:border-primary-400 dark:bg-primary-950/30' : 'border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900'}`}>
+								<div class="mb-4 space-y-2">
+									{paket.recommended && (
+										<span class="inline-flex rounded-full bg-primary-700 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
+											Direkomendasikan
+										</span>
+									)}
+									<h3 class="text-2xl font-extrabold">{paket.name}</h3>
+									<p class="text-4xl font-black text-primary-700 dark:text-primary-300">{paket.price}</p>
+									<p class="text-sm text-gray-600 dark:text-gray-300">{paket.renewal}</p>
+								</div>
+								<ul class="space-y-2 text-sm">
+									{
+										paket.features.map((feature) => (
+											<li class={`flex items-start gap-2 ${feature.included ? 'text-gray-700 dark:text-gray-200' : 'text-gray-400 dark:text-gray-500'}`}>
+												<svg
+													class={`h-4 w-4 flex-shrink-0 ${feature.included ? 'text-primary-700 dark:text-primary-500' : 'text-gray-400 dark:text-gray-500'}`}
+													aria-hidden="true"
+													xmlns="http://www.w3.org/2000/svg"
+													fill="currentColor"
+													viewBox="0 0 20 20"
+												>
+                                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"></path>
+                                                </svg>
+												<span>{feature.label}</span>
+											</li>
+										))
+									}
+								</ul>
+								<a href={"https://wa.me/628991245050?text=Halo, saya ingin memesan paket " + paket.name + " untuk Jasa Pembuatan Website"} class={`mt-6 flex w-full items-center justify-center rounded-lg px-4 py-2 font-semibold text-white transition ${paket.recommended ? 'bg-primary-600 hover:bg-primary-700' : 'bg-gray-700 hover:bg-gray-800'}`} target="_blank" rel="noopener noreferrer">
+                                    Pesan Sekarang
+                                </a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="space-y-6">
+				<div class="space-y-2 text-center">
+					<h2 class="text-3xl font-extrabold">Cara Pesan</h2>
+				</div>
+				<ol class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+					{
+						langkahPesan.map((step) => (
+							<li class="rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-900">
+								<h3 class="text-base font-bold text-primary-700 dark:text-primary-300">{step.title}</h3>
+								<p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{step.description}</p>
+							</li>
+						))
+					}
+				</ol>
+			</section>
+
+			<section class="space-y-6">
+				<div class="space-y-2 text-center">
+					<h2 class="text-3xl font-extrabold">Pertanyaan yang Sering Ditanyakan</h2>
+				</div>
+				<div class="space-y-3">
+					{
+						faqList.map((item) => (
+							<details class="rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-900">
+								<summary class="cursor-pointer text-base font-bold text-gray-900 dark:text-white">
+									{item.q}
+								</summary>
+								<ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-gray-600 dark:text-gray-300">
+									{item.a.map((point) => <li>{point}</li>)}
+								</ul>
+							</details>
+						))
+					}
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

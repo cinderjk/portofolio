@@ -45,7 +45,7 @@
 					id="desktop-layanan-menu"
 					class="invisible absolute left-1/2 top-8 z-50 w-64 -translate-x-1/2 overflow-hidden rounded-xl border border-gray-200 bg-white text-gray-700 opacity-0 shadow-lg transition duration-200 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
 				>
-					<a href="/hubungi?layanan=jasa-pembuatan-website" class="block border-b border-gray-100 px-4 py-3 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800">
+					<a href="/jasa-pembuatan-website" class="block border-b border-gray-100 px-4 py-3 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800">
 						Jasa Pembuatan Website
 					</a>
 					<a href="/hubungi?layanan=jasa-download-envato" class="block border-b border-gray-100 px-4 py-3 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800">
@@ -60,6 +60,7 @@
 				</div>
 			</div>
 			<a href="/proyek" class="transition hover:text-primary-600">Proyek</a>
+			<a href="/portofolio" class="transition hover:text-primary-600">Portofolio</a>
 			<a href="/hubungi" class="transition hover:text-primary-600">Hubungi</a>
 		</div>
 	</nav>
@@ -67,6 +68,7 @@
 		<div class="space-y-2 text-sm font-semibold text-gray-700 dark:text-gray-200">
 			<a href="/#home" class="block rounded-lg px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
 			<a href="/proyek" class="block rounded-lg px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-gray-700">Proyek</a>
+			<a href="/portofolio" class="block rounded-lg px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-gray-700">Portofolio</a>
 			<a href="/hubungi" class="block rounded-lg px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-gray-700">Hubungi</a>
 			<div class="rounded-lg border border-gray-200 px-3 py-2 dark:border-gray-700">
 				<button
@@ -82,7 +84,7 @@
 					</svg>
 				</button>
 				<div id="mobile-layanan-list" class="mt-2 hidden space-y-1">
-					<a href="/hubungi?layanan=jasa-pembuatan-website" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Pembuatan Website</a>
+					<a href="/jasa-pembuatan-website" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Pembuatan Website</a>
 					<a href="/hubungi?layanan=jasa-download-envato" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Download Envato</a>
 					<a href="/hubungi?layanan=jasa-maintenance-wordpress" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Maintenance Wordpress</a>
 					<a href="/hubungi?layanan=jasa-undangan-digital" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Undangan Digital</a>
@@ -93,6 +95,7 @@
 
 	<script is:inline>
 		const initMobileMenu = () => {
+			const closeHandlerKey = '__desktopLayananCloseHandler';
 			const desktopLayananToggle = document.getElementById('desktop-layanan-toggle');
 			const desktopLayananMenu = document.getElementById('desktop-layanan-menu');
 			const desktopLayananIcon = document.getElementById('desktop-layanan-icon');
@@ -137,9 +140,17 @@
 				event.stopPropagation();
 			};
 
-			document.onclick = () => {
+			const previousHandler = window[closeHandlerKey];
+			if (previousHandler) {
+				document.removeEventListener('click', previousHandler);
+			}
+
+			const closeOnDocumentClick = () => {
 				closeDesktopLayanan();
 			};
+
+			window[closeHandlerKey] = closeOnDocumentClick;
+			document.addEventListener('click', closeOnDocumentClick);
 
 			toggle.onclick = () => {
 				const isHidden = nav.classList.contains('hidden');

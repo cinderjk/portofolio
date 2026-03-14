@@ -2,6 +2,11 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const allProyek = await getCollection('proyek');
+// shuffle and pick 3 random projects at build time
+// const shuffled = allProyek.sort(() => Math.random() - 0.5).slice(0, 3);
 
 const SITE_TITLE = 'Khoiri Nur Khaliq Pano - Fahri Pano';
 const SITE_DESCRIPTION = 'Selamat datang di website portofolio saya';
@@ -27,18 +32,17 @@ const SITE_DESCRIPTION = 'Selamat datang di website portofolio saya';
 						Khoiri Nur Khaliq Pano
 					</h1>
 					<p class="text-lg text-gray-700 dark:text-gray-100">
-						Saya adalah developer berpengalaman sejak 2020 dalam membangun website dan aplikasi web
-						menggunakan WordPress, Laravel, Livewire, dan SvelteKit.
+						Saya adalah seorang developer yang berpengalaman sejak 2020 dalam membangun berbagai macam website dan aplikasi berbasis web. Keahlian saya mencakup WordPress, Laravel, Livewire, dan SvelteKit.
 					</p>
 					<p class="text-lg text-gray-700 dark:text-gray-100">
-						Saya mengerjakan berbagai proyek mulai dari portofolio pribadi sampai sistem CRM, ERP, dan
-						e-commerce yang terintegrasi dengan analytics dan optimasi performa.
+						Dalam perjalanan karier saya, saya telah mengerjakan proyek-proyek mulai dari portofolio pribadi menggunakan SvelteKit, hingga sistem CRM, ERP, dan E-Commerce untuk perusahaan distributor pakan ternak berbasis Laravel & Livewire, yang terintegrasi dengan Google AdSense dan Google Analytics.
+					</p>
+					<p class="text-lg text-gray-900 font-bold dark:text-gray-100">
+						Jika anda ingin mulai bekerjasama, silahkan klik tombol dibawah
 					</p>
 					<div class="flex flex-wrap gap-4">
 						<a
-							href="https://fahripano.vercel.app/contact"
-							target="_blank"
-							rel="noreferrer"
+							href="/hubungi"
 							class="rounded-lg bg-primary-700 px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-primary-800"
 						>
 							Hubungi Saya
@@ -53,7 +57,7 @@ const SITE_DESCRIPTION = 'Selamat datang di website portofolio saya';
 						</a>
 					</div>
 				</div>
-				<div class="mx-auto">
+				<div class="mx-auto order-first lg:order-none">
 					<img
 						src="/decor-dot-yellow.png"
 						alt="decor"
@@ -100,41 +104,48 @@ const SITE_DESCRIPTION = 'Selamat datang di website portofolio saya';
 			<section class="pt-16">
 				<h2 class="py-6 text-center text-3xl font-extrabold">JUGA FAMILIAR DENGAN</h2>
 				<div class="grid grid-cols-3 gap-6 rounded-xl bg-gray-50 p-6 dark:bg-gray-800 lg:grid-cols-6">
-					<img src="/livewire.png" alt="Livewire" class="mx-auto h-14 w-14 object-contain" />
-					<img src="/tailwind.png" alt="Tailwind" class="mx-auto h-14 w-14 object-contain" />
-					<img src="/flowbite.png" alt="Flowbite" class="mx-auto h-14 w-14 object-contain" />
-					<img src="/npm.png" alt="NPM" class="mx-auto h-14 w-14 object-contain" />
-					<img src="/firebase.png" alt="Firebase" class="mx-auto h-14 w-14 object-contain" />
-					<img src="/contentful.png" alt="Contentful" class="mx-auto h-14 w-14 object-contain" />
+					<img src="/livewire.png" alt="Livewire" class="mx-auto h-14 w-14 object-contain transition duration-300 hover:-translate-y-1" />
+					<img src="/tailwind.png" alt="Tailwind" class="mx-auto h-14 w-14 object-contain transition duration-300 hover:-translate-y-1" />
+					<img src="/flowbite.png" alt="Flowbite" class="mx-auto h-14 w-14 object-contain transition duration-300 hover:-translate-y-1" />
+					<img src="/npm.png" alt="NPM" class="mx-auto h-14 w-14 object-contain transition duration-300 hover:-translate-y-1" />
+					<img src="/firebase.png" alt="Firebase" class="mx-auto h-14 w-14 object-contain transition duration-300 hover:-translate-y-1" />
+					<img src="/contentful.png" alt="Contentful" class="mx-auto h-14 w-14 object-contain transition duration-300 hover:-translate-y-1" />
 				</div>
 			</section>
 
 			<section id="projects" class="pt-16">
 				<h2 class="py-6 text-center text-3xl font-extrabold">PROJECT UNGGULAN</h2>
-				<div class="space-y-6">
-					<article class="grid gap-6 rounded-xl bg-gray-50 p-6 dark:bg-gray-900 lg:grid-cols-2">
-						<img
-							src="/blog-placeholder-1.jpg"
-							alt="E-COMMERCE PODOMOROFEEDMILL"
-							class="w-full rounded-lg"
-						/>
-						<div>
-							<h3 class="mb-3 text-2xl font-extrabold">E-COMMERCE PODOMOROFEEDMILL</h3>
-							<p class="mb-4 text-gray-700 dark:text-gray-100">
-								Aplikasi dibangun dengan Laravel dan Livewire untuk membantu perusahaan mengenalkan produk
-								dan memudahkan proses bisnis.
-							</p>
-							<a
-								href="https://fahripano.vercel.app/projects/e-commerce-podomorofeedmill"
-								target="_blank"
-								rel="noreferrer"
-								class="inline-block rounded-lg bg-primary-700 px-5 py-2.5 font-semibold text-white transition hover:bg-primary-800"
-							>
-								Selengkapnya
-							</a>
-						</div>
-					</article>
-				</div>
+				<ul class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+					{
+						allProyek.map((item) => (
+							<li class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+								<a href={`/proyek/${item.id}/`} class="block h-full">
+									{item.data.heroImage && (
+										<div class="overflow-hidden">
+											<img
+												width={720}
+												height={360}
+												src={item.data.heroImage}
+												alt={item.data.title}
+												class="w-full object-cover transition duration-500 group-hover:scale-105"
+											/>
+										</div>
+									)}
+									<div class="space-y-3 p-5">
+										<p class="text-sm font-medium text-primary-700 dark:text-primary-300">{item.data.pubDate}</p>
+										<h2 class="text-xl font-bold leading-tight text-gray-900 transition group-hover:text-primary-700 dark:text-white dark:group-hover:text-primary-300">
+											{item.data.title}
+										</h2>
+										<p class="text-sm leading-relaxed text-gray-600 dark:text-gray-300">{item.data.description}</p>
+										<span class="inline-flex items-center text-sm font-semibold text-primary-700 group-hover:underline dark:text-primary-300">
+											Lihat detail
+										</span>
+									</div>
+								</a>
+							</li>
+						))
+					}
+				</ul>
 			</section>
 		</main>
 		<Footer />

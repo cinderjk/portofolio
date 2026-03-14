@@ -1,0 +1,115 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface PortofolioItem {
+	name: string;
+	slug: string;
+	thumbnail_url: string;
+	updated_at: string;
+}
+
+let items: PortofolioItem[] = [];
+let error = false;
+
+try {
+	const res = await fetch('https://foe.my.id/api.php');
+	if (!res.ok) throw new Error(`HTTP ${res.status}`);
+	const json = JSON.parse(await res.text()) as { data?: PortofolioItem[] };
+	items = json.data ?? [];
+} catch {
+	error = true;
+}
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<BaseHead
+			title="Portofolio - Fahri Pano"
+			description="Kumpulan portofolio website yang pernah saya kerjakan."
+		/>
+	</head>
+	<body class="bg-white text-gray-900 dark:bg-gray-800 dark:text-white">
+		<Header />
+		<main class="mx-auto max-w-6xl px-4 pb-16 pt-28">
+			<section class="space-y-8">
+				<div class="space-y-3 text-center">
+					<h1 class="text-3xl font-extrabold text-primary-700 dark:text-primary-200 lg:text-4xl">
+						Portofolio
+					</h1>
+					<p class="mx-auto max-w-2xl text-base text-gray-600 dark:text-gray-300">
+						Kumpulan website yang pernah saya bangun dan kembangkan untuk klien maupun proyek pribadi.
+					</p>
+				</div>
+
+				{
+					error && (
+						<div class="rounded-xl border border-red-200 bg-red-50 p-6 text-center text-red-700 dark:border-red-800 dark:bg-red-900/20 dark:text-red-400">
+							Gagal memuat data portofolio. Silakan coba lagi nanti.
+						</div>
+					)
+				}
+
+				{
+					!error && items.length === 0 && (
+						<div class="rounded-xl border border-gray-200 bg-gray-50 p-6 text-center text-gray-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-400">
+							Belum ada data portofolio.
+						</div>
+					)
+				}
+
+				{
+					!error && items.length > 0 && (
+						<ul class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+							{items.map((item) => (
+								<li class="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+									<a
+										href={`https://foe.my.id/p/${item.slug}/`}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="block h-full"
+									>
+										<div class="overflow-hidden">
+											<img
+												src={item.thumbnail_url}
+												alt={item.name}
+												loading="lazy"
+												class="w-full object-cover transition duration-500 group-hover:scale-105"
+											/>
+										</div>
+										<div class="space-y-2 p-5">
+											<h2 class="text-lg font-bold leading-tight text-gray-900 transition group-hover:text-primary-700 dark:text-white dark:group-hover:text-primary-300">
+												{item.name}
+											</h2>
+											<p class="text-xs text-gray-500 dark:text-gray-400">
+												Diperbarui: {item.updated_at}
+											</p>
+											<span class="inline-flex items-center gap-1 text-sm font-semibold text-primary-700 group-hover:underline dark:text-primary-300">
+												Lihat website
+												<svg
+													class="h-4 w-4"
+													viewBox="0 0 20 20"
+													fill="currentColor"
+													aria-hidden="true"
+												>
+													<path
+														fill-rule="evenodd"
+														d="M4.25 5.5a.75.75 0 0 0-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 0 0 .75-.75v-4a.75.75 0 0 1 1.5 0v4A2.25 2.25 0 0 1 12.75 17h-8.5A2.25 2.25 0 0 1 2 14.75v-8.5A2.25 2.25 0 0 1 4.25 4h4a.75.75 0 0 1 0 1.5h-4Zm6.5-1a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0V6.31l-6.22 6.22a.75.75 0 0 1-1.06-1.06L15.19 5.25h-4.19a.75.75 0 0 1-.75-.75Z"
+														clip-rule="evenodd"
+													/>
+												</svg>
+											</span>
+										</div>
+									</a>
+								</li>
+							))}
+						</ul>
+					)
+				}
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
