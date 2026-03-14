@@ -13,7 +13,7 @@ interface PortofolioItem {
 let portofolio: PortofolioItem[] = [];
 
 try {
-	const res = await fetch('https://foe.my.id/api.php');
+	const res = await fetch('https://p.foe.my.id/api.php');
 	if (!res.ok) throw new Error(`HTTP ${res.status}`);
 	const json = JSON.parse(await res.text()) as { data?: PortofolioItem[] };
 	portofolio = (json.data ?? []).sort(() => Math.random() - 0.5).slice(0, 4);
