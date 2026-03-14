@@ -1,85 +1,165 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
-				<span class="sr-only">Follow Astro on Mastodon</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
-					></path></svg
+<header class="fixed top-0 z-30 w-full bg-white/95 shadow-sm backdrop-blur dark:bg-gray-800/95">
+	<nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+		<a href="/" class="flex items-center gap-3 text-xl font-extrabold text-primary-700 dark:text-primary-200">
+			<img src="/logo.webp" alt="Fahri Pano Logo" class="h-8 w-8 object-cover" />
+			<span>Fahri Pano</span>
+		</a>
+		<button
+			id="mobile-menu-toggle"
+			type="button"
+			class="inline-flex items-center justify-center rounded-lg border border-gray-300 p-2 text-gray-700 transition hover:bg-gray-100 md:hidden dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+			aria-label="Buka menu navigasi"
+			aria-controls="mobile-nav"
+			aria-expanded="false"
+		>
+			<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+		</button>
+		<div class="hidden items-center gap-6 text-sm font-semibold md:flex">
+			<a href="/#home" class="transition hover:text-primary-600">Home</a>
+			<div class="relative">
+				<button
+					id="desktop-layanan-toggle"
+					type="button"
+					class="inline-flex cursor-pointer items-center gap-1 transition hover:text-primary-600 focus:outline-none"
+					aria-haspopup="true"
+					aria-controls="desktop-layanan-menu"
+					aria-expanded="false"
 				>
-			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
-				<span class="sr-only">Follow Astro on Twitter</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
+					Layanan
+					<svg
+						id="desktop-layanan-icon"
+						class="h-4 w-4 transition"
+						viewBox="0 0 20 20"
 						fill="currentColor"
-						d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-					></path></svg
+						aria-hidden="true"
+					>
+						<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+				<div
+					id="desktop-layanan-menu"
+					class="invisible absolute left-1/2 top-8 z-50 w-64 -translate-x-1/2 overflow-hidden rounded-xl border border-gray-200 bg-white text-gray-700 opacity-0 shadow-lg transition duration-200 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
 				>
-			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
-				<span class="sr-only">Go to Astro's GitHub repo</span>
-				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
-			</a>
+					<a href="/hubungi?layanan=jasa-pembuatan-website" class="block border-b border-gray-100 px-4 py-3 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800">
+						Jasa Pembuatan Website
+					</a>
+					<a href="/hubungi?layanan=jasa-download-envato" class="block border-b border-gray-100 px-4 py-3 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800">
+						Jasa Download Envato
+					</a>
+					<a href="/hubungi?layanan=jasa-maintenance-wordpress" class="block border-b border-gray-100 px-4 py-3 transition hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800">
+						Jasa Maintenance Wordpress
+					</a>
+					<a href="/hubungi?layanan=jasa-undangan-digital" class="block px-4 py-3 transition hover:bg-gray-100 dark:hover:bg-gray-800">
+						Jasa Undangan Digital
+					</a>
+				</div>
+			</div>
+			<a href="/proyek" class="transition hover:text-primary-600">Proyek</a>
+			<a href="/hubungi" class="transition hover:text-primary-600">Hubungi</a>
 		</div>
 	</nav>
-</header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+	<div id="mobile-nav" class="hidden border-t border-gray-200 bg-white px-4 pb-4 pt-3 md:hidden dark:border-gray-700 dark:bg-gray-800">
+		<div class="space-y-2 text-sm font-semibold text-gray-700 dark:text-gray-200">
+			<a href="/#home" class="block rounded-lg px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+			<a href="/proyek" class="block rounded-lg px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-gray-700">Proyek</a>
+			<a href="/hubungi" class="block rounded-lg px-3 py-2 transition hover:bg-gray-100 dark:hover:bg-gray-700">Hubungi</a>
+			<div class="rounded-lg border border-gray-200 px-3 py-2 dark:border-gray-700">
+				<button
+					id="mobile-layanan-toggle"
+					type="button"
+					class="flex w-full items-center justify-between text-left text-xs font-bold uppercase tracking-wide text-primary-700 dark:text-primary-300"
+					aria-controls="mobile-layanan-list"
+					aria-expanded="false"
+				>
+					Layanan
+					<svg class="h-4 w-4 transition" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+						<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+				<div id="mobile-layanan-list" class="mt-2 hidden space-y-1">
+					<a href="/hubungi?layanan=jasa-pembuatan-website" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Pembuatan Website</a>
+					<a href="/hubungi?layanan=jasa-download-envato" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Download Envato</a>
+					<a href="/hubungi?layanan=jasa-maintenance-wordpress" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Maintenance Wordpress</a>
+					<a href="/hubungi?layanan=jasa-undangan-digital" class="block rounded-md px-2 py-1.5 text-sm transition hover:bg-gray-100 dark:hover:bg-gray-700">Jasa Undangan Digital</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>
+	<script is:inline>
+		const initMobileMenu = () => {
+			const desktopLayananToggle = document.getElementById('desktop-layanan-toggle');
+			const desktopLayananMenu = document.getElementById('desktop-layanan-menu');
+			const desktopLayananIcon = document.getElementById('desktop-layanan-icon');
+			const toggle = document.getElementById('mobile-menu-toggle');
+			const nav = document.getElementById('mobile-nav');
+			const layananToggle = document.getElementById('mobile-layanan-toggle');
+			const layananList = document.getElementById('mobile-layanan-list');
+			if (
+				!desktopLayananToggle ||
+				!desktopLayananMenu ||
+				!desktopLayananIcon ||
+				!toggle ||
+				!nav ||
+				!layananToggle ||
+				!layananList
+			)
+				return;
+
+			const closeDesktopLayanan = () => {
+				desktopLayananMenu.classList.add('invisible', 'opacity-0');
+				desktopLayananToggle.setAttribute('aria-expanded', 'false');
+				desktopLayananIcon.classList.remove('rotate-180');
+			};
+
+			const openDesktopLayanan = () => {
+				desktopLayananMenu.classList.remove('invisible', 'opacity-0');
+				desktopLayananToggle.setAttribute('aria-expanded', 'true');
+				desktopLayananIcon.classList.add('rotate-180');
+			};
+
+			desktopLayananToggle.onclick = (event) => {
+				event.stopPropagation();
+				const isClosed = desktopLayananMenu.classList.contains('invisible');
+				if (isClosed) {
+					openDesktopLayanan();
+				} else {
+					closeDesktopLayanan();
+				}
+			};
+
+			desktopLayananMenu.onclick = (event) => {
+				event.stopPropagation();
+			};
+
+			document.onclick = () => {
+				closeDesktopLayanan();
+			};
+
+			toggle.onclick = () => {
+				const isHidden = nav.classList.contains('hidden');
+				nav.classList.toggle('hidden', !isHidden);
+				toggle.setAttribute('aria-expanded', String(isHidden));
+
+				if (!isHidden) {
+					layananList.classList.add('hidden');
+					layananToggle.setAttribute('aria-expanded', 'false');
+				}
+			};
+
+			layananToggle.onclick = () => {
+				const isHidden = layananList.classList.contains('hidden');
+				layananList.classList.toggle('hidden', !isHidden);
+				layananToggle.setAttribute('aria-expanded', String(isHidden));
+			};
+		};
+
+		initMobileMenu();
+		document.addEventListener('astro:page-load', initMobileMenu);
+	</script>
+</header>

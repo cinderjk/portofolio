@@ -4,9 +4,40 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-primary-50: #fafbeb;
+	--color-primary-100: #f1f5cc;
+	--color-primary-200: #e8ed9b;
+	--color-primary-300: #e5e779;
+	--color-primary-400: #d9d536;
+	--color-primary-500: #c9be29;
+	--color-primary-600: #ad9921;
+	--color-primary-700: #8b721d;
+	--color-primary-800: #745b1f;
+	--color-primary-900: #634c20;
+	--color-primary-950: #39280f;
+
+	--color-gray-50: #f9faf9;
+	--color-gray-100: #f4f5f4;
+	--color-gray-200: #e7e7e4;
+	--color-gray-300: #d6d6d1;
+	--color-gray-400: #a8a89e;
+	--color-gray-500: #77786c;
+	--color-gray-600: #55574e;
+	--color-gray-700: #3a3b34;
+	--color-gray-800: #292824;
+	--color-gray-900: #1c1c17;
+	--color-gray-950: #0c0c09;
+}
+
+
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #d9d536;
+	--accent-dark: #745b1f;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -17,123 +48,53 @@
 		0 16px 32px rgba(var(--gray), 33%);
 }
 @font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-regular.woff") format("woff");
+	font-family: "nunito";
+	src: url("/fonts/nunito.ttf") format("truetype");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-bold.woff") format("woff");
+	font-family: "nunito";
+	src: url("/fonts/nunito.ttf") format("truetype");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 body {
-	font-family: "Atkinson", sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
+	font-family: "nunito", sans-serif;
 }
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
 	width: 100%;
 }
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
+@media (min-width: 640px) {
+    .main {
+        max-width: 640px
+    }
 }
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+
+@media (min-width: 768px) {
+    .main {
+        max-width: 768px
+    }
 }
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
+
+@media (min-width: 1024px) {
+    .main {
+        max-width: 1024px
+    }
 }
-pre > code {
-	all: unset;
+
+@media (min-width: 1280px) {
+    .main {
+        max-width: 1280px
+    }
 }
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
+
+@media (min-width: 1536px) {
+    .main {
+        max-width: 1536px
+    }
 }
 
 .sr-only {

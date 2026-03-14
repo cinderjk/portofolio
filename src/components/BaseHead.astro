@@ -3,6 +3,9 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 
+// Import ClientRouter
+import { ClientRouter } from "astro:transitions";
+
 interface Props {
 	title: string;
 	description: string;
@@ -17,7 +20,7 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
@@ -45,3 +48,26 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<script is:inline>
+    const applyTheme = () => {
+        const saved = localStorage.getItem('color-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (saved === 'dark' || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    };
+
+    // First load
+    applyTheme();
+
+    // Re-run after ClientRouter navigation
+    document.addEventListener('astro:page-load', applyTheme);
+    // Optional: apply right after DOM swap to reduce flicker
+    document.addEventListener('astro:after-swap', applyTheme);
+</script>
+
+<ClientRouter />

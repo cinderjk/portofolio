@@ -2,48 +2,140 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const SITE_TITLE = 'Khoiri Nur Khaliq Pano - Fahri Pano';
+const SITE_DESCRIPTION = 'Selamat datang di website portofolio saya';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="bg-white text-gray-900 dark:bg-gray-800 dark:text-white">
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+		<main id="home" class="mx-auto max-w-6xl px-4 pb-12 pt-28">
+			<section class="grid items-center gap-10 lg:grid-cols-2">
+				<div class="space-y-6">
+					<img
+						src="/decor-wave-line.png"
+						alt="decor"
+						class="pointer-events-none absolute left-2 top-24 -z-10 w-20 opacity-60 lg:left-14 lg:top-64 lg:w-32"
+					/>
+					<h1 class="text-3xl font-extrabold leading-tight text-primary-600 dark:text-primary-200 lg:text-5xl">
+						Khoiri Nur Khaliq Pano
+					</h1>
+					<p class="text-lg text-gray-700 dark:text-gray-100">
+						Saya adalah developer berpengalaman sejak 2020 dalam membangun website dan aplikasi web
+						menggunakan WordPress, Laravel, Livewire, dan SvelteKit.
+					</p>
+					<p class="text-lg text-gray-700 dark:text-gray-100">
+						Saya mengerjakan berbagai proyek mulai dari portofolio pribadi sampai sistem CRM, ERP, dan
+						e-commerce yang terintegrasi dengan analytics dan optimasi performa.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<a
+							href="https://fahripano.vercel.app/contact"
+							target="_blank"
+							rel="noreferrer"
+							class="rounded-lg bg-primary-700 px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-primary-800"
+						>
+							Hubungi Saya
+						</a>
+						<a
+							href="https://drive.google.com/file/d/10LRQ8iO4lLzDop-e7jvV7AbTgLG8zKJA/view?usp=sharing"
+							target="_blank"
+							rel="noreferrer"
+							class="rounded-lg border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-800 transition hover:-translate-y-0.5 hover:border-primary-400 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-900 dark:text-white"
+						>
+							Unduh CV
+						</a>
+					</div>
+				</div>
+				<div class="mx-auto">
+					<img
+						src="/decor-dot-yellow.png"
+						alt="decor"
+						class="pointer-events-none absolute right-4 top-48 -z-10 hidden w-20 opacity-80 md:block lg:right-28 lg:top-24 lg:w-28"
+					/>
+					<img
+						src="/fahripano.webp"
+						alt="Fahri Pano"
+						class="w-64 rounded-2xl shadow-2xl shadow-gray-400 dark:shadow-gray-900 lg:w-[420px]"
+					/>
+				</div>
+			</section>
+
+			<section id="skills" class="pt-16">
+				<h2 class="py-6 text-center text-3xl font-extrabold">KEAHLIAN</h2>
+				<div class="grid gap-5 lg:grid-cols-3">
+					<article class="rounded-xl bg-primary-100 p-6 dark:bg-gray-900">
+						<img src="/laravel.png" alt="Laravel" class="mb-4 h-14 w-14 object-contain" />
+						<h3 class="mb-3 text-2xl font-bold">Laravel</h3>
+						<p class="text-gray-700 dark:text-gray-100">
+							Berpengalaman membangun aplikasi dari CRUD sederhana hingga e-commerce dan dashboard
+							operasional perusahaan.
+						</p>
+					</article>
+					<article class="rounded-xl bg-primary-100 p-6 dark:bg-gray-900">
+						<img src="/svelte.png" alt="SvelteKit" class="mb-4 h-14 w-14 object-contain" />
+						<h3 class="mb-3 text-2xl font-bold">SvelteKit</h3>
+						<p class="text-gray-700 dark:text-gray-100">
+							Membangun aplikasi web modern yang cepat, ringan, dan responsif untuk kebutuhan company
+							profile hingga aplikasi kustom.
+						</p>
+					</article>
+					<article class="rounded-xl bg-primary-100 p-6 dark:bg-gray-900">
+						<img src="/wordpress.png" alt="WordPress" class="mb-4 h-14 w-14 object-contain" />
+						<h3 class="mb-3 text-2xl font-bold">WordPress</h3>
+						<p class="text-gray-700 dark:text-gray-100">
+							Terbiasa membuat landing page dan website bisnis dengan fokus SEO, performa, dan
+							emaintainability.
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="pt-16">
+				<h2 class="py-6 text-center text-3xl font-extrabold">JUGA FAMILIAR DENGAN</h2>
+				<div class="grid grid-cols-3 gap-6 rounded-xl bg-gray-50 p-6 dark:bg-gray-800 lg:grid-cols-6">
+					<img src="/livewire.png" alt="Livewire" class="mx-auto h-14 w-14 object-contain" />
+					<img src="/tailwind.png" alt="Tailwind" class="mx-auto h-14 w-14 object-contain" />
+					<img src="/flowbite.png" alt="Flowbite" class="mx-auto h-14 w-14 object-contain" />
+					<img src="/npm.png" alt="NPM" class="mx-auto h-14 w-14 object-contain" />
+					<img src="/firebase.png" alt="Firebase" class="mx-auto h-14 w-14 object-contain" />
+					<img src="/contentful.png" alt="Contentful" class="mx-auto h-14 w-14 object-contain" />
+				</div>
+			</section>
+
+			<section id="projects" class="pt-16">
+				<h2 class="py-6 text-center text-3xl font-extrabold">PROJECT UNGGULAN</h2>
+				<div class="space-y-6">
+					<article class="grid gap-6 rounded-xl bg-gray-50 p-6 dark:bg-gray-900 lg:grid-cols-2">
+						<img
+							src="/blog-placeholder-1.jpg"
+							alt="E-COMMERCE PODOMOROFEEDMILL"
+							class="w-full rounded-lg"
+						/>
+						<div>
+							<h3 class="mb-3 text-2xl font-extrabold">E-COMMERCE PODOMOROFEEDMILL</h3>
+							<p class="mb-4 text-gray-700 dark:text-gray-100">
+								Aplikasi dibangun dengan Laravel dan Livewire untuk membantu perusahaan mengenalkan produk
+								dan memudahkan proses bisnis.
+							</p>
+							<a
+								href="https://fahripano.vercel.app/projects/e-commerce-podomorofeedmill"
+								target="_blank"
+								rel="noreferrer"
+								class="inline-block rounded-lg bg-primary-700 px-5 py-2.5 font-semibold text-white transition hover:bg-primary-800"
+							>
+								Selengkapnya
+							</a>
+						</div>
+					</article>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
