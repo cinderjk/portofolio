@@ -1,0 +1,191 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const whatsappNumber = '628991245050';
+
+const benefits = [
+	'Akses tanpa batas ke item Envato Elements',
+	'Template, plugin, video, font, dan grafis premium',
+	'Proses order cepat langsung via WhatsApp',
+];
+
+const steps = [
+	'Paste link Envato yang ingin didownload',
+	'Satu link ditulis satu baris agar mudah dicek',
+	'Klik tombol pesan untuk kirim order ke WhatsApp',
+];
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<BaseHead
+			title="Jasa Download Envato - Fahri Pano"
+			description="Jasa download Envato Elements terpercaya mulai dari 2k per item, proses cepat lewat WhatsApp."
+			image="/hero-jasa-download-envato.webp"
+		/>
+	</head>
+	<body class="bg-white text-stone-900 dark:bg-gray-800 dark:text-white">
+		<Header />
+		<main class="relative isolate overflow-hidden pt-24">
+			<div class="absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top_right,_rgba(132,204,22,0.6),_transparent_34%),linear-gradient(180deg,_rgba(255,255,255,1),_rgba(132,204,22,0.5)_42%,_rgba(255,255,255,1))] dark:bg-[radial-gradient(circle_at_top_right,_rgba(132,204,22,0.24),_transparent_34%),linear-gradient(180deg,_rgba(132,204,22,0.14),_rgba(255,255,255,0))]"></div>
+
+			<section class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+				<div class="space-y-4">
+					<div class="inline-flex rounded-full border border-lime-600/20 bg-lime-100 px-4 py-2 text-sm font-semibold text-lime-800 shadow-[0_0_0_1px_rgba(132,204,22,0.08)] dark:border-lime-400/25 dark:bg-lime-400/10 dark:text-lime-300">
+						Jasa Download Envato
+					</div>
+					<div class="space-y-4">
+						<h1 class="max-w-2xl text-3xl font-black leading-tight tracking-tight text-stone-900 sm:text-4xl dark:text-white">
+							Jasa Download Envato Elements terpercaya, mulai dari
+							<span class="text-lime-400"> 2k saja!</span>
+						</h1>
+						<p class="max-w-xl text-base leading-8 text-stone-700 sm:text-lg dark:text-stone-200">
+							Akses item premium Envato tanpa repot langganan. Cocok untuk kebutuhan template,
+							plugin, video, presentasi, mockup, dan aset desain lainnya.
+						</p>
+					</div>
+
+					<ul class="grid gap-3 text-sm text-stone-700 sm:text-base dark:text-stone-100">
+						{
+							benefits.map((item) => (
+								<li class="flex items-start gap-3 rounded-2xl border border-stone-200 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm dark:border-white/8 dark:bg-white/5 dark:shadow-none">
+									<span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-lime-400 text-sm font-black text-[#27301a]">
+										✓
+									</span>
+									<span>{item}</span>
+								</li>
+							))
+						}
+					</ul>
+
+					<div class="flex flex-wrap gap-3">
+						<a href="#form-pemesanan" class="inline-flex items-center justify-center rounded-xl bg-lime-500 px-5 py-3 text-sm font-bold text-[#24301a] transition hover:bg-lime-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300">
+							Pesan Sekarang
+						</a>
+						<a href="https://wa.me/628991245050?text=Halo,%20saya%20ingin%20order%20jasa%20download%20Envato" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-xl border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition hover:border-lime-400 hover:bg-lime-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:border-lime-300/40 dark:hover:bg-white/10">
+							Chat WhatsApp
+						</a>
+					</div>
+				</div>
+
+				<div class="relative order-first mx-auto w-full max-w-xl lg:order-none">
+					<div class="pointer-events-none absolute -left-6 top-12 hidden lg:block">
+						<div class="grid grid-cols-6 gap-2 opacity-70">
+							{Array.from({ length: 42 }).map(() => <span class="h-1.5 w-1.5 rounded-full bg-lime-400/70"></span>)}
+						</div>
+					</div>
+					<div class="pointer-events-none absolute -right-2 top-1 hidden lg:block">
+						<div class="grid grid-cols-2 gap-2 opacity-80">
+							{Array.from({ length: 14 }).map(() => <span class="h-2.5 w-2.5 rounded-full bg-lime-400"></span>)}
+						</div>
+					</div>
+					<div class="pointer-events-none absolute bottom-6 left-2 hidden lg:flex lg:flex-col lg:gap-2 lg:opacity-70">
+						{Array.from({ length: 6 }).map(() => <span class="h-6 w-0.5 rotate-35 bg-lime-400"></span>)}
+					</div>
+					<div class="relative rounded-[2rem] shadow-[0_24px_60px_rgba(120,113,108,0.18)] backdrop-blur-sm sm:p-6 dark:border-white/8 dark:bg-white/4 dark:shadow-[0_24px_60px_rgba(0,0,0,0.25)]">
+						<img src="/hero-jasa-download-envato.webp" alt="Jasa download Envato" class="w-full object-contain" />
+					</div>
+				</div>
+			</section>
+
+			<section class="mx-auto max-w-6xl px-4 py-16">
+				<div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+					<div class="rounded-[2rem] border border-stone-200 bg-white/85 p-6 shadow-[0_18px_40px_rgba(120,113,108,0.14)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
+						<p class="text-sm font-semibold uppercase tracking-[0.2em] text-lime-700 dark:text-lime-300">Cara Order</p>
+						<h2 class="mt-3 text-2xl font-bold text-stone-900 dark:text-white">Form sederhana, proses cepat</h2>
+						<ul class="mt-5 space-y-4">
+							{
+								steps.map((item, index) => (
+									<li class="flex gap-4">
+										<span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lime-400 font-black text-[#27301a]">
+											{index + 1}
+										</span>
+										<p class="pt-1 text-sm leading-7 text-stone-700 sm:text-base dark:text-stone-200">{item}</p>
+									</li>
+								))
+							}
+						</ul>
+						<div class="mt-6 rounded-2xl border border-lime-600/20 bg-lime-50 px-4 py-3 text-sm leading-7 text-lime-900 dark:border-lime-400/20 dark:bg-lime-400/10 dark:text-lime-100">
+							Harga mulai dari <span class="font-extrabold text-lime-700 dark:text-lime-300">2k/item</span>, menyesuaikan jenis item
+							dan kebutuhan download.
+						</div>
+					</div>
+
+					<div id="form-pemesanan" class="rounded-[2rem] border border-stone-200 bg-white/85 p-6 shadow-[0_18px_40px_rgba(120,113,108,0.14)] backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[0_18px_40px_rgba(0,0,0,0.18)] sm:p-8">
+						<div class="space-y-3 text-center">
+							<h2 class="text-3xl font-black tracking-tight text-stone-900 sm:text-4xl dark:text-white">Form Pemesanan</h2>
+							<p class="mx-auto max-w-2xl text-sm leading-7 text-stone-600 sm:text-base dark:text-stone-300">
+								Tempel link item Envato yang ingin kamu download. Satu link per baris agar proses pengecekan
+								lebih cepat.
+							</p>
+						</div>
+
+						<form id="envato-order-form" class="mt-6 space-y-4" data-whatsapp-number={whatsappNumber}>
+							<label for="envato-links" class="sr-only">Daftar link Envato</label>
+							<textarea
+								id="envato-links"
+								name="links"
+								required
+								rows="6"
+								placeholder="https://elements.envato.com/contoh-1-123&#10;https://elements.envato.com/contoh-2-456&#10;https://elements.envato.com/contoh-3-789"
+								class="min-h-44 w-full rounded-2xl border border-stone-300 bg-stone-100 px-4 py-4 text-sm leading-7 text-stone-900 placeholder:text-stone-500 focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-300/30 dark:border-white/10 dark:bg-[#4a4c40] dark:text-white dark:placeholder:text-stone-400"
+							></textarea>
+							<div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+								<p class="text-sm text-stone-600 dark:text-stone-300">NB: 1 link per baris</p>
+								<button type="submit" class="inline-flex min-w-44 items-center justify-center rounded-xl bg-lime-500 px-6 py-3 text-sm font-bold text-[#24301a] transition hover:bg-lime-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300">
+									Pesan Sekarang
+								</button>
+							</div>
+							<p id="envato-order-error" class="hidden rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-400/20 dark:bg-red-500/10 dark:text-red-100"></p>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+
+		<script is:inline>
+			const bindEnvatoOrderForm = () => {
+				const form = document.getElementById('envato-order-form');
+				const textarea = document.getElementById('envato-links');
+				const errorBox = document.getElementById('envato-order-error');
+
+				if (!form || !textarea || !errorBox) return;
+
+				form.onsubmit = (event) => {
+					event.preventDefault();
+
+					const lines = textarea.value
+						.split('\n')
+						.map((line) => line.trim())
+						.filter(Boolean);
+
+					if (lines.length === 0) {
+						errorBox.textContent = 'Masukkan minimal satu link Envato sebelum mengirim pesan.';
+						errorBox.classList.remove('hidden');
+						textarea.focus();
+						return;
+					}
+
+					errorBox.classList.add('hidden');
+
+					const message = [
+						'Halo, saya ingin order jasa download Envato.',
+						'',
+						'Daftar link:',
+						...lines.map((line, index) => `${index + 1}. ${line}`),
+					].join('\n');
+
+					const whatsappNumber = form.dataset.whatsappNumber;
+					window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+				};
+			};
+
+			bindEnvatoOrderForm();
+			document.addEventListener('astro:page-load', bindEnvatoOrderForm);
+		</script>
+	</body>
+</html>

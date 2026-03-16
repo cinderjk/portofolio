@@ -65,20 +65,26 @@ const today = new Date();
 	bindThemeToggle();
 	document.addEventListener('astro:page-load', bindThemeToggle);
 
-	const scrollToTopBtn = document.getElementById('scroll-to-top');
-	if (scrollToTopBtn) {
-		const toggleScrollButton = () => {
-			const shouldShow = window.scrollY > 200;
-			scrollToTopBtn.classList.toggle('invisible', !shouldShow);
-			scrollToTopBtn.classList.toggle('opacity-0', !shouldShow);
-			scrollToTopBtn.classList.toggle('pointer-events-none', !shouldShow);
-		};
+	const bindScrollToTop = () => {
+		const scrollToTopBtn = document.getElementById('scroll-to-top');
+		if (scrollToTopBtn) {
+			const toggleScrollButton = () => {
+				const shouldShow = window.scrollY > 200;
+				scrollToTopBtn.classList.toggle('invisible', !shouldShow);
+				scrollToTopBtn.classList.toggle('opacity-0', !shouldShow);
+				scrollToTopBtn.classList.toggle('pointer-events-none', !shouldShow);
+			};
 
-		toggleScrollButton();
-		window.addEventListener('scroll', toggleScrollButton, { passive: true });
+			toggleScrollButton();
+			window.addEventListener('scroll', toggleScrollButton, { passive: true });
 
-		scrollToTopBtn.onclick = () => {
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		};
-	}
+			scrollToTopBtn.onclick = () => {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			};
+		}
+	};
+
+	bindScrollToTop();
+	document.addEventListener('astro:page-load', bindScrollToTop);
+	
 </script>

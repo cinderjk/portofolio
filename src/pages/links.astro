@@ -1,5 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import FooterLinks from '../components/FooterLinks.astro';
 
 const links = [
 	{
@@ -23,12 +24,6 @@ const links = [
 	{
 		title: 'Jasa Pembuatan Web',
 		href: '/jasa-pembuatan-website',
-		iconLabel: 'WP',
-		iconClass: 'wp',
-	},
-	{
-		title: 'Buat Undangan Digital',
-		href: '/hubungi?layanan=jasa-undangan-digital',
 		iconLabel: 'WP',
 		iconClass: 'wp',
 	},
@@ -57,177 +52,34 @@ const socials = [
 			description="Kumpulan tautan penting Fahri Pano"
 			image="/fahripano.webp"
 		/>
-		<style>
-			.links-page {
-				min-height: 100vh;
-				background: radial-gradient(circle at top center, #1a2212 0%, #0a0f0c 62%);
-				padding: 2rem 1rem;
-			}
-
-			.container {
-				margin: 0 auto;
-				max-width: 30rem;
-			}
-
-			.profile {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 0.75rem;
-				margin-bottom: 1.5rem;
-			}
-
-			.avatar {
-				height: 6rem;
-				width: 6rem;
-				border-radius: 9999px;
-				object-fit: cover;
-				border: 3px solid #d9d536;
-				box-shadow: 0 0 30px rgba(217, 213, 54, 0.22);
-			}
-
-			.name {
-				display: inline-flex;
-				align-items: center;
-				gap: 0.5rem;
-				color: #ffffff;
-				font-size: 1.95rem;
-				font-weight: 800;
-				line-height: 1;
-			}
-
-			.badge {
-				display: inline-flex;
-				height: 1rem;
-				width: 1rem;
-				border-radius: 9999px;
-				background: #21c8ff;
-			}
-
-			.link-list {
-				display: grid;
-				gap: 0.85rem;
-			}
-
-			.link-card {
-				display: grid;
-				grid-template-columns: 2.25rem 1fr 1rem;
-				align-items: center;
-				gap: 1rem;
-				border-radius: 0.7rem;
-				background: #6b5018;
-				padding: 1rem 0.95rem;
-				color: #fff;
-				text-decoration: none;
-				font-size: 1.12rem;
-				font-weight: 700;
-				transition: transform 140ms ease, filter 140ms ease;
-			}
-
-			.link-card:hover {
-				transform: translateY(-1px);
-				filter: brightness(1.07);
-			}
-
-			.left-icon {
-				display: inline-flex;
-				height: 2.25rem;
-				width: 2.25rem;
-				align-items: center;
-				justify-content: center;
-				border-radius: 9999px;
-				font-size: 0.74rem;
-				font-weight: 900;
-				letter-spacing: 0.04em;
-				background: rgba(255, 255, 255, 0.08);
-			}
-
-			.left-icon.fp { color: #e6eb80; }
-			.left-icon.lv { color: #ff4028; }
-			.left-icon.wp { color: #0db2ff; }
-			.left-icon.sv { color: #ff5b1e; }
-
-			.link-title {
-				text-align: center;
-			}
-
-			.dots {
-				height: 1rem;
-				display: inline-flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				gap: 0.12rem;
-			}
-
-			.dots span {
-				display: block;
-				height: 0.14rem;
-				width: 0.14rem;
-				border-radius: 9999px;
-				background: #fff;
-			}
-
-			.socials {
-				margin-top: 2rem;
-				display: flex;
-				justify-content: center;
-				gap: 0.9rem;
-			}
-
-			.social {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				height: 2.4rem;
-				width: 2.4rem;
-				border: 2px solid #d9d536;
-				border-radius: 9999px;
-				color: #d9d536;
-				text-decoration: none;
-				font-size: 0.9rem;
-				font-weight: 800;
-				transition: transform 140ms ease, background-color 140ms ease, color 140ms ease;
-			}
-
-			.social:hover {
-				transform: translateY(-1px);
-				background: #d9d536;
-				color: #10140f;
-			}
-
-			@media (max-width: 640px) {
-				.name { font-size: 1.9rem; }
-				.link-card { font-size: 1rem; }
-			}
-		</style>
 	</head>
-	<body class="links-page">
-		<main class="container">
-			<section class="profile">
-				<img src="/fahripano.webp" alt="Fahri Pano" class="avatar" />
-				<h1 class="name">Fahri Pano 
+	<body class="min-h-screen bg-primary-200 text-gray-950 antialiased dark:bg-gray-950 dark:text-gray-100">
+		<main class="mx-auto flex w-full max-w-xl flex-col gap-8 px-4 py-10 sm:py-14">
+			<section class="flex flex-col items-center gap-4 text-center">
+				<img src="/fahripano.webp" alt="Fahri Pano" class="h-24 w-24 rounded-full border-4 border-white object-cover shadow-lg ring-1 ring-gray-200 dark:border-primary-800 dark:ring-primary-800" />
+				<h1 class="inline-flex items-center gap-2 text-2xl font-bold tracking-tight sm:text-3xl">Fahri Pano
 					<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04LjUyNDcgMTUuMTIzNEM4LjIwMyAxNC45MjUxIDcuNzk3IDE0LjkyNTEgNy40NzUzIDE1LjEyMzRMNy4xNDg3MyAxNS4zMjQ3QzYuNjk0MiAxNS42MDQ4IDYuMDk5NzQgMTUuNDc4NSA1Ljc5ODQ1IDE1LjAzNzdMNS41ODE5OSAxNC43MjFDNS4zNjg3NSAxNC40MDkgNC45OTc4NSAxNC4yNDM4IDQuNjIzMzIgMTQuMjk0MUw0LjI0MzExIDE0LjM0NTJDMy43MTM5MiAxNC40MTYyIDMuMjIyMjYgMTQuMDU5IDMuMTI2MzEgMTMuNTMzOEwzLjA1NzM3IDEzLjE1NjRDMi45ODk0NyAxMi43ODQ3IDIuNzE3OCAxMi40ODMgMi4zNTUxOSAxMi4zNzY2TDEuOTg3MDkgMTIuMjY4NkMxLjQ3NDc1IDEyLjExODIgMS4xNzA4OCAxMS41OTE5IDEuMjk2ODcgMTEuMDczMUwxLjM4NzM4IDEwLjcwMDNDMS40NzY1NSAxMC4zMzMgMS4zNTEwOSA5Ljk0NjkyIDEuMDYzMSA5LjcwMjI0TDAuNzcwNzU3IDkuNDUzODVDMC4zNjM4NTIgOS4xMDgxMyAwLjMwMDMyNyA4LjUwMzczIDAuNjI2NDYyIDguMDgwOTZMMC44NjA3NzcgNy43NzcyMkMxLjA5MTYgNy40NzgwMSAxLjEzNDA0IDcuMDc0MjQgMC45NzA0NjggNi43MzM1OEwwLjgwNDQyNCA2LjM4Nzc2QzAuNTczMzE0IDUuOTA2NDMgMC43NjExMTQgNS4zMjg0NCAxLjIzMTAxIDUuMDc0ODhMMS41Njg2MSA0Ljg5MjdDMS45MDExNyA0LjcxMzI0IDIuMTA0MTcgNC4zNjE2NCAyLjA5MzMgMy45ODM5TDIuMDgyMjcgMy42MDA0NEMyLjA2NjkyIDMuMDY2NzIgMi40NzM1NyAyLjYxNTA5IDMuMDA1OTcgMi41NzQ1N0wzLjM4ODQ4IDIuNTQ1NDZDMy43NjUyOSAyLjUxNjc4IDQuMDkzNzUgMi4yNzgxNCA0LjIzNzQ2IDEuOTI4NjRMNC4zODMzNSAxLjU3Mzg1QzQuNTg2NCAxLjA4MDAyIDUuMTQxNiAwLjgzMjgzNiA1LjY0NDQ1IDEuMDEyMzdMNi4wMDU3MyAxLjE0MTM1QzYuMzYxNjMgMS4yNjg0MiA2Ljc1ODc1IDEuMTg0MDEgNy4wMzIxOSAwLjkyMzE3M0w3LjMwOTc4IDAuNjU4MzkxQzcuNjk2MTMgMC4yODk4NTIgOC4zMDM4NyAwLjI4OTg1MiA4LjY5MDIyIDAuNjU4MzkyTDguOTY3ODEgMC45MjMxNzNDOS4yNDEyNSAxLjE4NDAxIDkuNjM4MzcgMS4yNjg0MiA5Ljk5NDI3IDEuMTQxMzVMMTAuMzU1NSAxLjAxMjM3QzEwLjg1ODQgMC44MzI4MzYgMTEuNDEzNiAxLjA4MDAyIDExLjYxNjcgMS41NzM4NUwxMS43NjI1IDEuOTI4NjRDMTEuOTA2MyAyLjI3ODE0IDEyLjIzNDcgMi41MTY3OCAxMi42MTE1IDIuNTQ1NDZMMTIuOTk0IDIuNTc0NTdDMTMuNTI2NCAyLjYxNTA5IDEzLjkzMzEgMy4wNjY3MiAxMy45MTc3IDMuNjAwNDRMMTMuOTA2NyAzLjk4MzlDMTMuODk1OCA0LjM2MTY0IDE0LjA5ODggNC43MTMyNCAxNC40MzE0IDQuODkyN0wxNC43NjkgNS4wNzQ4OEMxNS4yMzg5IDUuMzI4NDQgMTUuNDI2NyA1LjkwNjQzIDE1LjE5NTYgNi4zODc3NkwxNS4wMjk1IDYuNzMzNThDMTQuODY2IDcuMDc0MjQgMTQuOTA4NCA3LjQ3ODAxIDE1LjEzOTIgNy43NzcyMkwxNS4zNzM1IDguMDgwOTZDMTUuNjk5NyA4LjUwMzczIDE1LjYzNjEgOS4xMDgxMyAxNS4yMjkyIDkuNDUzODVMMTQuOTM2OSA5LjcwMjI0QzE0LjY0ODkgOS45NDY5MiAxNC41MjM0IDEwLjMzMyAxNC42MTI2IDEwLjcwMDNMMTQuNzAzMSAxMS4wNzMxQzE0LjgyOTEgMTEuNTkxOSAxNC41MjUzIDEyLjExODIgMTQuMDEyOSAxMi4yNjg2TDEzLjY0NDggMTIuMzc2NkMxMy4yODIyIDEyLjQ4MyAxMy4wMTA1IDEyLjc4NDcgMTIuOTQyNiAxMy4xNTY0TDEyLjg3MzcgMTMuNTMzOEMxMi43Nzc3IDE0LjA1OSAxMi4yODYxIDE0LjQxNjIgMTEuNzU2OSAxNC4zNDUyTDExLjM3NjcgMTQuMjk0MUMxMS4wMDIxIDE0LjI0MzggMTAuNjMxMyAxNC40MDkgMTAuNDE4IDE0LjcyMUwxMC4yMDE1IDE1LjAzNzdDOS45MDAyNiAxNS40Nzg1IDkuMzA1OCAxNS42MDQ4IDguODUxMjcgMTUuMzI0N0w4LjUyNDcgMTUuMTIzNFoiIGZpbGw9IiMwMEI2RkYiLz4KPHBhdGggZD0iTTUuMDY5OTggNy41NjI2NUw3LjE5MTMgOS42ODM5N0wxMS40MzM5IDUuNDQxMzMiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K" alt="Verified profile" data-testid="verificationTick">
 				</h1>
 			</section>
 
-			<section class="link-list" aria-label="Daftar Tautan">
+			<section class="flex flex-col gap-3" aria-label="Daftar Tautan">
 				{links.map((item) => (
-					<a href={item.href} class="link-card">
-						<span class={`left-icon ${item.iconClass}`}>{item.iconLabel}</span>
-						<span class="link-title">{item.title}</span>
-						<span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+					<a href={item.href} class="group flex items-center gap-3 rounded-2xl border border-gray-200 bg-white px-4 py-3 shadow-sm transition duration-200 hover:-trangray-y-0.5 hover:border-gray-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:border-primary-900 dark:bg-primary-950 dark:hover:border-primary-600">
+						<span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-semibold tracking-wide text-gray-700 dark:bg-primary-800 dark:text-gray-200">{item.iconLabel}</span>
+						<span class="flex-1 text-left text-sm font-medium text-gray-800 dark:text-gray-100 sm:text-base">{item.title}</span>
+						<span class="flex items-center gap-1" aria-hidden="true"><span class="h-1.5 w-1.5 rounded-full bg-gray-400 transition-colors group-hover:bg-gray-600 dark:bg-gray-500 dark:group-hover:bg-gray-300"></span><span class="h-1.5 w-1.5 rounded-full bg-gray-400 transition-colors group-hover:bg-gray-600 dark:bg-gray-500 dark:group-hover:bg-gray-300"></span><span class="h-1.5 w-1.5 rounded-full bg-gray-400 transition-colors group-hover:bg-gray-600 dark:bg-gray-500 dark:group-hover:bg-gray-300"></span></span>
 					</a>
 				))}
 			</section>
 
-			<section class="socials" aria-label="Social Media">
+			<section class="flex flex-wrap items-center justify-center gap-2 pt-1" aria-label="Social Media">
 				{socials.map((item) => (
-					<a href={item.href} target="_blank" rel="noopener noreferrer" class="social" aria-label={item.label}>
+					<a href={item.href} target="_blank" rel="noopener noreferrer" class="inline-flex h-10 min-w-10 items-center justify-center rounded-full border border-gray-300 bg-white px-3 text-xs font-semibold uppercase tracking-wider text-gray-700 transition hover:-trangray-y-0.5 hover:border-gray-400 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:border-primary-700 dark:bg-primary-950 dark:text-gray-200 dark:hover:border-primary-400 dark:hover:text-white" aria-label={item.label}>
 						{item.key.toUpperCase()}
 					</a>
 				))}
 			</section>
 		</main>
+		<FooterLinks />
 	</body>
 </html>
