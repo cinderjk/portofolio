@@ -24,7 +24,7 @@ const steps = [
 		<BaseHead
 			title="Jasa Download Envato - Fahri Pano"
 			description="Jasa download Envato Elements terpercaya mulai dari 2k per item, proses cepat lewat WhatsApp."
-			image="/hero-jasa-download-envato.webp"
+			image="/hero-jasa-download-envato-1.webp"
 		/>
 	</head>
 	<body class="bg-white text-stone-900 dark:bg-gray-800 dark:text-white">
@@ -38,9 +38,9 @@ const steps = [
 						Jasa Download Envato
 					</div>
 					<div class="space-y-4">
-						<h1 class="max-w-2xl text-3xl font-black leading-tight tracking-tight text-stone-900 sm:text-4xl dark:text-white">
+						<h1 class="max-w-2xl text-3xl text-stone-900 sm:text-4xl dark:text-white">
 							Jasa Download Envato Elements terpercaya, mulai dari
-							<span class="text-lime-400"> 2k saja!</span>
+							<span class="text-lime-600 dark:text-lime-400 font-bold"> 2k saja!</span>
 						</h1>
 						<p class="max-w-xl text-base leading-8 text-stone-700 sm:text-lg dark:text-stone-200">
 							Akses item premium Envato tanpa repot langganan. Cocok untuk kebutuhan template,
@@ -86,7 +86,7 @@ const steps = [
 						{Array.from({ length: 6 }).map(() => <span class="h-6 w-0.5 rotate-35 bg-lime-400"></span>)}
 					</div>
 					<div class="relative rounded-[2rem] shadow-[0_24px_60px_rgba(120,113,108,0.18)] backdrop-blur-sm sm:p-6 dark:border-white/8 dark:bg-white/4 dark:shadow-[0_24px_60px_rgba(0,0,0,0.25)]">
-						<img src="/hero-jasa-download-envato.webp" alt="Jasa download Envato" class="w-full object-contain" />
+						<img src="/hero-jasa-download-envato-1.webp" alt="Jasa download Envato" id="jasa-download-hero-image" class="w-full object-contain" />
 					</div>
 				</div>
 			</section>
@@ -188,4 +188,24 @@ const steps = [
 			document.addEventListener('astro:page-load', bindEnvatoOrderForm);
 		</script>
 	</body>
+
+	<script is:inline>
+		const bindHeroImageByTheme = () => {
+			const heroImage = document.getElementById('jasa-download-hero-image');
+			if (!heroImage) return;
+
+			const applyHeroImageTheme = () => {
+				const storedTheme = localStorage.getItem('color-theme');
+				heroImage.src = storedTheme === 'light'
+					? '/hero-jasa-download-envato-1.webp'
+					: '/hero-jasa-download-envato-2.webp';
+			};
+
+			applyHeroImageTheme();
+			document.addEventListener('theme:changed', applyHeroImageTheme);
+		};
+
+		bindHeroImageByTheme();
+		document.addEventListener('astro:page-load', bindHeroImageByTheme);
+	</script>
 </html>

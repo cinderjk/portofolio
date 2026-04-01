@@ -53,12 +53,15 @@ const today = new Date();
 		const btn = document.getElementById('theme-toggle');
 		if (!btn) return;
 
+
 		btn.onclick = () => {
 			document.documentElement.classList.toggle('dark');
+			const activeTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 			localStorage.setItem(
 				'color-theme',
-				document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+				activeTheme
 			);
+			document.dispatchEvent(new CustomEvent('theme:changed', { detail: { theme: activeTheme } }));
 		};
 	};
 
