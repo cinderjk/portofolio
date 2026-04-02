@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Aurumora</title>
+  <meta name="description" content="Blog edukasi Aurumora: tips memilih emas, investasi logam mulia, dan perawatan perhiasan." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aurum: {
+              50: '#fff9eb',
+              100: '#fef0c9',
+              200: '#fddb8a',
+              300: '#fac651',
+              400: '#f4af25',
+              500: '#df960f',
+              600: '#b9770c',
+              700: '#8f580f',
+              800: '#744612',
+              900: '#623b12'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 90% 0%, rgba(253, 219, 138, 0.24), transparent 34%),
+        radial-gradient(circle at 0% 80%, rgba(223, 150, 15, 0.08), transparent 35%),
+        linear-gradient(180deg, #fffef9 0%, #fff9ee 55%, #fffdf7 100%);
+    }
+  </style>
+</head>
+<body class="font-sans text-stone-800">
+  <header class="sticky top-0 z-40 border-b border-aurum-100/70 bg-white/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+      <a href="./index.html" class="flex items-center gap-2">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-aurum-500 text-white">
+          <i class="fa-solid fa-gem text-sm"></i>
+        </span>
+        <span class="font-serif text-2xl font-semibold text-aurum-800">Aurumora</span>
+      </a>
+
+      <ul class="hidden items-center gap-7 text-sm font-semibold md:flex">
+        <li><a href="./index.html" class="hover:text-aurum-700">Home</a></li>
+        <li><a href="./shop.html" class="hover:text-aurum-700">Shop</a></li>
+        <li><a href="./cart.html" class="hover:text-aurum-700">Cart</a></li>
+        <li><a href="./blog.html" class="text-aurum-700">Blog</a></li>
+      </ul>
+
+      <a href="./shop.html" class="rounded-full bg-aurum-500 px-4 py-2 text-sm font-bold text-white hover:bg-aurum-600">Belanja Emas</a>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 pb-16 pt-12 md:px-8">
+    <section class="mb-10">
+      <p class="text-sm font-bold uppercase tracking-widest text-aurum-700">Aurumora Journal</p>
+      <h1 class="font-serif text-5xl leading-tight text-aurum-900">Insight Emas & Gaya Investasi</h1>
+      <p class="mt-3 max-w-3xl text-sm text-stone-600">Artikel singkat yang membantu kamu memilih produk emas terbaik, memahami momentum investasi, dan menjaga perhiasan tetap berkilau.</p>
+    </section>
+
+    <section class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <article class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-aurum-100">
+        <img src="./asset/logam-mulia.svg" alt="Tips investasi logam mulia" class="h-44 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-aurum-700">Investasi</p>
+        <h2 class="mt-1 text-xl font-bold text-aurum-900">5 Cara Mulai Investasi Logam Mulia Untuk Pemula</h2>
+        <p class="mt-2 text-sm text-stone-600">Pelajari strategi aman mulai dari gramasi kecil, waktu beli, hingga penyimpanan.</p>
+        <a href="#" class="mt-4 inline-flex text-sm font-bold text-aurum-700">Baca Artikel <i class="fa-solid fa-arrow-right ml-2"></i></a>
+      </article>
+
+      <article class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-aurum-100">
+        <img src="./asset/kalung.svg" alt="Panduan memilih kalung emas" class="h-44 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-aurum-700">Perhiasan</p>
+        <h2 class="mt-1 text-xl font-bold text-aurum-900">Panduan Memilih Kalung Emas Sesuai Bentuk Wajah</h2>
+        <p class="mt-2 text-sm text-stone-600">Cek panjang rantai, model liontin, dan tips styling agar tampilan lebih proporsional.</p>
+        <a href="#" class="mt-4 inline-flex text-sm font-bold text-aurum-700">Baca Artikel <i class="fa-solid fa-arrow-right ml-2"></i></a>
+      </article>
+
+      <article class="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-aurum-100 md:col-span-2 lg:col-span-1">
+        <img src="./asset/gelang.svg" alt="Perawatan gelang emas" class="h-44 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-aurum-700">Perawatan</p>
+        <h2 class="mt-1 text-xl font-bold text-aurum-900">Cara Merawat Gelang Emas Agar Tidak Kusam</h2>
+        <p class="mt-2 text-sm text-stone-600">Rutinitas simpel mingguan untuk menjaga warna dan kilau gelang tetap maksimal.</p>
+        <a href="#" class="mt-4 inline-flex text-sm font-bold text-aurum-700">Baca Artikel <i class="fa-solid fa-arrow-right ml-2"></i></a>
+      </article>
+    </section>
+
+    <section class="mt-10 rounded-3xl bg-gradient-to-r from-aurum-700 to-aurum-500 p-7 text-white md:p-9">
+      <p class="text-sm font-semibold uppercase tracking-widest text-amber-100">Newsletter</p>
+      <h2 class="mt-2 font-serif text-4xl">Dapatkan Update Harga Emas Mingguan</h2>
+      <p class="mt-2 max-w-2xl text-sm text-amber-50/95">Kami kirim insight pasar, rekomendasi koleksi, dan promo terbatas langsung ke email kamu.</p>
+      <form class="mt-5 flex flex-col gap-3 sm:flex-row">
+        <input type="email" placeholder="Masukkan email kamu" class="w-full rounded-xl border border-white/30 bg-white/15 px-4 py-3 text-sm text-white placeholder:text-white/80 focus:border-white focus:outline-none" />
+        <button type="submit" class="rounded-xl bg-white px-6 py-3 text-sm font-bold text-aurum-700 hover:bg-amber-50">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t border-aurum-100 bg-white py-7">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 text-sm text-stone-500 md:flex-row md:items-center md:justify-between md:px-8">
+      <p>© 2026 Aurumora. Semua hak cipta dilindungi.</p>
+      <p>Alamat: Jakarta Selatan | WhatsApp: 0812-0000-0000</p>
+    </div>
+  </footer>
+</body>
+</html>

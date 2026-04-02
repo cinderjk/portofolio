@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Aurumora</title>
+  <meta name="description" content="Lihat dan kelola keranjang belanja emas kamu di Aurumora." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aurum: {
+              50: '#fff9eb',
+              100: '#fef0c9',
+              200: '#fddb8a',
+              300: '#fac651',
+              400: '#f4af25',
+              500: '#df960f',
+              600: '#b9770c',
+              700: '#8f580f',
+              800: '#744612',
+              900: '#623b12'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 100% 0%, rgba(253, 219, 138, 0.23), transparent 35%),
+        linear-gradient(180deg, #fffefb 0%, #fff8ea 60%, #fffcf4 100%);
+    }
+  </style>
+</head>
+<body class="font-sans text-stone-800">
+  <header class="sticky top-0 z-40 border-b border-aurum-100/70 bg-white/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+      <a href="./index.html" class="flex items-center gap-2">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-aurum-500 text-white">
+          <i class="fa-solid fa-gem text-sm"></i>
+        </span>
+        <span class="font-serif text-2xl font-semibold text-aurum-800">Aurumora</span>
+      </a>
+
+      <ul class="hidden items-center gap-7 text-sm font-semibold md:flex">
+        <li><a href="./index.html" class="hover:text-aurum-700">Home</a></li>
+        <li><a href="./shop.html" class="hover:text-aurum-700">Shop</a></li>
+        <li><a href="./cart.html" class="text-aurum-700">Cart</a></li>
+        <li><a href="./blog.html" class="hover:text-aurum-700">Blog</a></li>
+      </ul>
+
+      <a href="./shop.html" class="rounded-full bg-aurum-500 px-4 py-2 text-sm font-bold text-white hover:bg-aurum-600">Tambah Produk</a>
+    </nav>
+  </header>
+
+  <main class="mx-auto grid max-w-7xl gap-6 px-4 pb-16 pt-12 md:grid-cols-3 md:px-8">
+    <section class="md:col-span-2">
+      <h1 class="font-serif text-5xl leading-tight text-aurum-900">Keranjang Belanja</h1>
+      <p class="mt-2 text-sm text-stone-600">Atur jumlah item, lihat subtotal, lalu lanjutkan checkout.</p>
+
+      <div id="cartItems" class="mt-6 space-y-4"></div>
+
+      <div id="emptyState" class="mt-6 hidden rounded-3xl border border-dashed border-aurum-300 bg-white p-8 text-center">
+        <i class="fa-solid fa-bag-shopping text-2xl text-aurum-600"></i>
+        <p class="mt-3 font-semibold text-aurum-900">Keranjang kamu masih kosong.</p>
+        <a href="./shop.html" class="mt-4 inline-flex rounded-full bg-aurum-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-aurum-600">Mulai Belanja</a>
+      </div>
+    </section>
+
+    <aside class="h-fit rounded-3xl bg-white p-6 shadow-sm ring-1 ring-aurum-100">
+      <h2 class="text-xl font-bold text-aurum-900">Ringkasan Pesanan</h2>
+      <div class="mt-5 space-y-3 text-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-stone-600">Total Item</span>
+          <span id="summaryItems" class="font-bold">0</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-stone-600">Subtotal</span>
+          <span id="summarySubtotal" class="font-bold">Rp 0</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-stone-600">Asuransi Pengiriman</span>
+          <span id="summaryShipping" class="font-bold">Rp 50.000</span>
+        </div>
+      </div>
+
+      <div class="mt-4 border-t border-aurum-100 pt-4">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-semibold text-stone-600">Total Bayar</span>
+          <span id="summaryTotal" class="text-2xl font-extrabold text-aurum-700">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="checkoutBtn" class="mt-5 w-full rounded-xl bg-aurum-500 py-3 text-sm font-bold text-white hover:bg-aurum-600">Lanjut Checkout</button>
+      <button id="clearCartBtn" class="mt-3 w-full rounded-xl border border-aurum-300 py-3 text-sm font-bold text-aurum-800 hover:border-aurum-500">Kosongkan Keranjang</button>
+    </aside>
+  </main>
+
+  <footer class="border-t border-aurum-100 bg-white py-7">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 text-sm text-stone-500 md:flex-row md:items-center md:justify-between md:px-8">
+      <p>© 2026 Aurumora. Semua hak cipta dilindungi.</p>
+      <p>Alamat: Jakarta Selatan | WhatsApp: 0812-0000-0000</p>
+    </div>
+  </footer>
+
+  <script>
+    const CART_KEY = 'aurumora-cart';
+    const SHIPPING = 50000;
+
+    function formatCurrency(number) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        maximumFractionDigits: 0
+      }).format(number);
+    }
+
+    function getCart() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const cartItems = document.getElementById('cartItems');
+      const emptyState = document.getElementById('emptyState');
+      cartItems.innerHTML = '';
+
+      if (!cart.length) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+      }
+
+      cart.forEach(function (item) {
+        const row = document.createElement('article');
+        row.className = 'rounded-3xl bg-white p-5 shadow-sm ring-1 ring-aurum-100';
+        row.innerHTML = [
+          '<div class="flex flex-wrap items-start justify-between gap-4">',
+          '  <div>',
+          '    <p class="text-lg font-bold text-aurum-900">' + item.name + '</p>',
+          '    <p class="mt-1 text-sm text-stone-600">Harga: ' + formatCurrency(item.price) + '</p>',
+          '  </div>',
+          '  <div class="flex items-center gap-2">',
+          '    <button data-action="minus" data-id="' + item.id + '" class="qty-btn rounded-lg border border-aurum-300 px-3 py-1 font-bold text-aurum-800">-</button>',
+          '    <span class="min-w-8 text-center font-bold">' + item.qty + '</span>',
+          '    <button data-action="plus" data-id="' + item.id + '" class="qty-btn rounded-lg border border-aurum-300 px-3 py-1 font-bold text-aurum-800">+</button>',
+          '  </div>',
+          '</div>',
+          '<div class="mt-4 flex items-center justify-between border-t border-aurum-100 pt-4">',
+          '  <p class="text-sm text-stone-600">Subtotal produk</p>',
+          '  <p class="font-extrabold text-aurum-700">' + formatCurrency(item.price * item.qty) + '</p>',
+          '</div>'
+        ].join('');
+
+        cartItems.appendChild(row);
+      });
+
+      bindQtyButtons();
+      renderSummary(cart);
+    }
+
+    function renderSummary(cart) {
+      const totalItems = cart.reduce(function (sum, item) { return sum + item.qty; }, 0);
+      const subtotal = cart.reduce(function (sum, item) { return sum + item.price * item.qty; }, 0);
+      const total = subtotal + (subtotal > 0 ? SHIPPING : 0);
+
+      document.getElementById('summaryItems').textContent = String(totalItems);
+      document.getElementById('summarySubtotal').textContent = formatCurrency(subtotal);
+      document.getElementById('summaryShipping').textContent = subtotal > 0 ? formatCurrency(SHIPPING) : formatCurrency(0);
+      document.getElementById('summaryTotal').textContent = formatCurrency(total);
+    }
+
+    function updateQty(id, action) {
+      const cart = getCart();
+      const found = cart.find(function (item) { return item.id === id; });
+      if (!found) return;
+
+      if (action === 'plus') {
+        found.qty += 1;
+      }
+
+      if (action === 'minus') {
+        found.qty -= 1;
+      }
+
+      const cleaned = cart.filter(function (item) { return item.qty > 0; });
+      saveCart(cleaned);
+      renderCart();
+    }
+
+    function bindQtyButtons() {
+      document.querySelectorAll('.qty-btn').forEach(function (button) {
+        button.addEventListener('click', function () {
+          updateQty(button.dataset.id, button.dataset.action);
+        });
+      });
+    }
+
+    document.getElementById('clearCartBtn').addEventListener('click', function () {
+      saveCart([]);
+      renderCart();
+    });
+
+    document.getElementById('checkoutBtn').addEventListener('click', function () {
+      const cart = getCart();
+      if (!cart.length) {
+        alert('Keranjang masih kosong. Pilih produk dulu ya.');
+        return;
+      }
+      alert('Checkout demo berhasil. Lanjutkan ke payment gateway di integrasi berikutnya.');
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>
