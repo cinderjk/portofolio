@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Aurumora x UBS Gold Lifestyle</title>
+  <meta name="description" content="Aurumora Journal berisi insight investasi emas, styling perhiasan, dan tips perawatan koleksi UBS Gold Lifestyle." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blush: {
+              50: '#fff7fa',
+              100: '#feeef4',
+              200: '#fbdde9',
+              300: '#f5c1d4'
+            },
+            navy: {
+              700: '#223750',
+              800: '#1a2f47',
+              900: '#102742'
+            },
+            gold: {
+              400: '#efb34b',
+              500: '#db9a33',
+              600: '#be7f1f'
+            }
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            display: ['Marcellus', 'serif']
+          },
+          boxShadow: {
+            soft: '0 24px 60px rgba(16, 39, 66, 0.14)',
+            card: '0 18px 35px rgba(19, 34, 58, 0.09)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(245, 193, 212, 0.45), transparent 38%),
+        radial-gradient(circle at 100% 25%, rgba(239, 179, 75, 0.14), transparent 42%),
+        linear-gradient(160deg, #fff9fc 0%, #fff4f8 45%, #fffdfd 100%);
+      color: #17314f;
+    }
+
+    .glass {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border: 1px solid #f3d6e3;
+    }
+
+    .article-card {
+      transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-6px);
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 z-50 border-b border-blush-200/80 bg-white/85 backdrop-blur-md">
+    <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./asset/logo-ubs.png" alt="UBS Gold Lifestyle" class="h-10 w-auto" />
+      </a>
+
+      <button id="menuToggle" class="rounded-xl border border-blush-200 px-3 py-2 text-navy-900 md:hidden" aria-label="Toggle menu">
+        Menu
+      </button>
+
+      <ul class="hidden items-center gap-7 text-sm font-semibold text-navy-800 md:flex">
+        <li><a href="./index.html" class="transition hover:text-gold-600">Home</a></li>
+        <li><a href="./shop.html" class="transition hover:text-gold-600">Shop</a></li>
+        <li><a href="./cart.html" class="transition hover:text-gold-600">Cart</a></li>
+        <li><a href="./blog.html" class="text-gold-600">Blog</a></li>
+      </ul>
+
+      <a href="./shop.html" class="hidden rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800 md:inline-flex">Belanja Sekarang</a>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-blush-200 bg-white px-4 py-4 md:hidden">
+      <ul class="space-y-3 text-sm font-semibold text-navy-800">
+        <li><a href="./index.html" class="block">Home</a></li>
+        <li><a href="./shop.html" class="block">Shop</a></li>
+        <li><a href="./cart.html" class="block">Cart</a></li>
+        <li><a href="./blog.html" class="block text-gold-600">Blog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="mx-auto w-full max-w-7xl px-4 pb-16 pt-10 md:px-8">
+    <section class="glass relative overflow-hidden rounded-[2rem] p-8 shadow-soft md:p-10">
+      <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-blush-200/70 blur-2xl"></div>
+      <div class="absolute -bottom-14 left-4 h-36 w-36 rounded-full bg-gold-400/20 blur-2xl"></div>
+
+      <div class="relative z-10 grid gap-6 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Aurumora Journal</p>
+          <h1 class="mt-2 font-display text-4xl text-navy-900 md:text-5xl">Insight Emas & Lifestyle Premium</h1>
+          <p class="mt-3 max-w-xl text-sm leading-relaxed text-navy-700/85">Artikel pilihan untuk membantu kamu memilih produk, memahami momentum investasi, dan merawat koleksi emas agar tetap bernilai.</p>
+        </div>
+        <img src="./asset/slider (2).jpeg" alt="Aurumora Journal" class="h-56 w-full rounded-3xl object-cover md:h-64" />
+      </div>
+    </section>
+
+    <section class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <article class="article-card rounded-3xl bg-white p-5 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/hero-kategori-lm.jpeg" alt="Investasi logam mulia" class="h-44 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Investasi</p>
+        <h2 class="mt-1 text-xl font-bold text-navy-900">Cara Mulai Investasi Gold Bar Dengan Budget Bertahap</h2>
+        <p class="mt-2 text-sm text-navy-700/80">Mulai dari gramasi kecil, atur jadwal beli, dan fokus pada tujuan jangka panjang.</p>
+        <a href="#" class="mt-4 inline-flex text-sm font-bold text-navy-900 transition hover:text-gold-600">Baca Artikel</a>
+      </article>
+
+      <article class="article-card rounded-3xl bg-white p-5 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/hero-kategori-kalung.jpeg" alt="Styling kalung emas" class="h-44 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Styling</p>
+        <h2 class="mt-1 text-xl font-bold text-navy-900">Tips Styling Kalung Rose Gold Untuk Daily Look</h2>
+        <p class="mt-2 text-sm text-navy-700/80">Padukan panjang chain, outfit warna netral, dan layering yang proporsional.</p>
+        <a href="#" class="mt-4 inline-flex text-sm font-bold text-navy-900 transition hover:text-gold-600">Baca Artikel</a>
+      </article>
+
+      <article class="article-card rounded-3xl bg-white p-5 shadow-card ring-1 ring-blush-200 md:col-span-2 lg:col-span-1">
+        <img src="./asset/hero-kategori-cincin.jpeg" alt="Perawatan perhiasan" class="h-44 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Perawatan</p>
+        <h2 class="mt-1 text-xl font-bold text-navy-900">Langkah Simpel Menjaga Kilau Perhiasan Tetap Maksimal</h2>
+        <p class="mt-2 text-sm text-navy-700/80">Bersihkan berkala, hindari bahan kimia, dan simpan di tempat yang tepat.</p>
+        <a href="#" class="mt-4 inline-flex text-sm font-bold text-navy-900 transition hover:text-gold-600">Baca Artikel</a>
+      </article>
+    </section>
+
+    <section class="mt-10 glass rounded-[2rem] p-8 shadow-soft md:p-10">
+      <div class="grid gap-6 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Newsletter</p>
+          <h2 class="mt-2 font-display text-3xl text-navy-900 md:text-4xl">Update Harga Emas & Insight Mingguan</h2>
+          <p class="mt-3 text-sm leading-relaxed text-navy-700/85">Dapatkan ringkasan tren pasar, rekomendasi koleksi, dan promo terbaru langsung di inbox kamu.</p>
+        </div>
+
+        <form class="grid gap-3 sm:grid-cols-[1fr_auto]">
+          <input type="email" placeholder="Masukkan email kamu" class="w-full rounded-xl border border-blush-300 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-navy-500/70 focus:border-gold-500 focus:outline-none" />
+          <button type="submit" class="rounded-xl bg-navy-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-navy-800">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-blush-200 bg-white/70 py-7 backdrop-blur-sm">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 text-sm text-navy-700/80 md:flex-row md:items-center md:justify-between md:px-8">
+      <p>&copy; 2026 Aurumora x UBS Gold Lifestyle</p>
+      <p>Jakarta Selatan | WhatsApp 0812-0000-0000</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

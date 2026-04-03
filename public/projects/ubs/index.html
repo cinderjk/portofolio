@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UBS Gold Lifestyle</title>
+  <meta name="description" content="Koleksi UBS Gold Lifestyle dengan tampilan estetik: hero slider, kategori koleksi, dan list produk logam mulia." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blush: {
+              50: '#fff7fa',
+              100: '#feeef4',
+              200: '#fbdde9',
+              300: '#f5c1d4'
+            },
+            navy: {
+              700: '#223750',
+              800: '#1a2f47',
+              900: '#102742'
+            },
+            gold: {
+              400: '#efb34b',
+              500: '#db9a33',
+              600: '#be7f1f'
+            }
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            display: ['Marcellus', 'serif']
+          },
+          boxShadow: {
+            soft: '0 24px 60px rgba(16, 39, 66, 0.14)',
+            card: '0 18px 35px rgba(19, 34, 58, 0.09)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --rose-bg: #fff8fb;
+      --rose-surface: #ffffffcc;
+      --line-soft: #f3d6e3;
+      --text-main: #17314f;
+      --gold-main: #d79a36;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(245, 193, 212, 0.5), transparent 38%),
+        radial-gradient(circle at 100% 20%, rgba(239, 179, 75, 0.17), transparent 42%),
+        linear-gradient(160deg, #fff9fc 0%, #fff4f8 45%, #fffdfd 100%);
+      color: var(--text-main);
+    }
+
+    .glass {
+      background: var(--rose-surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--line-soft);
+    }
+
+    .heroSwiper {
+      border-radius: 2rem;
+      overflow: hidden;
+    }
+
+    .heroSwiper .swiper-slide {
+      position: relative;
+    }
+
+    .heroSwiper .swiper-button-prev,
+    .heroSwiper .swiper-button-next {
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.75);
+      color: #102742;
+    }
+
+    .heroSwiper .swiper-button-prev::after,
+    .heroSwiper .swiper-button-next::after {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .heroSwiper .swiper-pagination-bullet {
+      width: 0.6rem;
+      height: 0.6rem;
+      background: rgba(255, 255, 255, 0.7);
+      opacity: 1;
+      transition: all 220ms ease;
+    }
+
+    .heroSwiper .swiper-pagination-bullet-active {
+      width: 1.9rem;
+      border-radius: 9999px;
+      background: #ffffff;
+    }
+
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: rise 700ms ease forwards;
+    }
+
+    .dot.active {
+      width: 1.9rem;
+      background: #ffffff;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 z-50 border-b border-blush-200/80 bg-white/85 backdrop-blur-md">
+    <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="./asset/logo-ubs.png" alt="UBS Gold Lifestyle" class="h-10 w-auto" />
+      </a>
+
+      <button id="menuToggle" class="rounded-xl border border-blush-200 px-3 py-2 text-navy-900 md:hidden" aria-label="Toggle menu">
+        Menu
+      </button>
+
+      <ul class="hidden items-center gap-7 text-sm font-semibold text-navy-800 md:flex">
+        <li><a href="#hero" class="transition hover:text-gold-600">Home</a></li>
+        <li><a href="#kategori" class="transition hover:text-gold-600">Kategori</a></li>
+        <li><a href="#produk" class="transition hover:text-gold-600">List Produk</a></li>
+        <li><a href="./shop.html" class="transition hover:text-gold-600">Shop</a></li>
+        <li><a href="./blog.html" class="transition hover:text-gold-600">Blog</a></li>
+      </ul>
+
+      <a href="./shop.html" class="hidden rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800 md:inline-flex">Belanja Sekarang</a>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-blush-200 bg-white px-4 py-4 md:hidden">
+      <ul class="space-y-3 text-sm font-semibold text-navy-800">
+        <li><a href="#hero" class="block">Home</a></li>
+        <li><a href="#kategori" class="block">Kategori</a></li>
+        <li><a href="#produk" class="block">List Produk</a></li>
+        <li><a href="./shop.html" class="block">Shop</a></li>
+        <li><a href="./blog.html" class="block">Blog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="home" class="pb-16">
+    <section id="hero" class="mx-auto w-full max-w-7xl px-4 pt-8 md:px-8 md:pt-10">
+      <div class="relative overflow-hidden rounded-[2rem] shadow-soft">
+        <div class="swiper heroSwiper relative aspect-[16/12] w-full sm:aspect-[16/9] lg:aspect-[16/7]">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide">
+            <img src="./asset/slider (1).jpeg" alt="Koleksi UBS Gold Lifestyle" class="h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-900/60 via-navy-900/30 to-transparent"></div>
+            <div class="absolute bottom-7 left-5 right-5 md:bottom-12 md:left-10 md:max-w-xl">
+              <p class="mb-2 inline-flex rounded-full bg-white/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Signature Collection</p>
+              <h1 class="font-display text-3xl leading-tight text-white sm:text-4xl md:text-5xl">Kilau Elegan Untuk Momen Paling Personal</h1>
+              <p class="mt-3 text-sm text-white/90 md:text-base">Koleksi perhiasan dengan nuansa feminin modern, didesain untuk dipakai setiap hari dan momen istimewa.</p>
+            </div>
+            </article>
+
+            <article class="swiper-slide">
+            <img src="./asset/slider (2).jpeg" alt="Koleksi pink series UBS" class="h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-900/60 via-navy-900/28 to-transparent"></div>
+            <div class="absolute bottom-7 left-5 right-5 md:bottom-12 md:left-10 md:max-w-xl">
+              <p class="mb-2 inline-flex rounded-full bg-white/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Spring Edit</p>
+              <h2 class="font-display text-3xl leading-tight text-white sm:text-4xl md:text-5xl">Soft Color, Bold Impression</h2>
+              <p class="mt-3 text-sm text-white/90 md:text-base">Perpaduan rose gold dan detail bunga untuk tampilan yang manis, clean, dan premium.</p>
+            </div>
+            </article>
+
+            <article class="swiper-slide">
+            <img src="./asset/slider (3).jpeg" alt="UBS gold bar" class="h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-900/60 via-navy-900/30 to-transparent"></div>
+            <div class="absolute bottom-7 left-5 right-5 md:bottom-12 md:left-10 md:max-w-xl">
+              <p class="mb-2 inline-flex rounded-full bg-white/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Investment Grade</p>
+              <h2 class="font-display text-3xl leading-tight text-white sm:text-4xl md:text-5xl">Logam Mulia Untuk Portofolio Stabil</h2>
+              <p class="mt-3 text-sm text-white/90 md:text-base">Mulai dari gramasi ringan sampai koleksi premium, semuanya bersertifikat resmi.</p>
+            </div>
+            </article>
+          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kategori" class="mx-auto mt-14 w-full max-w-7xl px-4 md:px-8">
+      <div class="mb-7 flex flex-col gap-3 md:mb-9 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Featured Categories</p>
+          <h2 class="mt-2 font-display text-3xl text-navy-900 md:text-4xl">Pilih Koleksi Sesuai Style</h2>
+        </div>
+        <a href="./shop.html" class="text-sm font-bold text-navy-900 transition hover:text-gold-600">Lihat Semua Koleksi</a>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="stagger-item overflow-hidden rounded-3xl bg-white shadow-card ring-1 ring-blush-200" style="animation-delay: 0ms;">
+          <img src="./asset/hero-kategori-cincin.jpeg" alt="Kategori cincin" class="h-64 w-full object-cover" />
+          <div class="p-5">
+            <h3 class="font-display text-2xl text-navy-900">Cincin</h3>
+            <p class="mt-2 text-sm text-navy-700/80">Detail potongan yang halus untuk everyday elegance.</p>
+          </div>
+        </article>
+
+        <article class="stagger-item overflow-hidden rounded-3xl bg-white shadow-card ring-1 ring-blush-200" style="animation-delay: 120ms;">
+          <img src="./asset/hero-kategori-kalung.jpeg" alt="Kategori kalung" class="h-64 w-full object-cover" />
+          <div class="p-5">
+            <h3 class="font-display text-2xl text-navy-900">Kalung</h3>
+            <p class="mt-2 text-sm text-navy-700/80">Sentuhan rose gold yang lembut dan timeless.</p>
+          </div>
+        </article>
+
+        <article class="stagger-item overflow-hidden rounded-3xl bg-white shadow-card ring-1 ring-blush-200" style="animation-delay: 240ms;">
+          <img src="./asset/hero-kategori-lm.jpeg" alt="Kategori logam mulia" class="h-64 w-full object-cover" />
+          <div class="p-5">
+            <h3 class="font-display text-2xl text-navy-900">Logam Mulia</h3>
+            <p class="mt-2 text-sm text-navy-700/80">Aset fisik premium untuk diversifikasi jangka panjang.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="produk" class="mx-auto mt-14 w-full max-w-7xl px-4 md:px-8">
+      <div class="mb-7">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">List Produk</p>
+        <h2 class="mt-2 font-display text-3xl text-navy-900 md:text-4xl">UBS Gold Bar Classic Series</h2>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/2gr-classic.jpg" alt="UBS Gold Bar 2 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 2 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 2.450.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/3gr-classic.jpg" alt="UBS Gold Bar 3 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 3 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 3.660.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/4gr-classic.jpg" alt="UBS Gold Bar 4 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 4 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 4.860.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/5gr-classic.jpg" alt="UBS Gold Bar 5 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 5 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 6.090.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/10gr-classic.jpg" alt="UBS Gold Bar 10 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 10 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 12.120.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/25gr-classic.jpg" alt="UBS Gold Bar 25 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 25 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 30.050.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/50gr-classic.jpg" alt="UBS Gold Bar 50 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 50 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 59.900.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+
+        <article class="rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+          <img src="./asset/produk/100gr-classic.jpg" alt="UBS Gold Bar 100 gram" class="h-56 w-full rounded-2xl object-cover" />
+          <h3 class="mt-4 text-base font-bold text-navy-900">Gold Bar 100 gr</h3>
+          <p class="mt-1 text-sm text-navy-700/80">Seri Classic 999.9</p>
+          <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 119.700.000</p>
+          <a href="./shop.html" class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Lihat Detail</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-14 w-full max-w-7xl px-4 md:px-8">
+      <div class="glass relative overflow-hidden rounded-[2rem] p-8 shadow-soft md:p-10">
+        <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-blush-200/70 blur-2xl"></div>
+        <div class="absolute -bottom-16 left-4 h-36 w-36 rounded-full bg-gold-400/20 blur-2xl"></div>
+
+        <div class="relative z-10 grid gap-8 md:grid-cols-2 md:items-center">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">UBS Gold Lifestyle</p>
+            <h2 class="mt-2 font-display text-3xl text-navy-900 md:text-4xl">Temukan Koleksi yang Menjadi Signature Anda</h2>
+            <p class="mt-3 text-sm leading-relaxed text-navy-700/85">Mulai dari perhiasan feminin sampai logam mulia bernilai investasi, semua hadir dengan kualitas terjaga dan kemasan premium.</p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="./shop.html" class="rounded-full bg-navy-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-navy-800">Mulai Belanja</a>
+              <a href="./cart.html" class="rounded-full border border-navy-200 px-6 py-3 text-sm font-semibold text-navy-900 transition hover:border-gold-500 hover:text-gold-600">Lihat Keranjang</a>
+            </div>
+          </div>
+
+          <img src="./asset/hero-kategori-lm.jpeg" alt="UBS Gold Lifestyle campaign" class="h-64 w-full rounded-3xl object-cover md:h-72" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-blush-200 bg-white/70 py-7 backdrop-blur-sm">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 text-sm text-navy-700/80 md:flex-row md:items-center md:justify-between md:px-8">
+      <p>&copy; 2026 UBS Gold Lifestyle</p>
+      <p>Jakarta Selatan | WhatsApp 0812-0000-0000</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    new Swiper('.heroSwiper', {
+      loop: true,
+      speed: 850,
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      pagination: {
+        el: '.heroSwiper .swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.heroSwiper .swiper-button-next',
+        prevEl: '.heroSwiper .swiper-button-prev'
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Aurumora x UBS Gold Lifestyle</title>
+  <meta name="description" content="Belanja koleksi UBS Gold Lifestyle: perhiasan dan logam mulia dengan tampilan estetik dan premium." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blush: {
+              50: '#fff7fa',
+              100: '#feeef4',
+              200: '#fbdde9',
+              300: '#f5c1d4'
+            },
+            navy: {
+              700: '#223750',
+              800: '#1a2f47',
+              900: '#102742'
+            },
+            gold: {
+              400: '#efb34b',
+              500: '#db9a33',
+              600: '#be7f1f'
+            }
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            display: ['Marcellus', 'serif']
+          },
+          boxShadow: {
+            soft: '0 24px 60px rgba(16, 39, 66, 0.14)',
+            card: '0 18px 35px rgba(19, 34, 58, 0.09)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(245, 193, 212, 0.45), transparent 38%),
+        radial-gradient(circle at 100% 25%, rgba(239, 179, 75, 0.14), transparent 42%),
+        linear-gradient(160deg, #fff9fc 0%, #fff4f8 45%, #fffdfd 100%);
+      color: #17314f;
+    }
+
+    .glass {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border: 1px solid #f3d6e3;
+    }
+
+    .product-card {
+      transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 z-50 border-b border-blush-200/80 bg-white/85 backdrop-blur-md">
+    <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./asset/logo-ubs.png" alt="UBS Gold Lifestyle" class="h-10 w-auto" />
+      </a>
+
+      <button id="menuToggle" class="rounded-xl border border-blush-200 px-3 py-2 text-navy-900 md:hidden" aria-label="Toggle menu">
+        Menu
+      </button>
+
+      <ul class="hidden items-center gap-7 text-sm font-semibold text-navy-800 md:flex">
+        <li><a href="./index.html" class="transition hover:text-gold-600">Home</a></li>
+        <li><a href="./shop.html" class="text-gold-600">Shop</a></li>
+        <li><a href="./cart.html" class="transition hover:text-gold-600">Cart</a></li>
+        <li><a href="./blog.html" class="transition hover:text-gold-600">Blog</a></li>
+      </ul>
+
+      <a href="./cart.html" class="inline-flex items-center gap-2 rounded-full bg-navy-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-navy-800">
+        Keranjang
+        <span id="cartBadge" class="rounded-full bg-white/25 px-2 py-0.5 text-xs">0</span>
+      </a>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-blush-200 bg-white px-4 py-4 md:hidden">
+      <ul class="space-y-3 text-sm font-semibold text-navy-800">
+        <li><a href="./index.html" class="block">Home</a></li>
+        <li><a href="./shop.html" class="block text-gold-600">Shop</a></li>
+        <li><a href="./cart.html" class="block">Cart</a></li>
+        <li><a href="./blog.html" class="block">Blog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="mx-auto w-full max-w-7xl px-4 pb-16 pt-10 md:px-8">
+    <section class="glass relative overflow-hidden rounded-[2rem] p-8 shadow-soft md:p-10">
+      <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-blush-200/70 blur-2xl"></div>
+      <div class="absolute -bottom-14 left-4 h-36 w-36 rounded-full bg-gold-400/20 blur-2xl"></div>
+
+      <div class="relative z-10 grid gap-6 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Shop Collection</p>
+          <h1 class="mt-2 font-display text-4xl text-navy-900 md:text-5xl">UBS Gold Bar Classic Series</h1>
+          <p class="mt-3 max-w-xl text-sm leading-relaxed text-navy-700/85">Pilih gramasi sesuai kebutuhan: untuk hadiah, koleksi pribadi, atau strategi investasi jangka panjang.</p>
+        </div>
+        <img src="./asset/hero-kategori-lm.jpeg" alt="Koleksi UBS Gold Bar" class="h-56 w-full rounded-3xl object-cover md:h-64" />
+      </div>
+    </section>
+
+    <section class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/2gr-classic.jpg" alt="UBS Gold Bar 2 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 2 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 2.450.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-2gr" data-name="Gold Bar 2 gr" data-price="2450000">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/3gr-classic.jpg" alt="UBS Gold Bar 3 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 3 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 3.660.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-3gr" data-name="Gold Bar 3 gr" data-price="3660000">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/4gr-classic.jpg" alt="UBS Gold Bar 4 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 4 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 4.860.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-4gr" data-name="Gold Bar 4 gr" data-price="4860000">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/5gr-classic.jpg" alt="UBS Gold Bar 5 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 5 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 6.090.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-5gr" data-name="Gold Bar 5 gr" data-price="6090000">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/10gr-classic.jpg" alt="UBS Gold Bar 10 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 10 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 12.120.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-10gr" data-name="Gold Bar 10 gr" data-price="12120000">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/25gr-classic.jpg" alt="UBS Gold Bar 25 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 25 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 30.050.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-25gr" data-name="Gold Bar 25 gr" data-price="30050000">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/50gr-classic.jpg" alt="UBS Gold Bar 50 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 50 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 59.900.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-50gr" data-name="Gold Bar 50 gr" data-price="59900000">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="product-card rounded-3xl bg-white p-4 shadow-card ring-1 ring-blush-200">
+        <img src="./asset/produk/100gr-classic.jpg" alt="UBS Gold Bar 100 gram" class="h-56 w-full rounded-2xl object-cover" />
+        <p class="mt-4 text-xs font-bold uppercase tracking-wider text-gold-600">Classic Series</p>
+        <h2 class="mt-1 text-lg font-bold text-navy-900">Gold Bar 100 gr</h2>
+        <p class="mt-3 text-lg font-extrabold text-gold-600">Rp 119.700.000</p>
+        <button class="add-to-cart mt-4 w-full rounded-xl bg-navy-900 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800" data-id="lm-100gr" data-name="Gold Bar 100 gr" data-price="119700000">Tambah ke Keranjang</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="mt-16 border-t border-blush-200 bg-white/70 py-7 backdrop-blur-sm">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 text-sm text-navy-700/80 md:flex-row md:items-center md:justify-between md:px-8">
+      <p>&copy; 2026 Aurumora x UBS Gold Lifestyle</p>
+      <p>Jakarta Selatan | WhatsApp 0812-0000-0000</p>
+    </div>
+  </footer>
+
+  <script>
+    const CART_KEY = 'aurumora-cart';
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    function getCart() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function renderBadge() {
+      const count = getCart().reduce(function (total, item) {
+        return total + item.qty;
+      }, 0);
+      document.getElementById('cartBadge').textContent = count;
+    }
+
+    function addToCart(product) {
+      const cart = getCart();
+      const existing = cart.find(function (item) {
+        return item.id === product.id;
+      });
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          qty: 1
+        });
+      }
+
+      saveCart(cart);
+      renderBadge();
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(function (button) {
+      button.addEventListener('click', function () {
+        addToCart({
+          id: button.dataset.id,
+          name: button.dataset.name,
+          price: Number(button.dataset.price)
+        });
+
+        const initialText = button.textContent;
+        button.textContent = 'Berhasil Ditambahkan';
+        button.classList.add('bg-gold-600');
+        setTimeout(function () {
+          button.textContent = initialText;
+          button.classList.remove('bg-gold-600');
+        }, 1000);
+      });
+    });
+
+    renderBadge();
+  </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Aurumora x UBS Gold Lifestyle</title>
+  <meta name="description" content="Kelola keranjang belanja UBS Gold Lifestyle dengan tampilan modern dan ringkasan pembayaran yang jelas." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blush: {
+              50: '#fff7fa',
+              100: '#feeef4',
+              200: '#fbdde9',
+              300: '#f5c1d4'
+            },
+            navy: {
+              700: '#223750',
+              800: '#1a2f47',
+              900: '#102742'
+            },
+            gold: {
+              400: '#efb34b',
+              500: '#db9a33',
+              600: '#be7f1f'
+            }
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            display: ['Marcellus', 'serif']
+          },
+          boxShadow: {
+            soft: '0 24px 60px rgba(16, 39, 66, 0.14)',
+            card: '0 18px 35px rgba(19, 34, 58, 0.09)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(245, 193, 212, 0.45), transparent 38%),
+        radial-gradient(circle at 100% 25%, rgba(239, 179, 75, 0.14), transparent 42%),
+        linear-gradient(160deg, #fff9fc 0%, #fff4f8 45%, #fffdfd 100%);
+      color: #17314f;
+    }
+
+    .glass {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border: 1px solid #f3d6e3;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 z-50 border-b border-blush-200/80 bg-white/85 backdrop-blur-md">
+    <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="./asset/logo-ubs.png" alt="UBS Gold Lifestyle" class="h-10 w-auto" />
+      </a>
+
+      <button id="menuToggle" class="rounded-xl border border-blush-200 px-3 py-2 text-navy-900 md:hidden" aria-label="Toggle menu">
+        Menu
+      </button>
+
+      <ul class="hidden items-center gap-7 text-sm font-semibold text-navy-800 md:flex">
+        <li><a href="./index.html" class="transition hover:text-gold-600">Home</a></li>
+        <li><a href="./shop.html" class="transition hover:text-gold-600">Shop</a></li>
+        <li><a href="./cart.html" class="text-gold-600">Cart</a></li>
+        <li><a href="./blog.html" class="transition hover:text-gold-600">Blog</a></li>
+      </ul>
+
+      <a href="./shop.html" class="rounded-full bg-navy-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-navy-800">Tambah Produk</a>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-blush-200 bg-white px-4 py-4 md:hidden">
+      <ul class="space-y-3 text-sm font-semibold text-navy-800">
+        <li><a href="./index.html" class="block">Home</a></li>
+        <li><a href="./shop.html" class="block">Shop</a></li>
+        <li><a href="./cart.html" class="block text-gold-600">Cart</a></li>
+        <li><a href="./blog.html" class="block">Blog</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="mx-auto grid w-full max-w-7xl gap-6 px-4 pb-16 pt-10 md:grid-cols-3 md:px-8">
+    <section class="md:col-span-2">
+      <div class="glass rounded-[2rem] p-6 shadow-soft md:p-8">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-gold-600">Your Cart</p>
+        <h1 class="mt-2 font-display text-4xl text-navy-900 md:text-5xl">Keranjang Belanja</h1>
+        <p class="mt-2 text-sm text-navy-700/80">Atur jumlah item, cek total bayar, lalu lanjutkan checkout.</p>
+      </div>
+
+      <div id="cartItems" class="mt-6 space-y-4"></div>
+
+      <div id="emptyState" class="mt-6 hidden rounded-3xl border border-dashed border-blush-300 bg-white p-8 text-center shadow-card">
+        <p class="text-lg font-semibold text-navy-900">Keranjang kamu masih kosong.</p>
+        <p class="mt-1 text-sm text-navy-700/80">Tambahkan koleksi favorit dari halaman shop.</p>
+        <a href="./shop.html" class="mt-4 inline-flex rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-800">Mulai Belanja</a>
+      </div>
+    </section>
+
+    <aside class="glass h-fit rounded-[2rem] p-6 shadow-soft md:sticky md:top-24">
+      <h2 class="font-display text-2xl text-navy-900">Ringkasan Pesanan</h2>
+
+      <div class="mt-5 space-y-3 text-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-navy-700/80">Total Item</span>
+          <span id="summaryItems" class="font-bold">0</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-navy-700/80">Subtotal</span>
+          <span id="summarySubtotal" class="font-bold">Rp 0</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-navy-700/80">Asuransi Pengiriman</span>
+          <span id="summaryShipping" class="font-bold">Rp 0</span>
+        </div>
+      </div>
+
+      <div class="mt-4 border-t border-blush-200 pt-4">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-semibold text-navy-700/85">Total Bayar</span>
+          <span id="summaryTotal" class="text-2xl font-extrabold text-gold-600">Rp 0</span>
+        </div>
+      </div>
+
+      <button id="checkoutBtn" class="mt-5 w-full rounded-xl bg-navy-900 py-3 text-sm font-semibold text-white transition hover:bg-navy-800">Lanjut Checkout</button>
+      <button id="clearCartBtn" class="mt-3 w-full rounded-xl border border-blush-300 py-3 text-sm font-semibold text-navy-900 transition hover:border-gold-500 hover:text-gold-600">Kosongkan Keranjang</button>
+    </aside>
+  </main>
+
+  <footer class="mt-16 border-t border-blush-200 bg-white/70 py-7 backdrop-blur-sm">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 text-sm text-navy-700/80 md:flex-row md:items-center md:justify-between md:px-8">
+      <p>&copy; 2026 Aurumora x UBS Gold Lifestyle</p>
+      <p>Jakarta Selatan | WhatsApp 0812-0000-0000</p>
+    </div>
+  </footer>
+
+  <script>
+    const CART_KEY = 'aurumora-cart';
+    const SHIPPING = 50000;
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    function formatCurrency(number) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        maximumFractionDigits: 0
+      }).format(number);
+    }
+
+    function getCart() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+
+    function inferThumb(itemId) {
+      const map = {
+        'lm-2gr': './asset/produk/2gr-classic.jpg',
+        'lm-3gr': './asset/produk/3gr-classic.jpg',
+        'lm-4gr': './asset/produk/4gr-classic.jpg',
+        'lm-5gr': './asset/produk/5gr-classic.jpg',
+        'lm-10gr': './asset/produk/10gr-classic.jpg',
+        'lm-25gr': './asset/produk/25gr-classic.jpg',
+        'lm-50gr': './asset/produk/50gr-classic.jpg',
+        'lm-100gr': './asset/produk/100gr-classic.jpg'
+      };
+
+      return map[itemId] || './asset/logam-mulia.svg';
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      const cartItems = document.getElementById('cartItems');
+      const emptyState = document.getElementById('emptyState');
+      cartItems.innerHTML = '';
+
+      if (!cart.length) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+      }
+
+      cart.forEach(function (item) {
+        const row = document.createElement('article');
+        row.className = 'rounded-3xl bg-white p-5 shadow-card ring-1 ring-blush-200';
+        row.innerHTML = [
+          '<div class="flex flex-wrap items-center justify-between gap-4">',
+          '  <div class="flex items-center gap-4">',
+          '    <img src="' + inferThumb(item.id) + '" alt="' + item.name + '" class="h-20 w-20 rounded-2xl object-cover" />',
+          '    <div>',
+          '      <p class="text-base font-bold text-navy-900">' + item.name + '</p>',
+          '      <p class="mt-1 text-sm text-navy-700/75">Harga: ' + formatCurrency(item.price) + '</p>',
+          '    </div>',
+          '  </div>',
+          '  <div class="flex items-center gap-2">',
+          '    <button data-action="minus" data-id="' + item.id + '" class="qty-btn rounded-lg border border-blush-300 px-3 py-1 font-bold text-navy-900">-</button>',
+          '    <span class="min-w-8 text-center font-bold text-navy-900">' + item.qty + '</span>',
+          '    <button data-action="plus" data-id="' + item.id + '" class="qty-btn rounded-lg border border-blush-300 px-3 py-1 font-bold text-navy-900">+</button>',
+          '  </div>',
+          '</div>',
+          '<div class="mt-4 flex items-center justify-between border-t border-blush-200 pt-4">',
+          '  <p class="text-sm text-navy-700/80">Subtotal produk</p>',
+          '  <p class="font-extrabold text-gold-600">' + formatCurrency(item.price * item.qty) + '</p>',
+          '</div>'
+        ].join('');
+
+        cartItems.appendChild(row);
+      });
+
+      bindQtyButtons();
+      renderSummary(cart);
+    }
+
+    function renderSummary(cart) {
+      const totalItems = cart.reduce(function (sum, item) { return sum + item.qty; }, 0);
+      const subtotal = cart.reduce(function (sum, item) { return sum + item.price * item.qty; }, 0);
+      const total = subtotal + (subtotal > 0 ? SHIPPING : 0);
+
+      document.getElementById('summaryItems').textContent = String(totalItems);
+      document.getElementById('summarySubtotal').textContent = formatCurrency(subtotal);
+      document.getElementById('summaryShipping').textContent = subtotal > 0 ? formatCurrency(SHIPPING) : formatCurrency(0);
+      document.getElementById('summaryTotal').textContent = formatCurrency(total);
+    }
+
+    function updateQty(id, action) {
+      const cart = getCart();
+      const found = cart.find(function (item) { return item.id === id; });
+      if (!found) return;
+
+      if (action === 'plus') {
+        found.qty += 1;
+      }
+
+      if (action === 'minus') {
+        found.qty -= 1;
+      }
+
+      const cleaned = cart.filter(function (item) { return item.qty > 0; });
+      saveCart(cleaned);
+      renderCart();
+    }
+
+    function bindQtyButtons() {
+      document.querySelectorAll('.qty-btn').forEach(function (button) {
+        button.addEventListener('click', function () {
+          updateQty(button.dataset.id, button.dataset.action);
+        });
+      });
+    }
+
+    document.getElementById('clearCartBtn').addEventListener('click', function () {
+      saveCart([]);
+      renderCart();
+    });
+
+    document.getElementById('checkoutBtn').addEventListener('click', function () {
+      const cart = getCart();
+      if (!cart.length) {
+        alert('Keranjang masih kosong. Pilih produk dulu ya.');
+        return;
+      }
+      alert('Checkout demo berhasil. Lanjutkan ke payment gateway di integrasi berikutnya.');
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>
